@@ -1,7 +1,6 @@
 package leetcode.Solutions;
 
 public class POWxn {
-	public class Solution {
 	    public double pow(double x, int n) {
 	        if(n == 0){
 	        	return 1;
@@ -23,5 +22,5 @@ public class POWxn {
 	        	}
 	        return m;	
 	    }
-	}
+
 }
