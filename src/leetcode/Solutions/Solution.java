@@ -7,6 +7,28 @@ package leetcode.Solutions;
 
 
 //public class Solution {
+//    public boolean canJump(int[] A) {
+//        if(A == null || A.length == 0){
+//        	throw new IllegalArgumentException("wrong input");
+//        }
+//        
+//        int cur = A[0];
+//        for(int i=1; i< A.length; i++){
+//        	if(cur == 0){
+//        		return false;
+//        	}
+//        	cur--;
+//        	cur = Math.max(cur, A[i]);
+//        }
+//        return true;
+//    }
+//}
+
+
+
+
+
+//public class Solution {
 //    public double pow(double x, int n) {
 //        if(n == 0){
 //        	return 1;
