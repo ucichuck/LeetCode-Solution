@@ -6,6 +6,201 @@ package leetcode.Solutions;
 
 
 
+//import java.util.LinkedList;
+//
+//public class Solution {
+//    
+//    public void solve(char[][] board) {
+//        if (board==null || board.length<1)
+//            return;
+//        boolean[][] visit = new boolean[board.length][board[0].length];
+//        for (int i=0; i<board.length; i++)
+//            for (int j=0; j<board[i].length; j++)
+//                if (board[i][j]=='O' && !visit[i][j] && (i==0||j==0||i==board.length-1||j==board[i].length-1)) {
+//                	LinkedList<Point> queue = new LinkedList<Point>();
+//                    queue.add(new Point(i, j));
+//                    visit[i][j] = true;
+//                    while (!queue.isEmpty()) {
+//                        Point point = queue.poll();
+//                        if (point.j>0 && board[point.i][point.j-1]=='O' && !visit[point.i][point.j-1]) {
+//                            queue.add(new Point(point.i, point.j-1));
+//                           visit[point.i][point.j-1] = true; //add code here
+//                        }
+//                        if (point.j<board[point.i].length-1 && board[point.i][point.j+1]=='O' && !visit[point.i][point.j+1]) {
+//                            queue.add(new Point(point.i, point.j+1));
+//                           visit[point.i][point.j+1] = true;//add code here
+//                        }
+//                        if (point.i>0 && board[point.i-1][point.j]=='O' && !visit[point.i-1][point.j]) {
+//                            queue.add(new Point(point.i-1, point.j));
+//                            visit[point.i-1][point.j] = true;//add code here
+//                        }
+//                        if (point.i<board.length-1 && board[point.i+1][point.j]=='O' && !visit[point.i+1][point.j]) {
+//                            queue.add(new Point(point.i+1, point.j));
+//                           visit[point.i+1][point.j] = true;//add code here
+//                        }
+//                    }
+//                }
+//        for (int i=0; i<board.length; i++)
+//            for (int j=0; j<board[i].length; j++)
+//                if (visit[i][j])
+//                    board[i][j] = 'O';
+//                else
+//                    board[i][j] = 'X';
+//    }
+//    class Point {
+//        public int i;
+//        public int j;
+//        public Point(int ii, int jj) {
+//            this.i = ii;
+//            this.j = jj;
+//        }
+//    }
+//}
+
+
+
+
+
+
+//public class Solution{
+//	public int maximalRec(char[][] matrix) {
+//        if (matrix.length == 0 || matrix[0].length == 0) {
+//                return 0;
+//        }
+//        int m = matrix.length, n = matrix[0].length;
+//        int[][] l = new int[m][n + 2];
+//        int[][] r = new int[m][n + 2];
+//        for (int i = 0; i < m; i++) {
+//                for (int j = 1; j <= n; j++) {
+//                        if (matrix[i][j - 1] == '1') {
+//                                l[i][j] = l[i][j - 1] + 1;
+//                        }
+//                }
+//        }
+//        for (int i = 0; i < m; i++) {
+//                for (int j = n; j >= 1; j--) {
+//                        if (matrix[i][j - 1] == '1') {
+//                                r[i][j] = r[i][j + 1] + 1;
+//                        }
+//                }
+//        }
+//        int result = 0;
+//        for (int j = 0; j < n; j++) {
+//                int leftMost = n, rightMost = n;
+//                int count = 0;
+//                for (int i = 0; i < m; i++) {
+//                        if (matrix[i][j] == '0') {
+//                                count = 0;
+//                                leftMost = n;
+//                                rightMost = n;
+//                        } else {
+//                                count++;
+//                                leftMost = Math.min(leftMost, l[i][j + 1]);
+//                                rightMost = Math.min(rightMost, r[i][j + 1]);
+//                                int temp = (leftMost + rightMost - 1) * count;
+//                                result = Math.max(result, temp);
+//                        }
+//                }
+//        }
+//        return result;
+//}
+//}
+
+
+
+
+
+// World ladder 2
+//public class Solution {
+//    public List<List<String>> findLadders(String start, String end, Set<
+//String> dict) {
+//        List<List<String>> result = new ArrayList<List<String>>();
+//        if (start == null || end == null || start.length() != end.length() |
+//| dict.size() == 0) {
+//            return result;
+//        }
+//        
+//        HashMap<String, HashSet<String>> visited = new HashMap<String, 
+//HashSet<String>>();
+//        HashMap<String, Integer> level = new HashMap<String, Integer>();
+//        Queue<String> queue = new LinkedList<String>();
+//        HashSet<String> path = new HashSet<String>();
+//        visited.put(start,path);
+//        queue.offer(start);
+//        level.put(start,1);
+//        int min = Integer.MAX_VALUE;
+//        dict.remove(start);
+//        dict.add(end);
+//        
+//        while (!queue.isEmpty()) {
+//            String str = queue.poll();
+//            for (int i = 0; i < str.length(); i++) {
+//                char original = str.charAt(i);
+//                for (char c = 'a'; c <= 'z'; c++) {
+//                    if (c != original) {
+//                        String newStr = replace(str,i,c);
+//                        if ((dict.contains(newStr) && !visited.containsKey(
+//newStr))
+//                        || (visited.containsKey(newStr) && level.get(newStr)
+//> level.get(str))) {
+//                            if (visited.containsKey(newStr)) {
+//                                visited.get(newStr).add(str);
+//                            }
+//                            else {
+//                                HashSet<String> path1 = new HashSet<String>(
+//);
+//                                visited.put(newStr,path1);
+//                                path1.add(str);
+//                                level.put(newStr,level.get(str) + 1);
+//                                queue.offer(newStr);
+//                            }
+//                            
+//                            if (newStr.equals(end)) {
+//                                if (level.get(str) < min) {
+//                                    ArrayList<String> entry = new ArrayList<
+//String>();
+//                                    entry.add(end);
+//                                    result.addAll(back_trace(str,visited,
+//entry));
+//                                    min = level.get(str) + 1;
+//                                }
+//                            }
+//                            
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//        return result;
+//    }
+//    
+//    private String replace (String s, int i , char c) {
+//        char[] ch = s.toCharArray();
+//        ch[i] = c;
+//        return new String(ch);
+//    }
+//    
+//    private ArrayList<ArrayList<String>> back_trace(String s, HashMap<String
+//, HashSet<String>> visited, ArrayList<String> path) {
+//        ArrayList<ArrayList<String>> result = new ArrayList<ArrayList<String
+//>>();
+//        ArrayList<String> entry = new ArrayList<String>(path);
+//        entry.add(0,s);
+//        if (visited.get(s).size() < 1) {
+//            result.add(entry);
+//            return result;
+//        }
+//        for (String ss: visited.get(s)) {
+//            result.addAll(back_trace(ss,visited,entry));
+//        }
+//        return result;
+//    }
+//}
+
+
+
+
+
 //import java.util.ArrayList;
 //
 //import javax.swing.tree.TreeNode;
