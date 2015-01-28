@@ -2,8 +2,6 @@ package leetcode.Solutions;
 
 import java.util.LinkedList;
 
-import leetcode.Solutions.Solution.Point;
-
 public class SurroundedRegions {
 	public void solve(char[][] board) {
         if (board==null || board.length<1)
