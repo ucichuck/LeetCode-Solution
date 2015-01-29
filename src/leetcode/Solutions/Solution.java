@@ -7,6 +7,25 @@ package leetcode.Solutions;
 
 
 //public class Solution {
+//    public int singleNumber(int[] A) {
+//        if(A == null || A.length == 0){
+//        	return 0;
+//        }
+//        int res = A[0];
+//        
+//        for(int i=1; i<A.length; i++){
+//        	res = res ^ A[i];
+//        }
+//        
+//        return res;
+//    }
+//}
+
+
+
+
+
+//public class Solution {
 //    public int canCompleteCircuit(int[] gas, int[] cost) {
 //        if(gas.length == 0 || cost.length == 0){
 //        	return 0;
