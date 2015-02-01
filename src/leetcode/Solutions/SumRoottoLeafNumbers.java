@@ -2,7 +2,7 @@ package leetcode.Solutions;
 
 import java.util.ArrayList;
 
-import javax.swing.tree.TreeNode;
+import leetcode.Utility.TreeNode;
 
 public class SumRoottoLeafNumbers {
 	 public int sumNumbers(TreeNode root) {
