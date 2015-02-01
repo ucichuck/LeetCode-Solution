@@ -6,6 +6,45 @@ package leetcode.Solutions;
 
 
 
+
+//import leetcode.Utility.TreeNode;
+//
+//public class Solution {
+//    public boolean isValidBST(TreeNode root) {
+//        if(root == null){
+//        	return true;
+//        }
+//        Long min = (long)Integer.MIN_VALUE - 1;
+//        Long max = (long)Integer.MAX_VALUE + 1;
+//        return isValid(root, min, max);
+//    }
+//    private boolean isValid(TreeNode root, long min, long max){
+//    	if(root.val >=max || root.val <= min){
+//    		return false;
+//    	}
+//    	boolean res = true;
+//    	if(root.left != null){
+//    		res = isValid(root.left, min, root.val);
+//    		if(!res){
+//    			return res;
+//    		}
+//    	}
+//    	
+//    	if(root.right != null){
+//    		res = isValid(root.right, root.val, max);
+//    		if(!res){
+//    			return res;
+//    		}
+//    	}
+//    	
+//    	return res;
+//    }
+//}
+
+
+
+
+
 //public class Solution {
 //    public boolean isInterleave(String s1, String s2, String s3) {
 //        // Note: The Solution object is instantiated only once and is reused by each test case.
