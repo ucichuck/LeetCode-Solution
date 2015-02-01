@@ -6,6 +6,68 @@ package leetcode.Solutions;
 
 
 
+//import java.util.HashMap;
+//
+//import leetcode.Utility.TreeNode;
+//
+//public class Solution {
+//	HashMap<Integer,Integer> table = new HashMap<Integer, Integer>();
+//    public TreeNode buildTree(int[] preorder, int[] inorder) {
+//        
+//        for(int i=0; i<inorder.length; i++){
+//        	table.put(inorder[i], i);
+//        }
+//        
+//        return build(preorder, 0, preorder.length-1, inorder, 0, inorder.length-1);
+//    }
+//    private TreeNode build(int[] preorder, int pl, int pr, int[] inorder, int il, int ir){
+//    	if(pl > pr || il > ir){
+//    		return null;
+//    	}
+//    	
+//    	if(pl == pr || il == ir){
+//    		return new TreeNode(preorder[pl]);
+//    	}
+//    	
+//    	TreeNode cur = new TreeNode(preorder[pl]);
+//    	
+//    	int iin = table.get(preorder[pl]);
+//    	
+//    	TreeNode left = build(preorder, pl+1, pl+(iin - il), inorder, il, iin-1);
+//    	TreeNode right = build(preorder, pl+(iin - il)+1, pr, inorder, iin+1, ir);
+//    	
+//    	cur.left = left;
+//    	cur.right = right;
+//    	return cur;
+//    }
+//}
+
+
+
+
+
+//import leetcode.Utility.TreeNode;
+//
+//public class Solution {
+//    public int maxDepth(TreeNode root) {
+//        if(root == null){
+//        	return 0;
+//        }
+//        
+//        if(root.left == null){
+//        	return maxDepth(root.right) + 1;
+//        }else if(root.right == null){
+//        	return maxDepth(root.left)+1;
+//        }else{
+//        	return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
+//        }
+//    }
+//}
+
+
+
+
+
 //import java.util.ArrayList;
 //import java.util.Stack;
 //
