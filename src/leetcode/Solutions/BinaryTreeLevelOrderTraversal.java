@@ -11,7 +11,6 @@ public class BinaryTreeLevelOrderTraversal {
     	List<Integer> tmp = new ArrayList<Integer>();
     	List<TreeNode> level = new ArrayList<TreeNode>();
     	if(root == null){
-    		res.add(tmp);
     		return res;
     	}
     	level.add(root);
