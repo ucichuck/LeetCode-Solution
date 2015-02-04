@@ -4,13 +4,15 @@ import leetcode.Solutions.Solution;
 
 
 
+
 public class Main {
 	public static void main(String[] args){
 		
 		Solution solut = new Solution();
+		System.out.println(solut.maxProduct(new int[]{-4,-3,-2}));
 		
-		System.out.println(solut.isInterleave("aabcc", "dbbca", "aadbbcbcac"));
-		System.out.println(solut.isInterleave("aabcc", "dbbca", "aadbbbaccc"));
+//		System.out.println(solut.isInterleave("aabcc", "dbbca", "aadbbcbcac"));
+//		System.out.println(solut.isInterleave("aabcc", "dbbca", "aadbbbaccc"));
 		
 //		ListNode a1 = new ListNode(1);
 //		ListNode a2 = new ListNode(2);
