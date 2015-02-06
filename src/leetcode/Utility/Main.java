@@ -1,8 +1,5 @@
 package leetcode.Utility;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import leetcode.Solutions.Solution;
 
 
@@ -12,28 +9,31 @@ public class Main {
 	public static void main(String[] args){
 		
 		Solution solut = new Solution();
-		ListNode a = new ListNode(-1);
-		ListNode a2 = new ListNode(5);
-		ListNode a3 = new ListNode(11);
+
+		System.out.println(solut.isOneEditDistance("abccd", "aabcd"));
 		
-		ListNode b1 = new ListNode(6);
-		ListNode b2 = new ListNode(10);
-		
-		a.next = a2;
-		a2.next = a3;
-		
-		b1.next = b2;
-		List<ListNode> lists = new ArrayList<ListNode>();
-		lists.add(null);
-		lists.add(a);
-		lists.add(null);
-		lists.add(b1);
-		
-		ListNode res = solut.mergeKLists(lists);
-		
-		while(res != null){
-			System.out.println(res.val);
-		}
+		//		ListNode a = new ListNode(-1);
+//		ListNode a2 = new ListNode(5);
+//		ListNode a3 = new ListNode(11);
+//		
+//		ListNode b1 = new ListNode(6);
+//		ListNode b2 = new ListNode(10);
+//		
+//		a.next = a2;
+//		a2.next = a3;
+//		
+//		b1.next = b2;
+//		List<ListNode> lists = new ArrayList<ListNode>();
+//		lists.add(null);
+//		lists.add(a);
+//		lists.add(null);
+//		lists.add(b1);
+//		
+//		ListNode res = solut.mergeKLists(lists);
+//		
+//		while(res != null){
+//			System.out.println(res.val);
+//		}
 //		System.out.println(solut.maxProduct(new int[]{-4,-3,-2}));
 		
 //		System.out.println(solut.isInterleave("aabcc", "dbbca", "aadbbcbcac"));

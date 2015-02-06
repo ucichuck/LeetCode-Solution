@@ -6,6 +6,75 @@ package leetcode.Solutions;
 
 
 
+//public class Solution {
+//    public boolean isOneEditDistance(String s, String t) {
+//        int m = s.length(), n = t.length();
+//        if (m>n) return isOneEditDistance(t, s);
+//        if (n-m>1) return false;
+//        int i =0, shift = n-m;
+//        while (i<m && s.charAt(i)==t.charAt(i)) ++i;
+//        if (i==m) return shift > 0; // if two string are the same (shift==0), return false
+//        if (shift==0) i++; // if n==m skip current char in s (modify operation in s)
+//        while (i<m && s.charAt(i)==t.charAt(i+shift)) i++; // use shift to skip one char in t
+//        return i == m;
+//    }
+//}
+//
+//public class Solution {
+//    public boolean isOneEditDistance(String s, String t) {
+//       if(Math.abs(s.length() - t.length()) > 1) return false;
+//       if(s.length() == t.length()) return isOneSameLength(s, t);
+//       if(s.length() > t.length()) return isOneDifLength(t, s);
+//       else return isOneDifLength(s, t);
+//   }
+//   private boolean isOneDifLength(String s, String l) {
+//        int i = 0;
+//       while(i < s.length() && s.charAt(i) == l.charAt(i)) {++i;}
+//       if(i == s.length()) return true;
+//       return s.substring(i).equals(l.substring(i + 1));
+//   }
+//   private boolean isOneSameLength(String s, String t) {
+//       int dif = 0;
+//       for(int i = 0; i < s.length(); ++i) {
+//            if(s.charAt(i) != t.charAt(i)) ++dif;
+//       }
+//       return dif == 1;
+//   }
+//}
+
+
+
+
+//public class Solution {
+//    public boolean isOneEditDistance(String s, String t) {
+//        int a = s.length();
+//        int b = t.length();
+//        int[][] arr = new int[a+1][b+1];
+//        for(int i=0; i<=a; i++){
+//        	for(int j=0; j<=b; j++){
+//        		if(i == 0 && j == 0){
+//        			arr[i][j] = 0;
+//        		}else if(i == 0){
+//        			arr[i][j] = arr[i][j-1]+1;
+//        		}else if(j == 0){
+//        			arr[i][j] = arr[i-1][j]+1;
+//        		}else{
+//        			if(s.charAt(i-1) == t.charAt(j-1)){
+//        				arr[i][j] = arr[i-1][j-1];
+//        			}else{
+//        				arr[i][j] = Math.min(arr[i-1][j-1], Math.min(arr[i-1][j], arr[i][j-1]))+1;
+//        			}
+//        		}
+//        	}
+//        }
+//        return arr[a][b] == 1;
+//    }
+//}
+
+
+
+
+
 //import leetcode.Utility.ListNode;
 //
 //public class Solution {
