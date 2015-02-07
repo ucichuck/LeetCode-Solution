@@ -6,6 +6,21 @@ package leetcode.Solutions;
 
 
 
+//public class TwoSum {
+//	
+//	public void add(int number) {
+//	    
+//	}
+//
+//	public boolean find(int value) {
+//	    
+//	}
+//}
+
+
+
+
+
 //public class Solution {
 //    public int majorityElement(int[] num) {
 //    	if(num.length == 0){
