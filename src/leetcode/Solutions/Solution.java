@@ -1,5 +1,66 @@
 package leetcode.Solutions;
 
+import leetcode.Utility.ListNode;
+
+public class Solution {
+    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        if(headA == null || headB == null){
+        	return null;
+        }
+    	
+    	int count = 0;
+        
+    }
+}
+
+
+
+
+
+//import java.util.Stack;
+//class MinStack {
+//	Stack<Integer> st1 = new Stack<Integer>();
+//	Stack<Integer> st2 = new Stack<Integer>();
+//	
+//    public void push(int x) {
+//        st1.push(x);
+//        if(st2.isEmpty()){
+//        	st2.push(x);
+//        }else{
+//        	if(x <= getMin()){
+//        		st2.push(x);
+//        	}
+//        }
+//    }
+//
+//    public void pop() {
+//    	if(st1.isEmpty()){
+//        	throw new IllegalArgumentException("no min");
+//        }else{
+//        	int res = st1.pop();
+//        	if(res == getMin()){
+//        		st2.pop();
+//        	}
+//        }
+//    }
+//
+//    public int top() {
+//        if(st1.isEmpty()){
+//        	throw new IllegalArgumentException("no min");
+//        }else{
+//        	return st1.peek();
+//        }
+//    }
+//
+//    public int getMin() {
+//        if(st2.isEmpty()){
+//        	throw new IllegalArgumentException("no min");
+//        }else{
+//        	return st2.peek();
+//        }
+//    }
+//}
+
 
 
 

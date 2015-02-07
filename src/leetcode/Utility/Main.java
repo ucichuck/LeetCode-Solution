@@ -5,12 +5,19 @@ import leetcode.Solutions.Solution;
 
 
 
+
 public class Main {
 	public static void main(String[] args){
 		
-		Solution solut = new Solution();
-
-		System.out.println(solut.isOneEditDistance("abccd", "aabcd"));
+//		Solution solut = new Solution();
+		Solution st = new Solution();
+		st.push(0);
+		st.push(1);
+		st.push(0);
+		System.out.println(st.getMin());
+		
+		//
+//		System.out.println(solut.isOneEditDistance("abccd", "aabcd"));
 		
 		//		ListNode a = new ListNode(-1);
 //		ListNode a2 = new ListNode(5);
