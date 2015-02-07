@@ -7,6 +7,61 @@ package leetcode.Solutions;
 
 
 //public class Solution {
+//    public int majorityElement(int[] num) {
+//    	if(num.length == 0){
+//    		throw new IllegalArgumentException("wrong input");
+//    	}
+//    	
+//    	int cur = 0;
+//    	int count = 0;
+//    	for(int a : num){
+//    		if(count == 0){
+//    			cur = a;
+//    			count++;
+//    			continue;
+//    		}
+//    		if(cur == a){
+//    			count++;
+//    		}else{
+//    			count--;
+//    		}
+//    	}
+//    	if(count < 1){
+//    		throw new IllegalArgumentException("wrong input");
+//    	}
+//    	return cur;
+//    }
+//}
+
+
+
+
+
+//public class Solution {
+//    public int majorityElement(int[] num) {
+//    	int candidate = num[0];
+//        int nTimes, i;
+//        for (i = nTimes = 0; i < num.length; i++)
+//        {
+//            if (candidate == num[i])
+//                nTimes++;
+//            else 
+//                nTimes--;
+//            if (nTimes == 0)
+//            {
+//                candidate = num[i];
+//                nTimes = 1;
+//            }
+//        }
+//        return candidate;
+//    }
+//}
+
+
+
+
+
+//public class Solution {
 //    public int findPeakElement(int[] num) {
 //    	if (num == null) {
 //            return 0;
