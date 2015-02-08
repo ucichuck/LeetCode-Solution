@@ -3,8 +3,6 @@ package leetcode.Solutions;
 import java.util.Arrays;
 import java.util.Comparator;
 
-import leetcode.Solutions.Solution.MySort;
-
 public class LargestNumber {
 	public String largestNumber(int[] num) {
         int len = num.length;
