@@ -6,6 +6,76 @@ package leetcode.Solutions;
 
 
 
+//import java.util.HashMap;
+//
+//public class Solution {
+//    public String fractionToDecimal(int numerator, int denominator) {
+//        if (numerator == 0) return "0";
+//        if (denominator == 0) return "";
+//        
+//        String ans = "";
+//        
+//       if(numerator < 0 ^ denominator < 0){
+//    	   ans+="-";
+//       }
+//       
+//       long num = numerator, den = denominator;
+//       
+//       num = Math.abs(num);
+//       den = Math.abs(den);
+//       
+//       long res = num/den;
+//       ans+= res;
+//       long rest = (num%den)*10;
+//       if(rest == 0){
+//    	   return ans;
+//       }
+//       ans+='.';
+//       HashMap<Long,Integer> map = new HashMap<Long,Integer>();
+//       while(rest != 0){
+//    	   if(map.containsKey(rest)){
+//    		   int a = map.get(rest);
+//    		   String p1 = ans.substring(0,a);
+//    		   String p2 = ans.substring(a);
+//    		   ans = p1+"("+p2+")";
+//    		   return ans;
+//    	   }
+//    	   
+//    	   res = rest/den;
+//    	   ans+=res;
+//    	   map.put(res, ans.length());
+//    	   rest = (rest%den)*10;
+//       }
+//       return ans;
+//    }
+//}
+
+
+
+
+
+//public class Solution {
+//    public String reverseWords(String s) {
+//    	StringBuilder st = new StringBuilder();
+//    	int j = s.length();
+//    	for(int i = s.length()-1; i>=0; i--){
+//    		if(s.charAt(i) == ' '){
+//    			j = i;
+//    		} else if( i == 0 || s.charAt(i-1) == ' ') {
+//    			if(st.length() != 0){
+//    				st.append(" ");
+//    			}
+//    			st.append(s.substring(i,j));
+//    		}
+//    	}
+//    	return st.toString();
+//    }
+//}
+//
+
+
+
+
 //public class Solution {
 //    public int calculateMinimumHP(int[][] dungeon) {
 //        int m = dungeon.length;
