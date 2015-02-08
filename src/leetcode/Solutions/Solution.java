@@ -6,6 +6,43 @@ package leetcode.Solutions;
 
 
 
+//import java.util.HashMap;
+//import java.util.LinkedList;
+//
+//import leetcode.Utility.UndirectedGraphNode;
+//
+//public class Solution {
+//	public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
+//        if(node == null)
+//            return null;
+//            
+//        HashMap<UndirectedGraphNode, UndirectedGraphNode> hm = new HashMap<UndirectedGraphNode, UndirectedGraphNode>();
+//        LinkedList<UndirectedGraphNode> queue = new LinkedList<UndirectedGraphNode>();
+//        UndirectedGraphNode head = new UndirectedGraphNode(node.label);
+//        hm.put(node, head);
+//        queue.add(node);
+//        
+//        while(!queue.isEmpty()){
+//            UndirectedGraphNode curnode = queue.poll();
+//            for(UndirectedGraphNode aneighbor: curnode.neighbors){//check each neighbor
+//                if(!hm.containsKey(aneighbor)){//if not visited,then add to queue
+//                    queue.add(aneighbor);
+//                    UndirectedGraphNode newneighbor = new UndirectedGraphNode(aneighbor.label);
+//                    hm.put(aneighbor, newneighbor);
+//                }
+//                
+//                hm.get(curnode).neighbors.add(hm.get(aneighbor));
+//            }
+//        }
+//        
+//        return head;
+//    }
+//}
+
+
+
+
+
 //public class Solution {
 //    public int minCut(String s) {
 //        if(s == null || s.length() <2){
