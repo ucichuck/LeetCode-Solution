@@ -38,4 +38,38 @@ public class PermutationSequence {
         sb.append(String.valueOf(numbers.get(0)));
         return sb.toString();
     }
+	
+	private static int kth;
+	private static String save;
+	public static String getPermutation2(int n, int k) {  
+		kth  = k;  
+          
+        StringBuilder done = new StringBuilder();  
+        StringBuilder rest = new StringBuilder();  
+        for(int i=1; i<=n; i++){  
+            rest.append(i);  
+        }  
+          
+        rec(done, rest);  
+        return save;  
+    }  
+      
+    public static void rec(StringBuilder done, StringBuilder rest){  
+        if(rest.length() == 0){  
+            kth--;  
+            if(kth == 0){  
+                save = done.toString();  
+            }  
+            return;  
+        }  
+          
+        for(int i=0; i<rest.length(); i++){  
+            char c = rest.charAt(i);  
+            rest.deleteCharAt(i);  
+            done.append(c);  
+            rec(done, rest);  
+            done.deleteCharAt(done.length()-1);  
+            rest.insert(i, c);  
+        }  
+    }  
 }
