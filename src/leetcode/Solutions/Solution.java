@@ -6,6 +6,94 @@ package leetcode.Solutions;
 
 
 
+//public class Solution {
+//    public ArrayList<String> restoreIpAddresses(String s) {
+//    	ArrayList<String> res = new ArrayList<String>();
+//    	
+//    	if(s == null || s.length() == 0){
+//    		return res;
+//    	}
+//    	
+//    	getIP(s, 0, 0, "",res);
+//    	return res;
+//    }
+//    public void getIP(String s, int index, int n, String cur, ArrayList<String> res){
+//
+//    	if(s.length() == index && n == 4){
+//    		res.add(cur);
+//    		
+//    		return;
+//    	}
+//    	
+//    	if((s.length()-(index))>(4-n)*3){
+//    		return ;
+//    	}
+//    	
+//    	if((s.length()-(index) )< (4-n)){
+//    		return;
+//    	}  	
+//    	
+//    	for(int i = index; i<= index+2 && i<s.length(); i++){
+//    		String key = s.substring(index,i+1);
+//    		int value = Integer.valueOf(key);
+//    		if(value >= 0 && value <= 255){
+//    			String newS = cur.equals("")? key : cur+"."+key;
+//    			getIP(s,i+1,n+1,newS,res);
+//    		}
+//    		if(value == 0){
+//    		    break;
+//    		}
+//    	}
+//    }
+//}
+
+
+
+
+
+//import leetcode.Utility.TreeNode;
+//
+//public class Solution {
+//    TreeNode pre;       // 指向当前遍历元素的前一个  
+//   TreeNode first; // 第一个乱序的元素  
+//   TreeNode second;// 第二个乱序的元素  
+//   public void recoverTree(TreeNode root) {  
+//       
+//       pre = null;         // 必须在这里初始化一遍，否则OJ会报错  
+//       first = null;  
+//       second = null;  
+//       inorder(root);  
+//       if(first!=null && second!=null){        // 只需要交换元素值，而没必要进行指针操作！  
+//           int tmp = first.val;  
+//           first.val = second.val;  
+//           second.val = tmp;  
+//       }  
+//   }  
+//   
+//   public void inorder(TreeNode root){  
+//       if(root == null){  
+//           return;  
+//       }  
+//       inorder(root.left);  
+//       if(pre == null){  
+//           pre = root;  
+//       }else{  
+//           if(pre.val > root.val){  
+//               if(first == null){  
+//                   first = pre;        // 找到第一个乱序的元素  
+//               }  
+//               second = root;      // 第二个乱序的元素。如果用了else，则无法通过只有两个元素的情况  
+//           }  
+//           pre = root;             // 继续搜索  
+//       }  
+//       inorder(root.right);  
+//   }  
+//}
+
+
+
+
+
 //import leetcode.Utility.ListNode;
 //
 //public class Solution {
