@@ -6,6 +6,35 @@ package leetcode.Solutions;
 
 
 
+//public class Solution {
+//    public int uniquePathsWithObstacles(int[][] obstacleGrid) {
+//        if(obstacleGrid.length == 0 || obstacleGrid[0].length == 0){
+//        	return 0;
+//        	
+//        }
+//        int[][] res = new int[obstacleGrid.length][obstacleGrid[0].length];
+//        
+//        for(int i=0; i<res.length; i++){
+//        	for(int j = 0; j<res[0].length; j++){
+//        		if(i == 0 && j == 0){
+//        			res[i][j] = obstacleGrid[i][j] == 1? 0:1;
+//        		}else if( i == 0){
+//        			res[i][j] = obstacleGrid[i][j] == 1? 0 : res[i][j-1];
+//        		}else if( j == 0){
+//        			res[i][j] = obstacleGrid[i][j] == 1? 0: res[i-1][j];
+//        		}else{
+//        			res[i][j] = obstacleGrid[i][j] == 1? 0 : res[i-1][j]+res[i][j-1];
+//        		}
+//        	}
+//        }
+//        return res[obstacleGrid.length-1][obstacleGrid[0].length-1];
+//    }
+//}
+
+
+
+
+
 //import leetcode.Utility.ListNode;
 //
 //public class Solution {
