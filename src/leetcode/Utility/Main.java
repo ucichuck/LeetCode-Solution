@@ -14,10 +14,10 @@ public class Main {
 //		st.push(0);
 //		st.push(1);
 //		st.push(0);
-		System.out.println(st.trailingZeroes(16));
-		System.out.println(st.trailingZeroes(26));
-		System.out.println(st.trailingZeroes(51));
-		
+//		System.out.println(st.trailingZeroes(16));
+//		System.out.println(st.trailingZeroes(26));
+//		System.out.println(st.trailingZeroes(51));
+		System.out.println(st.lengthOfLongestSubstring("abba"));
 		//
 //		System.out.println(solut.isOneEditDistance("abccd", "aabcd"));
 		
