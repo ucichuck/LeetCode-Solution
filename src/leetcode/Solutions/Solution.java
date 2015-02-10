@@ -6,6 +6,42 @@ package leetcode.Solutions;
 
 
 
+//import leetcode.Utility.ListNode;
+//
+//public class Solution {
+//    public ListNode rotateRight(ListNode head, int n) {
+//        if(n <= 0 || head == null){
+//        	return head;
+//        }
+//        
+//        ListNode p1 = head;
+//        ListNode p2 = head;
+//        while(n > 0){
+//        	p2 = p2.next;
+//        	if(p2 == null){
+//        		p2 = head;
+//        	}
+//        	n--;
+//        }
+//        if(p1 == p2){
+//            return p2;
+//        } 
+//        while(p2.next != null){
+//        	p1 = p1.next;
+//        	p2 = p2.next;
+//        }
+//          
+//        p2.next = head;
+//        ListNode res = p1.next;
+//        p1.next = null;
+//        return res;
+//    }
+//}
+
+
+
+
+
 //import java.util.ArrayList;
 //import java.util.List;
 //
