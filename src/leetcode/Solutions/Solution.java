@@ -10,6 +10,50 @@ package leetcode.Solutions;
 //import java.util.List;
 //
 //public class Solution {
+//    public List<List<Integer>> subsets(int[] S) {
+//    	List<List<Integer>> res = new ArrayList<List<Integer>>();
+//    	if(S == null || S.length == 0){
+//        	return res;
+//        }
+//    	List<Integer> tmp = new ArrayList<Integer>();
+//    	return cal(S, 0);
+//    }
+//    private List<List<Integer>> cal(int[] S, int index){
+//    	List<List<Integer>> res = new ArrayList<List<Integer>>();
+//    	if(index == S.length){
+//    		List<Integer> tmp2 = new ArrayList<Integer>();
+//    		res.add(tmp2);
+//    		return res;
+//    	}
+//    	
+//    	res = cal(S, index+1);
+//    	List<List<Integer>> res2 = new ArrayList<List<Integer>>();
+//    	for(List<Integer> tmp : res){
+//    		if(tmp.isEmpty()){
+//    			List<Integer> tmp2 = new ArrayList<Integer>();
+//    			tmp2.add(S[index]);
+//    			res2.add(tmp2);
+//    		}else{
+//    			List<Integer> tmp2 = new ArrayList<Integer>();
+//    			tmp2.addAll(tmp);
+//    			tmp2.add(0,S[index]);
+//    			res2.add(tmp2);
+//    		}
+//    	}
+//    	res.addAll(res2);
+//    	return res;
+//    	
+//    }
+//}
+
+
+
+
+
+//import java.util.ArrayList;
+//import java.util.List;
+//
+//public class Solution {
 //    public List<List<Integer>> combine(int n, int k) {
 //    	List<List<Integer>> res = new ArrayList<List<Integer>>();
 //    	if(n < 0 || k > n){
