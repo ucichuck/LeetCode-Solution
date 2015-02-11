@@ -1,51 +1,98 @@
 package leetcode.Solutions;
 
-public class Solution {
-    public void setZeroes(int[][] matrix) {
-        if(matrix.length == 0 || matrix[0].length == 0){
-        	return;
-        }
-        
-        int[] arr = new int[matrix.length];
-        int[] arr2 = new int[matrix[0].length];
-        boolean izero = false;
-        boolean jzero = false;
-        for(int i=0; i<matrix.length; i++){
-        	if(matrix[i][0] == 0){
-        		arr[i] = 1;
-        		izero = true;
-        	}
-        }
-        
-        for(int j=0; j<matrix[0].length; j++){
-        	if(matrix[0][j] == 0){
-        		arr2[j] = 1;
-        		jzero = true;
-        	}
-        }
-        
-        for(int i=1; i<matrix.length; i++){
-        	for(int j = 1; j<matrix[0].length; j++){
-        		if(matrix[i][j] == 0){
-        			arr[i] = 1;
-        			arr2[j] = 1;
-        		}
-        	}
-        }
-        
-        for(int i=0; i<matrix.length; i++){
-        	for(int j = 0; j<matrix[0].length; j++){
-        		if(izero && j == 0){
-        				matrix[i][j] = 0;
-        		}else if(jzero && i == 0){
-        			matrix[i][j] = 0;
-        		}else if(arr[i] == 1 || arr2[j] == 1){
-        			matrix[i][j] = 0;
-        		}
-        	}
-        }
-    }
-}
+
+
+
+
+
+
+//import java.util.ArrayList;
+//import java.util.List;
+//
+//public class Solution {
+//    public List<List<Integer>> combine(int n, int k) {
+//    	List<List<Integer>> res = new ArrayList<List<Integer>>();
+//    	if(n < 0 || k > n){
+//    		return res;
+//    	}
+//    	
+//    	List<Integer> tmp = new ArrayList<Integer>();
+//    	
+//    	cal(res,tmp,1,n,k);
+//    	return res;
+//    }
+//    
+//    private void cal(List<List<Integer>> res,List<Integer> tmp, int index, int n, int k){
+//    	if( k == 0){
+//    		List<Integer> tmp2 = new ArrayList<Integer>();
+//    		tmp2.addAll(tmp);
+//    		res.add(tmp);
+//    		return;
+//    	}
+//    	
+//    	if(index > n){
+//    		return;
+//    	}
+//    	
+//    	
+//    	for(int i=index; i<=n; i++){
+//    		tmp.add(i);
+//    		cal(res,tmp, i+1,n,k-1);
+//    		tmp.remove(tmp.size()-1);
+//    	}
+//    }
+//}
+
+
+
+
+
+//public class Solution {
+//    public void setZeroes(int[][] matrix) {
+//        if(matrix.length == 0 || matrix[0].length == 0){
+//        	return;
+//        }
+//        
+//        int[] arr = new int[matrix.length];
+//        int[] arr2 = new int[matrix[0].length];
+//        boolean izero = false;
+//        boolean jzero = false;
+//        for(int i=0; i<matrix.length; i++){
+//        	if(matrix[i][0] == 0){
+//        		arr[i] = 1;
+//        		izero = true;
+//        	}
+//        }
+//        
+//        for(int j=0; j<matrix[0].length; j++){
+//        	if(matrix[0][j] == 0){
+//        		arr2[j] = 1;
+//        		jzero = true;
+//        	}
+//        }
+//        
+//        for(int i=1; i<matrix.length; i++){
+//        	for(int j = 1; j<matrix[0].length; j++){
+//        		if(matrix[i][j] == 0){
+//        			arr[i] = 1;
+//        			arr2[j] = 1;
+//        		}
+//        	}
+//        }
+//        
+//        for(int i=0; i<matrix.length; i++){
+//        	for(int j = 0; j<matrix[0].length; j++){
+//        		if(izero && j == 0){
+//        				matrix[i][j] = 0;
+//        		}else if(jzero && i == 0){
+//        			matrix[i][j] = 0;
+//        		}else if(arr[i] == 1 || arr2[j] == 1){
+//        			matrix[i][j] = 0;
+//        		}
+//        	}
+//        }
+//    }
+//}
 
 
 
