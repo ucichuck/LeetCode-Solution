@@ -6,6 +6,72 @@ package leetcode.Solutions;
 
 
 
+//public class Solution {
+//    public boolean exist(char[][] board, String word) {
+//        if(word == null || word.isEmpty()){
+//        	return true;
+//        }
+//        
+//        boolean[][] visited = new boolean[board.length][board[0].length];
+//        
+//        for(int i=0; i<board.length; i++){
+//        	for(int j=0; j<board[0].length; j++){
+//        		if(board[i][j] == word.charAt(0)){
+//        			visited[i][j] = true;
+//        			if(cal(board,i,j,visited,word.substring(1))){
+//        				return true;
+//        			}
+//        			visited[i][j] = false;
+//        		}
+//        	}
+//        }
+//        return false;
+//    }
+//    private boolean cal(char[][] board, int i, int j, boolean[][] visited,String word){
+//    	if(word.isEmpty()){
+//    		return true;
+//    	}
+//    	
+//    	boolean res = false;
+//    	
+//    	if(i > 0 && board[i-1][j] == word.charAt(0) && visited[i-1][j] == false){
+//    		visited[i-1][j] = true;
+//    		res |= cal(board,i-1,j,visited,word.substring(1));
+//    		visited[i-1][j] = false;
+//    	}
+//    	if(j>0 && board[i][j-1] == word.charAt(0) && visited[i][j-1] == false){
+//    		visited[i][j-1] = true;
+//    		res = cal(board,i,j-1,visited,word.substring(1));
+//    		if(res){
+//    			return res;
+//    		}
+//    		visited[i][j-1] = false;
+//    	}
+//    	
+//    	if(j<board[0].length-1 && board[i][j+1] == word.charAt(0) && visited[i][j+1] == false){
+//    		visited[i][j+1] = true;
+//    		res |= cal(board,i,j+1,visited,word.substring(1));
+//    		if(res){
+//    			return res;
+//    		}
+//    		visited[i][j+1] = false;
+//    	}
+//    	if(i<board.length-1 && board[i+1][j] == word.charAt(0) && visited[i+1][j] == false){
+//    		visited[i+1][j] = true;
+//    		res |= cal(board,i+1,j,visited,word.substring(1));
+//    		if(res){
+//    			return res;
+//    		}
+//    		visited[i+1][j] = false;
+//    	}
+//    	return res;
+//    }
+//}
+
+
+
+
+
 //import java.util.ArrayList;
 //import java.util.List;
 //
