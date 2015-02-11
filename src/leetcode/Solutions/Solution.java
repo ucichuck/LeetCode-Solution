@@ -7,6 +7,38 @@ package leetcode.Solutions;
 
 
 //public class Solution {
+//    public int numDistinct(String S, String T) {
+//        if(S.length() == 0 || T.length() == 0){
+//        	return 0;
+//        }
+//        
+//        int arr[][] = new int[S.length()+1][T.length()+1];
+//        
+//        for(int i=0; i<=S.length(); i++){
+//        	for(int j=0; j<=T.length(); j++){
+//        		if(i == 0 && j == 0){
+//        			arr[i][j] = 1;
+//        		}else if( i == 0){
+//        			arr[i][j] = 1;
+//        		}else if(j == 0){
+//        			arr[i][j] = 0;
+//        		}else{
+//        			if(S.charAt(i-1) == T.charAt(j-1)){
+//        				arr[i][j] = arr[i-1][j-1] + arr[i][j-1];
+//        			}else{
+//        				arr[i][j] = arr[i][j-1];
+//        			}
+//        		}
+//        	}
+//        }
+//        return arr[S.length()][T.length()];
+//    }
+//}
+
+
+
+
+//public class Solution {
 //    public boolean isPalindrome(int x) {
 //        if(x < 0){
 //        	return false;
