@@ -6,6 +6,42 @@ package leetcode.Solutions;
 
 
 
+//public class Solution {
+//    public boolean isPalindrome(int x) {
+//        if(x < 0){
+//        	return false;
+//        }
+//        if(x >=0 && x < 10){
+//        	return true;
+//        }
+//        
+//        int carry = 1;
+//        while(x/carry >= 10){
+//        	carry = carry*10;
+//        }
+//        
+//        while( x > 0){
+//        	int a = x/carry;
+//        	int b = x%10;
+//        	if(a != b){
+//        		return false;
+//        	}
+//        	
+//        	x = x- b;
+//        	x = x -a*carry;
+//        	x = x/10;
+//        	carry = carry/100;
+//        }
+//        return true;
+//        
+//        
+//    }
+//}
+
+
+
+
+
 //import leetcode.Utility.ListNode;
 //
 //public class Solution {

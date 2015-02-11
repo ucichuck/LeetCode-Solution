@@ -11,7 +11,8 @@ public class Main {
 		
 //		Solution solut = new Solution();
 		Solution st = new Solution();
-		st.exist(new char[][]{{'a','b'},{'c','d'}}, "acdb");
+		st.isPalindrome(1874994781);
+//		st.exist(new char[][]{{'a','b'},{'c','d'}}, "acdb");
 //		st.setZeroes(new int[][]{{0,1}});
 		
 //		st.push(0);
