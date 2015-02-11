@@ -6,6 +6,39 @@ package leetcode.Solutions;
 
 
 
+//import java.util.ArrayList;
+//import java.util.List;
+//
+//public class Solution {
+//    public List<List<Integer>> generate(int numRows) {
+//    	List<List<Integer>> res = new ArrayList<List<Integer>>();
+//    	List<Integer> tmp = new ArrayList<Integer>();
+//    	tmp.add(1);
+//    	res.add(tmp);
+//    	if(numRows == 1){
+//    		return res;
+//    	}
+//    	
+//    	while(numRows > 1){
+//    		List<Integer> cur = res.get(res.size()-1);
+//    		List<Integer> next = new ArrayList<Integer>();
+//    		next.add(1);
+//    		for(int i=1; i<cur.size(); i++){
+//    			next.add(cur.get(i)+cur.get(i-1));
+//    		}
+//    		next.add(1);
+//    		res.add(next);
+//    		numRows --;
+//    		
+//    	}
+//    	return res;
+//    }
+//}
+
+
+
+
+
 //public class Solution {
 //    public int numDistinct(String S, String T) {
 //        if(S.length() == 0 || T.length() == 0){
