@@ -6,25 +6,42 @@ public class SetMatrixZeroes {
         	return;
         }
         
-        int[] is = new int[matrix.length];
-        int[] js = new int[matrix[0].length];
-        
+        int[] arr = new int[matrix.length];
+        int[] arr2 = new int[matrix[0].length];
+        boolean izero = false;
+        boolean jzero = false;
         for(int i=0; i<matrix.length; i++){
-        	for(int j=0; j<matrix[0].length; j++){
+        	if(matrix[i][0] == 0){
+        		arr[i] = 1;
+        		izero = true;
+        	}
+        }
+        
+        for(int j=0; j<matrix[0].length; j++){
+        	if(matrix[0][j] == 0){
+        		arr2[j] = 1;
+        		jzero = true;
+        	}
+        }
+        
+        for(int i=1; i<matrix.length; i++){
+        	for(int j = 1; j<matrix[0].length; j++){
         		if(matrix[i][j] == 0){
-        			is[i] = 1;
-        			js[j] = 1;
+        			arr[i] = 1;
+        			arr2[j] = 1;
         		}
-        		
         	}
         }
         
         for(int i=0; i<matrix.length; i++){
-        	for(int j=0; j<matrix[0].length; j++){
-        		if(is[i] == 1 || js[j] == 1){
+        	for(int j = 0; j<matrix[0].length; j++){
+        		if(izero && j == 0){
+        				matrix[i][j] = 0;
+        		}else if(jzero && i == 0){
+        			matrix[i][j] = 0;
+        		}else if(arr[i] == 1 || arr2[j] == 1){
         			matrix[i][j] = 0;
         		}
-        		
         	}
         }
     }
