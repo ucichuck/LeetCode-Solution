@@ -6,6 +6,41 @@ package leetcode.Solutions;
 
 
 
+//import java.util.HashMap;
+//
+//public class TwoSum {
+//	HashMap<Integer,Integer> table = new HashMap<Integer,Integer>();
+//	public void add(int number) {
+//	    int num ;
+//	    if(table.containsKey(number)){
+//	    	num = table.get(number);
+//	    }else{
+//	    	num = 0;
+//	    }
+//	    table.put(number, num+1);
+//	}
+//
+//	public boolean find(int value) {
+//	    for(int cur : table.keySet()){
+//	    	int another = value - cur;
+//	    	if(table.containsKey(another)){
+//	    		if(another == cur){
+//	    			if( table.get(another) >= 2){
+//	    				return true;
+//	    			}
+//		    	}else{
+//		    		return true;
+//		    	}
+//	    	}
+//	    }
+//	    return false;
+//	}
+//}
+
+
+
+
+
 //public class Solution {
 //    public int majorityElement(int[] num) {
 //        if(num == null || num.length == 0){
