@@ -6,6 +6,104 @@ package leetcode.Solutions;
 
 
 
+//public class Solution {
+//    public int majorityElement(int[] num) {
+//        if(num == null || num.length == 0){
+//        	throw new IllegalArgumentException("wrong input");
+//        }
+//        
+//        int count = 1;
+//        int element = num[0];
+//        
+//        for(int i=1; i<num.length; i++){
+//        	if(element == num[i]){
+//        		count++;
+//        	}else{
+//        		if(count == 0){
+//        			element = num[i];
+//        			count = 1;
+//        		}else{
+//        			count --;
+//        		}
+//        	}
+//        }
+//        if(count <= 0){
+//        	throw new IllegalArgumentException("wrong input");
+//        }
+//        return element;
+//    }
+//}
+
+
+
+
+
+//public class Solution {
+//    public int compareVersion(String version1, String version2) {
+//        if(version1.isEmpty() && version2.isEmpty()){
+//        	return 0;
+//        }
+//        
+//        if(version1.isEmpty()){
+//        	int left = 0;
+//        	while(left < version2.length()){
+//        		if(version2.charAt(left)!='.' && version2.charAt(left)>'0'){
+//        			return -1;
+//        		}
+//        		left ++;
+//        	}
+//        	return 0;
+//        }
+//        
+//        if(version2.isEmpty()){
+//        	int left = 0;
+//        	while(left < version1.length()){
+//        		if(version1.charAt(left)!='.' && version1.charAt(left)>'0'){
+//        			return 1;
+//        		}
+//        		left ++;
+//        	}
+//        	return 0;
+//        }
+//        
+//        int left = 0;
+//        while(left < version1.length() &&version1.charAt(left)!= '.'){
+//        	left++;
+//        }
+//        String v11 = version1.substring(0,left);
+//        String v12;
+//        if(left == version1.length()){
+//        	v12 = "";
+//        }else{
+//        	v12 = version1.substring(left+1);
+//        }
+//        
+//        left = 0;
+//        while(left < version2.length() &&version2.charAt(left)!= '.'){
+//        	left++;
+//        }
+//        String v21 = version2.substring(0,left);
+//        String v22;
+//        if(left == version2.length()){
+//        	v22 = "";
+//        }else{
+//        	v22 = version2.substring(left+1);
+//        }
+//        
+//        if(Integer.valueOf(v11) > Integer.valueOf(v21)){
+//        	return 1;
+//        }else if(Integer.valueOf(v11) < Integer.valueOf(v21)){
+//        	return -1;
+//        }else{
+//        	return compareVersion(v12,v22);
+//        }
+//    }
+//}
+
+
+
+
+
 //import java.util.Stack;
 //
 //class MinStack {
