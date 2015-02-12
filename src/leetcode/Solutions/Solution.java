@@ -6,6 +6,50 @@ package leetcode.Solutions;
 
 
 
+//import leetcode.Utility.RandomListNode;
+//
+//public class Solution {
+//    public RandomListNode copyRandomList(RandomListNode head) {
+//        if(head == null){
+//        	return head;
+//        }
+//        
+//        RandomListNode cur = head;
+//        
+//        while(cur != null){
+//        	RandomListNode next = cur.next;
+//        	RandomListNode tmp = new RandomListNode(cur.label);
+//        	cur.next = tmp;
+//        	tmp.next = next;
+//        	cur = next;
+//        }
+//        
+//        cur = head;
+//        while(cur != null){
+//        	RandomListNode random = cur.random;
+//        	if(random != null){
+//        		cur.next.random = cur.random.next;
+//        	}
+//        	cur = cur.next.next;
+//        }
+//        cur = head;
+//        RandomListNode pre = new RandomListNode(-1);
+//        RandomListNode res = pre;
+//        while(cur != null){
+//        	pre.next = cur.next;
+//        	cur.next=cur.next.next;
+//        	pre = pre.next;
+//        	pre.next = null;
+//        	cur = cur.next;
+//        }
+//        return res.next;
+//    }
+//}
+
+
+
+
+
 //public class Solution {
 //    public boolean isPalindrome(String s) {
 //        if(s.length() <=1){
