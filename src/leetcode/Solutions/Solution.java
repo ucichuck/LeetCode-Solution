@@ -6,6 +6,76 @@ package leetcode.Solutions;
 
 
 
+//import java.util.Stack;
+//
+//class MinStack {
+//	Stack<Integer> st = new Stack<Integer>();
+//	Stack<Integer> minST = new Stack<Integer>();
+//	
+//    public void push(int x) {
+//        st.push(x);
+//        if(x <= getMin()){
+//        	minST.push(x);
+//        }
+//    }
+//
+//    public void pop() {
+//        if(!st.isEmpty()){
+//        	int res = st.pop();
+//        	if(res == getMin()){
+//        		minST.pop();
+//        	}
+//        }
+//    }
+//
+//    public int top() {
+//        if(st.isEmpty()){
+//        	return Integer.MAX_VALUE;
+//        }
+//        return st.peek();
+//    }
+//
+//    public int getMin() {
+//        if(minST.isEmpty()){
+//        	return Integer.MAX_VALUE;
+//        }else{
+//        	return minST.peek();
+//        }
+//    }
+//}
+
+
+
+
+
+
+//public class Solution {
+//    public int findMin(int[] num) {
+//        if(num == null || num.length == 0){
+//        	return -1;
+//        }
+//        
+//        int left = 0;
+//        int right = num.length-1;
+//        
+//        while(left < right){
+//        	int mid = (left+right)/2;
+//        	if(num[left] < num[mid]){
+//        		left = mid+1;
+//        	}if(num[left] == num[mid]){
+//        	    return num[left] > num[right] ? right : left;
+//        	}else{
+//        		right = mid;
+//        	}
+//        }
+//        return left;
+//    }
+//}
+
+
+
+
+
 //public class Solution {
 //    public int maxProduct(int[] A) {
 //        if(A == null || A.length == 0){
