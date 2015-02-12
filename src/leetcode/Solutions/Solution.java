@@ -6,6 +6,57 @@ package leetcode.Solutions;
 
 
 
+//import java.util.ArrayList;
+//import java.util.HashMap;
+//import java.util.List;
+//import java.util.Set;
+//
+//public class Solution {
+//    public List<String> wordBreak(String s, Set<String> dict) {
+//    	List<String> res = new ArrayList<String>();
+//    	if(s == null || s.length() == 0){
+//    		return res;
+//    	}
+//    	HashMap<String,List<String>> map = new HashMap<String,List<String>>();
+//    	res = cal(s,dict,map);
+//    	
+//    	return res;
+//    }
+//    
+//    private List<String> cal(String s, Set<String> dict, HashMap<String,List<String>> map){
+//    	List<String> res = new ArrayList<String>();
+//    	if(s.isEmpty()){
+//    		res.add("");
+//    		return res;
+//    	}
+//    	if(map.containsKey(s)){
+//    		return map.get(s);
+//    	}
+//    	for(int i=1; i<=s.length(); i++){
+//    		String tmp = s.substring(0,i);
+//    		if(dict.contains(tmp)){
+//    			List<String> next = cal(s.substring(i),dict,map);
+//    			if(!next.isEmpty()){
+//    				for(String val : next){
+//    					if(!val.isEmpty()){
+//    						res.add(tmp+" "+val);
+//    					}else{
+//    						res.add(tmp);
+//    					}
+//    				}
+//    			}
+//    		}
+//    	}
+//    	
+//    	map.put(s, res);
+//    	return res;
+//    }
+//}
+
+
+
+
+
 //import java.util.HashMap;
 //import java.util.Set;
 //
