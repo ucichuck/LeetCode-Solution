@@ -6,6 +6,33 @@ package leetcode.Solutions;
 
 
 
+//public class Solution {
+//    public int maxProduct(int[] A) {
+//        if(A == null || A.length == 0){
+//        	return 0;
+//        }
+//        
+//        int max = Integer.MIN_VALUE;
+//        int maxRes = 1;
+//        int minRes = 1;
+//        
+//        for(int i=0; i<A.length; i++){
+//        	int maxTmp = Math.max(A[i], Math.max(A[i]*maxRes, A[i]*minRes));
+//        	int minTmp = Math.min(A[i]*maxRes,Math.min(A[i],A[i]*minRes) );
+//        	maxRes = maxTmp;
+//        	minRes = minTmp;
+//        	if(maxRes > max){
+//        		max = maxRes;
+//        	}
+//        }
+//        return max;
+//    }
+//}
+
+
+
+
+
 //import java.util.ArrayList;
 //import java.util.HashMap;
 //import java.util.List;
