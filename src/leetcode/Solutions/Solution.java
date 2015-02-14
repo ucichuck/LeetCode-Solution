@@ -6,6 +6,37 @@ package leetcode.Solutions;
 
 
 
+//public class Solution {
+//    public void sortColors(int[] A) {
+//        if(A == null || A.length <= 1){
+//        	return;
+//        }
+//        int a = 0;
+//        int b = 0;
+//        int c =A.length-1;
+//        
+//        while(b <= c){
+//        	if(A[b] == 0){
+//        		A[b] = A[a];
+//        		A[a] = 0;
+//        		a++;
+//        		b++;
+//        	}else if(A[b] == 1){
+//        		b++;
+//        	}else{
+//        		int tmp = A[c];
+//        		A[c] = A[b];
+//        		A[b] = tmp;
+//        		c--;
+//        	}
+//        }
+//    }
+//}
+
+
+
+
+
 //import java.util.ArrayList;
 //import java.util.List;
 //
