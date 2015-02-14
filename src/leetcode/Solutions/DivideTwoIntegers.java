@@ -1,26 +1,35 @@
 package leetcode.Solutions;
 
 public class DivideTwoIntegers {
-	 public int divide(int dividend, int divisor) {
-	        if(dividend == Integer.MIN_VALUE && divisor == -1){
-	            return Integer.MAX_VALUE;
-	        }
-	        boolean negative = (dividend > 0 && divisor < 0) ||
-	            (dividend < 0 && divisor > 0);
+    public int divide(int dividend, int divisor) {
+        // Start typing your Java solution below
+        // DO NOT write main() function
+        boolean positive = true;
+        long dividendl = dividend;
+        long divisorl = divisor;
+        if(dividendl<0){
+            dividendl = Math.abs(dividendl);
+        	positive = !positive;
+        }
+        if(divisorl <0){
+        	divisorl = Math.abs(divisorl);
+        	positive = !positive;
+        }
+        int carry =0;
+        while((divisorl<<carry)<=dividendl){
+        	carry++;
+        	
+        }
+        carry--;
+        int res =0;
+        for(int i = carry ; i>=0; i--){
+        	if((divisorl<<i)<=dividendl){
+        		res += (1 <<i);
+        		dividendl -= (divisorl<<i);
+        	}
+        }
 
-	        long a = Math.abs((long)dividend);
-	        long b = Math.abs((long)divisor);
-	        int ans = 0;
-
-	        while (a >= b) {
-	            int shift = 0;
-	            while ((b << shift) <= a) {
-	                shift++;
-	            }
-	            ans += 1 << (shift-1);
-	            a = a - (b << (shift-1));
-	        }
-
-	        return negative ? -ans : ans;
-	    }
+        return positive == true ? res : -(res);
+        		
+    }
 }
