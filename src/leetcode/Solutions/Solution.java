@@ -6,6 +6,65 @@ package leetcode.Solutions;
 
 
 
+//import java.util.List;
+//
+//import leetcode.Utility.ListNode;
+//
+//public class Solution {
+//    public ListNode mergeKLists(List<ListNode> lists) {
+//        if(lists == null || lists.size() == 0){
+//        	return null;
+//        }
+//        
+//        int left = 0;
+//        int end = lists.size()-1;
+//        
+//        while(end > 0){
+//        	while(left < end){
+//        		lists.set(left, merge(lists.get(left),lists.get(end)));
+//        		end--;
+//        		left++;
+//        	}
+//        	left = 0;
+//        }
+//        return lists.get(0);
+//    }
+//    
+//    private ListNode merge(ListNode n1, ListNode n2){
+//    	if(n1 == null){
+//    		return n2;
+//    	}else if(n2 == null){
+//    		return n1;
+//    	}
+//    	ListNode pre = new ListNode(-1);
+//    	
+//    	ListNode res = pre;
+//    	
+//    	while(n1 != null && n2 != null){
+//    		if(n1.val >= n2.val){
+//    			pre.next = n2;
+//    			n2 = n2.next;
+//    		}else{
+//    			pre.next = n1;
+//    			n1 = n1.next;
+//    		}
+//    		pre = pre.next;
+//    	}
+//    	if(n1 != null){
+//    		pre.next = n1;
+//    	}else if(n2 != null){
+//    		pre.next = n2;
+//    	}
+//    	
+//    	return res.next;
+//    	
+//    }
+//}
+
+
+
+
+
 //public class Solution {
 //    public String intToRoman(int num) {
 //    	int[] values = new int[]{1000,900,500,400,100,90,50,40,10,9,5,4,1};
