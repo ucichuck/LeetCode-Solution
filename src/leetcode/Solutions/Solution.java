@@ -6,6 +6,50 @@ package leetcode.Solutions;
 
 
 
+//import java.util.ArrayList;
+//import java.util.List;
+//
+//import leetcode.Utility.TreeNode;
+//
+//public class Solution {
+//    public List<TreeNode> generateTrees(int n) {
+//        
+//    	List<TreeNode> res = new ArrayList<TreeNode>();
+//        
+//        res = cal(1,n);
+//        return res;
+//        
+//    }
+//    
+//    private List<TreeNode> cal(int left, int right){
+//    	List<TreeNode> res = new ArrayList<TreeNode>();
+//    	
+//    	if(left > right){
+//    		res.add(null);
+//    		return res;
+//    	}
+//    	
+//    	for(int i=left; i<=right; i++){
+//        	
+//        	List<TreeNode> leftList = cal(left,i-1);
+//        	List<TreeNode> rightList = cal(i+1,right);
+//        	
+//        	for(TreeNode leftNode : leftList){
+//        		for(TreeNode rightNode : rightList){
+//        			TreeNode root = new TreeNode(i);
+//        			root.left = leftNode;
+//        			root.right = rightNode;
+//        			res.add(root);
+//        		}
+//        	}
+//        }
+//    	return res;
+//    }
+//}
+
+
+
+
 //public class Solution {
 //    public int numDecodings(String s) {
 //        if(s.length() <= 0){
