@@ -7,6 +7,40 @@ package leetcode.Solutions;
 
 
 //public class Solution {
+//    public int numDecodings(String s) {
+//        if(s.length() <= 0){
+//        	return s.length();
+//        }
+//        
+//        int[] arr = new int[s.length()+1];
+//        arr[0] = 1;
+//        if (s.charAt(0) != '0')
+//        	arr[1] = arr[0];
+//		else
+//			arr[1] = 0;
+//        for(int i=2; i<=s.length(); i++){
+//        	if(s.charAt(i-1) == '0'){
+//        		arr[i] += arr[i-2];
+//        		continue;
+//        	}
+//        	if(s.charAt(i-1) != '0'){
+//            	arr[i] += arr[i-1];
+//            }
+//            if(s.charAt(i-2) == '1' || (s.charAt(i-2) == '2' && (s.charAt(i-1) >= '0' && s.charAt(i-1) <= '6'))){
+//            	arr[i] += arr[i-2];
+//            }
+//            
+//        }
+//        return arr[s.length()];
+//    }
+//    
+//}
+
+
+
+
+
+//public class Solution {
 //    public int removeDuplicates(int[] A) {
 //        if(A == null || A.length < 3){
 //        	return A.length;
