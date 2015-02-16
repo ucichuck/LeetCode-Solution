@@ -7,6 +7,194 @@ package leetcode.Solutions;
 
 
 //public class Solution {
+//    public int[][] generateMatrix(int n) {
+//        if(n <= 0){
+//        	return null;
+//        }
+//        
+//        int[][] res = new int[n][n];
+//        int cur = 1;
+//        
+//        int a=n;
+//        int b = n;
+//        int x = 0;
+//        int y = 0;
+//        
+//        while(a >0 && b>0){
+//        	if(a == 1){
+//        		for(int i=0; i<b; i++){
+//        			res[x][y++] = cur;
+//        			cur++;
+//        		}
+//        		break;
+//        	}
+//        	if(b == 1){
+//        		for(int i=0; i<a; i++){
+//        			res[x++][y] = cur;
+//        			cur++;
+//        		}
+//        		break;
+//        	}
+//        	for(int i=0; i<b-1;i++){
+//        		res[x][y++] = cur;
+//        		cur++;
+//        	}
+//        	for(int i=0; i<a-1; i++){
+//        		res[x++][y] = cur;
+//        		cur++;
+//        	}
+//        	for(int i=0; i<b-1; i++){
+//        		res[x][y--] = cur;
+//        		cur++;
+//        	}
+//        	for(int i=0; i<a-1; i++){
+//        		res[x--][y] = cur;
+//        		cur++;
+//        	}
+//        	x++;
+//        	y++;
+//        	a=a-2;
+//        	b = b-2;
+//        }
+//        return res;
+//        
+//    }
+//}
+
+
+
+
+
+//import java.util.ArrayList;
+//import java.util.List;
+//
+//public class Solution {
+//    public List<Integer> spiralOrder(int[][] matrix) {
+//    	List<Integer> res = new ArrayList<Integer>();
+//        if(matrix == null ||matrix.length == 0|| matrix[0].length == 0){
+//        	return res;
+//        }
+//        
+//        int m =  matrix.length;
+//        int n = matrix[0].length;
+//        int x =0;
+//        int y = 0;
+//        
+//        while(m >0 && n > 0){
+//        	if(m == 1){
+//        		for(int i=0; i<n; i++){
+//        			res.add(matrix[x][y++]);
+//        		}
+//        		break;
+//        	}
+//        	if(n == 1){
+//        		for(int i=0; i<m; i++){
+//        			res.add(matrix[x++][y]);
+//        		}
+//        		break;
+//        	}
+//        	
+//        	for(int i=0; i<n-1; i++){
+//        		res.add(matrix[x][y++]);
+//        	}
+//        	for(int i=0; i<m-1; i++){
+//        		res.add(matrix[x++][y]);
+//        	}
+//        	for(int i=0; i<n-1; i++){
+//        		res.add(matrix[x][y--]);
+//        	}
+//        	for(int i=0; i<m-1; i++){
+//        		res.add(matrix[x--][y]);
+//        	}
+//        	
+//        	x++;
+//        	y++;
+//        	m = m-2;
+//        	n = n-2;
+//        }
+//        return res;
+//        
+//    }
+//}
+
+
+
+
+
+//public class Solution {
+//    public void rotate(int[][] matrix) {
+//        int n = matrix.length-1;
+//        for(int i=0; i<(n+1)/2; i++){
+//        	for(int j=i; j<n-i; j++){
+//        		int tmp = matrix[i][j];
+//        		matrix[i][j] = matrix[n-j][i];
+//        		matrix[n-j][i] = matrix[n-i][n-j];
+//        		matrix[n-i][n-j] = matrix[j][n-i];
+//        		matrix[j][n-i] = tmp;
+//        	}
+//        }
+//        return ;
+//    }
+//}
+
+
+
+
+
+//public class Solution {
+//    public int[] searchRange(int[] A, int target) {
+//        int[] res = new int[]{-1,-1};
+//        
+//        if(A == null){
+//        	return res;
+//        }
+//       
+//        int left =0;
+//        int right = A.length-1;
+//        while(left <= right){
+//        	int mid = (left+right)/2;
+//        	if(A[mid] == target){
+//        		if(mid > 0 && A[mid-1] == target){
+//        			right = mid-1;
+//        		
+//        		}else{
+//        			res[0] = mid;
+//        			break;
+//        		}
+//        	}else if(A[mid] > target){
+//        		right = mid-1;
+//        	}else{
+//        		left = mid+1;
+//        	}
+//        }
+//        
+//        left =0;
+//        right = A.length-1;
+//        while(left <= right){
+//        	int mid = (left+right)/2;
+//        	if(A[mid] == target){
+//        		if(mid < A.length-1 && A[mid+1] == target){
+//        			left = mid+1;
+//        		}else{
+//        			res[1] = mid;
+//        			break;
+//        		}
+//        	}else if(A[mid] > target){
+//        		right = mid-1;
+//        	}else{
+//        		left = mid+1;
+//        	}
+//        }
+//        
+//        return res;
+//    }
+//}
+
+
+
+
+
+//public class Solution {
 //    public void sortColors(int[] A) {
 //        if(A == null || A.length <= 1){
 //        	return;
