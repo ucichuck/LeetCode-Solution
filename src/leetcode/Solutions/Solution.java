@@ -7,6 +7,91 @@ package leetcode.Solutions;
 
 
 //public class Solution {
+//    public int sqrt(int x) {
+//        if(x <= 0){
+//        	return 0;
+//        }
+//        
+//        if(x == 1){
+//        	return 1;
+//        }
+//        
+//        boolean isLessOne = false;
+//        if(x >0 && x < 1){
+//        	x = 1/x;
+//        	isLessOne = true;
+//        }
+//        
+//        long num = (long) x;
+//        long right = num;
+//        long left = 0;
+//        while(left <= right){
+//        	long mid = (left+right)/2;
+//        	if(mid*mid<= num && (mid+1)*(mid+1) > num){
+//        		return isLessOne ? 1/(int)mid : (int)mid;
+//        	}else if(mid*mid > num){
+//        		right = mid-1;
+//        	}else{
+//        		left = mid+1;
+//        	}
+//        }
+//        return -1;
+//    }
+//}
+
+
+
+
+
+//public class Solution {
+//    public boolean isNumber(String s) {
+//        s = s.trim();
+//        if(s.length() == 0){
+//        	return false;
+//        }
+//        
+//        int cur = 0;
+//        if(s.charAt(0) == '+' || s.charAt(0) == '-'){
+//        	cur++;
+//        }
+//        boolean isDigit = false;
+//        boolean isDot = false;
+//        boolean isE = false;
+//        while(cur < s.length()){
+//        	char tmp = s.charAt(cur);
+//        	if(tmp>='0' && tmp<='9'){
+//        		isDigit = true;
+//        	}else if(tmp == '.'){
+//        		if(isE || isDot){
+//        			return false;
+//        		}
+//        		isDot = true;
+//        	}else if(tmp == 'e'){
+//        		if(!isDigit || isE){
+//        			return false;
+//        		}else{
+//        			isE = true;
+//        			isDigit = false;
+//        			if(cur<s.length()-1 && (s.charAt(cur+1)=='+' || s.charAt(cur+1) == '-') ){
+//        				cur++;
+//        			}
+//        		}
+//        	}else{
+//        		return false;
+//        	}
+//        	
+//        	
+//        	cur++;
+//        }
+//        return isDigit;
+//    }
+//}
+
+
+
+
+
+//public class Solution {
 //    public int[][] generateMatrix(int n) {
 //        if(n <= 0){
 //        	return null;
