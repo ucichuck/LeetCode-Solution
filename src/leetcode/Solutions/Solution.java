@@ -7,6 +7,96 @@ package leetcode.Solutions;
 
 
 //public class Solution {
+//    public int removeDuplicates(int[] A) {
+//        if(A == null || A.length < 3){
+//        	return A.length;
+//        }
+//        int key = A[0];
+//        
+//        int left = 1;
+//        int count = 1;
+//        int cur = 1;
+//        while(cur < A.length){
+//        	if(A[cur] == key){
+//        		if(count < 2){
+//        		    A[left] = key;
+//        			count++;
+//        			left++;
+//        		}
+//        		cur++;
+//        	}else{
+//        		key = A[cur];
+//        		count = 1;
+//        		A[left] = key;
+//        		left++;
+//        		cur++;
+//        	}
+//        }
+//        return left;
+//    }
+//}
+
+
+
+
+
+//public class Solution {
+//    public String minWindow(String S, String T) {
+//        if(T.length() == 0 || S.length() < T.length()){
+//        	return "";
+//        }
+//        
+//        int[] ss = new int[256];
+//        int[] tt = new int[256];
+//        
+//        for(int i=0; i<T.length(); i++){
+//        	tt[T.charAt(i)]++;
+//        }
+//        
+//        int count = 0;
+//        int cur =0;
+//        int left = 0;
+//        String res ="";
+//        int min =Integer.MAX_VALUE;
+//        
+//        while(cur < S.length()){
+//        	char tmp = S.charAt(cur);
+//        	if(tt[tmp] > 0){
+//        		if(ss[tmp] < tt[tmp]){
+//        			count++;
+//        		}
+//        		ss[tmp]++;
+//        	}	
+//        	
+//        	if(count == T.length()){
+//        		while(true){
+//        			char head = S.charAt(left);
+//        			if(tt[head] == 0){
+//        				left++;
+//        				
+//        			}else if(ss[head] > tt[head]){
+//        				ss[head] --;
+//        				left++;
+//        			}else{
+//        				break;
+//        			}       			
+//        		}
+//        		if(cur-left < min){
+//        		    min = cur - left;
+//    				res = S.substring(left,cur+1);
+//    			}
+//        	}
+//        	cur++;
+//        	
+//        }
+//        return res;
+//    }
+//}
+
+
+
+
+//public class Solution {
 //    public int sqrt(int x) {
 //        if(x <= 0){
 //        	return 0;
