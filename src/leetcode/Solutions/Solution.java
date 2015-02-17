@@ -6,6 +6,43 @@ package leetcode.Solutions;
 
 
 
+//import leetcode.Utility.TreeNode;
+//
+//public class Solution {
+//    public int maxPathSum(TreeNode root) {
+//        if(root == null){
+//        	return 0;
+//        }
+//        
+//        int[] arr = cal(root);
+//        return arr[0];
+//    }
+//    
+//    private int[] cal(TreeNode root){
+//    	int[] res = new int[]{Integer.MIN_VALUE,Integer.MIN_VALUE};
+//    	if(root == null){
+//    		return res;
+//    	}
+//    	
+//    	int[] left = cal(root.left);
+//    	int[] right = cal(root.right);
+//    	
+//    	int leftSinglePath = Math.max(0, left[1]);
+//    	int rightSinglePath = Math.max(0, right[1]);
+//    	
+//    	int singlePath = Math.max(leftSinglePath, rightSinglePath)+root.val;
+//    	
+//    	int sumPath = Math.max(left[0], Math.max(right[0],leftSinglePath+rightSinglePath+root.val));
+//    	res[0] = sumPath;
+//    	res[1] = singlePath;
+//    	return res;
+//    }
+//}
+
+
+
+
+
 //import java.util.ArrayList;
 //import java.util.List;
 //
