@@ -6,6 +6,49 @@ package leetcode.Solutions;
 
 
 
+//import java.util.ArrayList;
+//
+//import leetcode.Utility.TreeLinkNode;
+//
+//public class Solution {
+//    public void connect(TreeLinkNode root) {
+//        if(root == null){
+//        	return ;
+//        }
+//        
+//        ArrayList<TreeLinkNode> list = new ArrayList<TreeLinkNode>();
+//        ArrayList<TreeLinkNode> nextlist = new ArrayList<TreeLinkNode>();
+//        
+//        list.add(root);
+//        list.add(null);
+//        
+//        while(!list.isEmpty()){
+//        	TreeLinkNode cur = list.remove(0);
+//        	if(cur == null){
+//        		if(nextlist.isEmpty()){
+//        			break;
+//        		}
+//        		nextlist.add(null);
+//        		list.addAll(nextlist);
+//        		nextlist = new ArrayList<TreeLinkNode>();
+//        	}else{
+//        		if(cur.left != null){
+//        			nextlist.add(cur.left);
+//        		}
+//        		if(cur.right != null){
+//        			nextlist.add(cur.right);
+//        		}
+//        		cur.next = list.get(0);
+//        	}
+//        }
+//        
+//    }
+//}
+
+
+
+
+
 //import leetcode.Utility.TreeNode;
 //
 //public class Solution {
