@@ -7,6 +7,38 @@ package leetcode.Solutions;
 
 
 //import java.util.ArrayList;
+//import java.util.List;
+//
+//public class Solution {
+//    public List<Integer> getRow(int rowIndex) {
+//    	List<Integer> res = new ArrayList<Integer>();
+//    	if(rowIndex < 0){
+//    		return res;
+//    	}
+//    	
+//    	res.add(1);
+//    	int count = 1;
+//    	while(count <= rowIndex){
+//    		if(rowIndex == 1){
+//    			res.add(1);
+//    		}else{
+//    			for(int i=res.size()-1; i>=1; i--){
+//    				int tmp = res.get(i)+res.get(i-1);
+//    				res.set(i, tmp);
+//    			}
+//    			res.add(1);
+//    		}
+//    		count++;
+//    	}
+//    	return res;
+//    }
+//}
+
+
+
+
+
+//import java.util.ArrayList;
 //
 //import leetcode.Utility.TreeLinkNode;
 //
