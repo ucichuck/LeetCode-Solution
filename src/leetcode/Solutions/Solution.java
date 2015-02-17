@@ -6,6 +6,125 @@ package leetcode.Solutions;
 
 
 
+//import leetcode.Utility.ListNode;
+//import leetcode.Utility.TreeNode;
+//
+//public class Solution {
+//	private ListNode head;
+//    public TreeNode sortedListToBST(ListNode head) {
+//        if(head == null){
+//        	return null;
+//        }
+//        this.head = head;
+//        
+//        int len = 0;
+//        while(head != null){
+//        	len++;
+//        	head = head.next;
+//        }
+//        
+//        return cal(0,len-1);
+//    }
+//    
+//    private TreeNode cal(int left, int right){
+//    	if(left > right){
+//    		return null;
+//    	}
+//    	int mid = (left+right)/2;
+//    	TreeNode leftNode = cal(left,mid-1);
+//    	TreeNode root = new TreeNode(head.val);
+//    	head = head.next;
+//    	root.left = leftNode;
+//    	
+//    	TreeNode rightNode = cal(mid+1,right);
+//    	root.right = rightNode;
+//    	return root;
+//    }
+//}
+
+
+
+
+
+//import java.util.ArrayList;
+//import java.util.List;
+//
+//import leetcode.Utility.TreeNode;
+//
+//public class Solution {
+//    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+//    	List<List<Integer>> res = new ArrayList<List<Integer>>();
+//    	if(root == null){
+//    		return res;
+//    	}
+//    	
+//    	List<TreeNode> list = new ArrayList<TreeNode>();
+//    	list.add(root);
+//    	List<TreeNode> tmpList = new ArrayList<TreeNode>();
+//    	List<Integer> tmp = new ArrayList<Integer>();
+//    	tmp.add(root.val);
+//    	res.add(tmp);
+//    	int count = 0;
+//    	while(!list.isEmpty()){
+//    		TreeNode cur = list.remove(0);
+//    		if(cur.left != null){
+//    			tmpList.add(cur.left);
+//    		}
+//    		if(cur.right != null){
+//    			tmpList.add(cur.right);
+//    		}
+//    		if(list.isEmpty()){
+//    			tmp = new ArrayList<Integer>();
+//    			for(int i=0; i<tmpList.size(); i++){
+//    				list.add(tmpList.get(i));
+//    				if(count % 2 ==0){
+//    					tmp.add(0,tmpList.get(i).val);
+//    				}else{
+//    					tmp.add(tmpList.get(i).val);
+//    				}
+//    			}
+//    			if(!tmp.isEmpty()){
+//    				res.add(tmp);
+//    			}
+//    			tmpList = new ArrayList<TreeNode>();
+//    			count ++;
+//    		}
+//    	}
+//    	return res;
+//    }
+//}
+
+
+
+
+
+//import leetcode.Utility.TreeNode;
+//
+//public class Solution {
+//    public boolean isValidBST(TreeNode root) {
+//        if(root == null){
+//        	return false;
+//        }
+//        
+//        return cal((long)Integer.MIN_VALUE-1, (long)Integer.MAX_VALUE+1, root);
+//    }
+//    
+//    private boolean cal(long left, long right, TreeNode root){
+//    	if(root == null){
+//    		return true;
+//    	}
+//    	if(root.val < left || root.val > right){
+//    		return false;
+//    	}
+//    	
+//    	return cal(left,(long)root.val,root.left) && cal((long)root.val,right,root.right);
+//    }
+//}
+
+
+
+
+
 //import java.util.ArrayList;
 //import java.util.List;
 //
