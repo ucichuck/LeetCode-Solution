@@ -6,6 +6,79 @@ package leetcode.Solutions;
 
 
 
+//import leetcode.Utility.TreeNode;
+//
+//public class Solution {
+//    public boolean hasPathSum(TreeNode root, int sum) {
+//        if(root == null && sum == 0){
+//        	return true;
+//        }else if(root == null){
+//        	return false;
+//        }
+//        
+//        if(root.left == null && root.right == null){
+//        	if(root.val == sum){
+//        		return true;
+//        	}else{
+//        		return false;
+//        	}
+//        }
+//        
+//        if(root.left != null){
+//        	if(hasPathSum(root.left, sum-root.val)){
+//        		return true;
+//        	}
+//        }
+//        
+//        if(root.right != null){
+//        	if(hasPathSum(root.right, sum-root.val)){
+//        		return true;
+//        	}
+//        }
+//        return false;
+//    }
+//}
+
+
+
+
+
+//import leetcode.Utility.TreeNode;
+//
+//public class Solution {
+//    public boolean isBalanced(TreeNode root) {
+//    	if(root == null){
+//    		return true;
+//    	}
+//    	int len = getDepth(root);
+//    	return len != -1;
+//    }
+//    private int getDepth(TreeNode root){
+//    	if(root == null){
+//    		return 0;
+//    	}
+//    	
+//    	int left = getDepth(root.left);
+//    	if(left == -1){
+//    		return -1;
+//    	}
+//    	
+//    	int right = getDepth(root.right);
+//    	if(right == -1){
+//    		return -1;
+//    	}
+//    	
+//    	if(Math.abs(left - right) > 1){
+//    		return -1;
+//    	}
+//    	return Math.max(left, right);
+//    }
+//}
+
+
+
+
+
 //import leetcode.Utility.ListNode;
 //import leetcode.Utility.TreeNode;
 //
