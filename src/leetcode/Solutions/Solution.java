@@ -9,6 +9,76 @@ package leetcode.Solutions;
 //import leetcode.Utility.TreeNode;
 //
 //public class Solution {
+//	 private TreeNode pre = null;
+//	 private TreeNode one = null;
+//	 private TreeNode two = null;
+//	public void recoverTree(TreeNode root) {
+//        if(root == null){
+//        	return;
+//        }
+//       
+//        
+//        inorder(root);
+//        
+//        if(one != null && two != null){
+//        	TreeNode tmp = one;
+//        	one = two;
+//        	two = tmp;
+//        	
+//        }
+//        
+//        
+//    }
+//	
+//	private void inorder(TreeNode root){
+//		if(root == null){
+//			return;
+//		}
+//		
+//		inorder(root.left);
+//		if(pre == null){
+//			pre = root;
+//		}else{
+//			if(pre.val > root.val){
+//				if(one == null){
+//					one = pre;
+//				}
+//				two = root;
+//			}
+//			pre = root;
+//		}
+//		inorder(root.right);
+//	}
+//}
+
+
+
+
+
+//public class Solution {
+//    public int singleNumber(int[] A) {
+//        int one = 0;
+//        int two = 0;
+//        int three = 0;
+//        for(int i=0; i<A.length; i++){
+//        	int tmp = one & A[i];
+//        	one = one^A[i];
+//        	two |= tmp;
+//        	three = one & two;
+//        	two &= ~three;
+//        	one &= ~three;
+//        }
+//        return one;
+//    }
+//}
+
+
+
+
+
+//import leetcode.Utility.TreeNode;
+//
+//public class Solution {
 //    public int maxPathSum(TreeNode root) {
 //        if(root == null){
 //        	return 0;
