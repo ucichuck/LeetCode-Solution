@@ -6,6 +6,59 @@ package leetcode.Solutions;
 
 
 
+//public class Solution {
+//    public int findPeakElement(int[] num) {
+//        if(num.length == 0){
+//        	return -1;
+//        }
+//        
+//        int left = 0;
+//        int right = num.length-1;
+//        while(left < right){
+//        	int mid = (left+right)/2;
+//        	
+//        	if(num[mid] <num[mid+1]){
+//        		left = mid+1;
+//        	}else{
+//        		right = mid;
+//        	}
+//        }
+//        return left;
+//    }
+//}
+
+
+
+
+
+//public class Solution {
+//    public int minCut(String s) {
+//        if(s == null || s.length() < 2){
+//        	return 0;
+//        }
+//        int[] arr = new int[s.length()+1];
+//        boolean[][] table = new boolean[s.length()][s.length()];
+//        
+//        for(int i= s.length(); i>=0; i--){
+//        	arr[i] = s.length() - i;
+//        }
+//        
+//        for(int i= s.length()-1; i>=0; i--){
+//        	for(int j = i; j<s.length(); j++){
+//        		if(s.charAt(i) == s.charAt(j) && (j-i<=2 || table[i+1][j-1])){
+//        			table[i][j] = true;
+//        			arr[i] = Math.min(arr[i], arr[j+1]+1);
+//        		}
+//        	}
+//        }
+//        return arr[0]-1;
+//    }
+//}
+
+
+
+
+
 //import java.util.ArrayList;
 //import java.util.HashMap;
 //import java.util.List;
