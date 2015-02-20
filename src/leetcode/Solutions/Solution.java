@@ -6,6 +6,52 @@ package leetcode.Solutions;
 
 
 
+//public class Solution {
+//    public boolean isOneEditDistance(String s, String t) {
+//        if(s.isEmpty() || t.isEmpty()){
+//        	return false;
+//        }
+//    	if(Math.abs(s.length()-t.length())>1){
+//        	return false;
+//        }
+//        
+//        if(s.length() == t.length()){
+//        	return isOneSameLength(s,t);
+//        }
+//        if(s.length() > t.length()){
+//        	return isOneDiffLength(t,s);
+//        }else{
+//        	return isOneDiffLength(s,t);
+//        }
+//    }
+//    private boolean isOneDiffLength(String s, String t){
+//    	int i = 0;
+//    	while(i < s.length() && s.charAt(i)==t.charAt(i)){
+//    		i++;
+//    	}
+//    	if(i == s.length()){
+//    		return true;
+//    	}
+//    	return s.substring(i).equals(t.substring(i+1));
+//    }
+//    private boolean isOneSameLength(String s, String t){
+//    	int count = 0;
+//    	for(int i=0; i<s.length(); i++){
+//    		if(s.charAt(i) != t.charAt(i)){
+//    			count++;
+//    			if(count > 1){
+//    				return false;
+//    			}
+//    		}
+//    	}
+//    	return count == 1;
+//    }
+//}
+
+
+
+
+
 //import java.util.Stack;
 //
 //public class Solution {
