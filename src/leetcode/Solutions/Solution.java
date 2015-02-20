@@ -6,6 +6,48 @@ package leetcode.Solutions;
 
 
 
+//public class Solution {
+//    public int canCompleteCircuit(int[] gas, int[] cost) {
+//        if(gas.length != cost.length){
+//        	return -1;
+//        }
+//        int start = 0;
+//        int end = 0;
+//        int sum = gas[0] - cost[0];
+//        do{
+//        	if(sum < 0){
+//        		start --;
+//        		if(start < 0){
+//        			start = gas.length-1;
+//        		}
+//        		if(end == start){
+//        			break;
+//        		}
+//        		sum += gas[start] - cost[start];
+//        	}else{
+//        		end ++;
+//        		if(end == cost.length){
+//        			end = 0;
+//        		}
+//        		if(end == start){
+//        			break;
+//        		}
+//        		sum += gas[end] - cost[end];
+//        	}
+//        }while(start != end);
+//        
+//        if(sum >= 0){
+//        	return start;
+//        }else{
+//        	return -1;
+//        }
+//    }
+//}
+
+
+
+
+
 //import java.util.ArrayList;
 //import java.util.List;
 //
