@@ -6,6 +6,60 @@ package leetcode.Solutions;
 
 
 
+//import java.util.ArrayList;
+//import java.util.HashMap;
+//import java.util.List;
+//
+//import leetcode.Utility.UndirectedGraphNode;
+//
+//public class Solution {
+//    public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
+//        if(node == null){
+//        	return node;
+//        }
+//        
+//        HashMap<Integer, UndirectedGraphNode> map = new HashMap<Integer, UndirectedGraphNode>();
+//        List<UndirectedGraphNode> list = new ArrayList<UndirectedGraphNode>();
+//        UndirectedGraphNode res = null;
+//        list.add(node);
+//        while(!list.isEmpty()){
+//        	UndirectedGraphNode cur = list.remove(0);
+//        	UndirectedGraphNode cloneCur ;
+//        	if(map.containsKey(cur.label)){
+//        		cloneCur = map.get(cur.label);
+//    		}else{
+//    			cloneCur = new UndirectedGraphNode(cur.label);
+//    			map.put(cur.label, cloneCur);
+//    		}
+//        	
+//        	List<UndirectedGraphNode> cloneList = new ArrayList<UndirectedGraphNode>();
+//        	
+//        	for(UndirectedGraphNode next : cur.neighbors){
+//        		
+//        		UndirectedGraphNode cloneNext;
+//        		if(map.containsKey(next.label)){
+//        			cloneNext = map.get(next.label);
+//        		}else{
+//        			list.add(next);
+//        			cloneNext = new UndirectedGraphNode(next.label);
+//        			map.put(next.label, cloneNext);
+//        		}
+//        		cloneList.add(cloneNext);
+//        	}
+//        	
+//        	cloneCur.neighbors = cloneList;
+//        	if(res == null){
+//        		res = cloneCur;
+//        	}
+//        }
+//        return res;
+//    }
+//}
+
+
+
+
+
 //public class Solution {
 //    public int canCompleteCircuit(int[] gas, int[] cost) {
 //        if(gas.length != cost.length){
