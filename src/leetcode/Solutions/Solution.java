@@ -6,6 +6,55 @@ package leetcode.Solutions;
 
 
 
+//import java.util.ArrayList;
+//import java.util.List;
+//
+//public class Solution {
+//    public List<String> restoreIpAddresses(String s) {
+//    	List<String> res = new ArrayList<String>();
+//        if(s == null || s.length()<4 || s.length()>12){
+//        	return res;
+//        }
+//        
+//        cal(s,0,0,"",res);
+//        return res;
+//    }
+//    
+//    private void cal(String s, int index, int num, String cur, List<String> res){
+//    	if(num == 4 && s.length() == index){
+//    		res.add(cur);
+//    		return;
+//    	}
+//    	
+//    	if((s.length() - index )< 4-num || (s.length() - index) > (4-num)*3){
+//    		return ;
+//    	}
+//    	
+//    	for(int i=index; i<index+3 && i < s.length(); i++){
+//    		int tmp = Integer.valueOf(s.substring(index,i+1));
+//    		if(tmp >=0 && tmp <= 255){
+//    			String next = "";
+//    			if(cur.equals("")){
+//    				next = s.substring(index, i+1);
+//    			}else{
+//    				next =cur+"."+s.substring(index, i+1);
+//    			}
+//    			cal(s,i+1,num+1,next,res);
+//    		}
+//    		if(tmp == 0){
+//    			break;
+//    		}
+//    	}
+//    	
+//    	
+//    	
+//    }
+//}
+
+
+
+
+
 //public class Solution {
 //    public boolean isOneEditDistance(String s, String t) {
 //        if(s.isEmpty() || t.isEmpty()){
