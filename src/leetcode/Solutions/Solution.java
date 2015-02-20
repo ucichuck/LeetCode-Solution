@@ -7,6 +7,36 @@ package leetcode.Solutions;
 
 
 //public class Solution {
+//    public String convertToTitle(int n) {
+//        if(n <= 0){
+//        	return "";
+//        }
+//        
+//        String res = "";
+//        
+//        while(n > 0){
+//        	
+//        	int rest = n%26;
+//        	
+//        	n = n/26;
+//        	char tmp;
+//        	if(rest == 0){
+//        		tmp = 'Z';
+//        		n--;
+//        	}else{
+//        		tmp = (char)('A'+rest-1);
+//        	}
+//        	res = tmp + res;
+//        }
+//        return res;
+//    }
+//}
+
+
+
+
+
+//public class Solution {
 //    public int findPeakElement(int[] num) {
 //        if(num.length == 0){
 //        	return -1;
