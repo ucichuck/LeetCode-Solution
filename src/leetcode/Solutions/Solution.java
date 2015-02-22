@@ -1,6 +1,102 @@
 package leetcode.Solutions;
 
+import java.util.ArrayList;
 
+
+
+
+
+//public class Solution {
+//    public String getPermutation(int n, int k) {
+//        ArrayList<Integer> numbers = new ArrayList<Integer>();
+//        int nn = 1;
+//        for(int i=1; i<=n; i++){
+//        	nn *= i;
+//        	numbers.add(i);
+//        }
+//        
+//        nn /= n;
+//        k = k-1;
+//        StringBuilder res = new StringBuilder();
+//        for(int i=n-1; i>=1; i--){
+//        	int index = k / nn;
+//        	int curNum = numbers.get(index);
+//        	res.append(curNum);
+//        	numbers.remove(index);
+//        	k = k%nn;
+//        	nn /= i;
+//        }
+//        res.append(numbers.get(0));
+//        return res.toString();
+//    }
+//}
+
+
+
+
+
+//import java.util.Stack;
+//
+//public class Solution {
+//    public void solve(char[][] board) {
+//    	 if (board==null || board.length<1)
+//             return;
+//    	 
+//    	boolean[][] visited = new boolean[board.length][board[0].length];
+//        
+//        for(int i=0; i<board.length; i++){
+//        	for(int j=0; j<board[0].length; j++){
+//        		if(board[i][j] == 'O' && !visited[i][j] && (i ==0 || j== 0|| i== board.length-1 || j==board[0].length-1)){
+//        			Point cur = new Point(i,j);
+//        			visited[i][j] = true;
+//        			Stack<Point> st = new Stack<Point>();
+//        			st.push(cur);
+//        			while(!st.isEmpty()){
+//        				Point tmp = st.pop();
+//        				if(tmp.x>0 && board[tmp.x-1][tmp.y] == 'O' && !visited[tmp.x-1][tmp.y] ){
+//        					Point next = new Point(tmp.x-1,tmp.y);
+//        					st.push(next);
+//        					visited[tmp.x-1][tmp.y] = true;
+//        				}
+//        				if(tmp.y>0 && board[tmp.x][tmp.y-1] == 'O' && !visited[tmp.x][tmp.y-1]){
+//        					Point next = new Point(tmp.x,tmp.y-1);
+//        					st.push(next);
+//        					visited[tmp.x][tmp.y-1] = true;
+//        				}
+//        				
+//        				if(tmp.x<board.length-1 && board[tmp.x+1][tmp.y] == 'O' && !visited[tmp.x+1][tmp.y]){
+//        					Point next = new Point(tmp.x+1,tmp.y);
+//        					st.push(next);
+//        					visited[tmp.x+1][tmp.y] = true;
+//        				}
+//        				if(tmp.y< board[0].length-1 && board[tmp.x][tmp.y+1] == 'O' && !visited[tmp.x][tmp.y+1]){
+//        					Point next = new Point(tmp.x,tmp.y+1);
+//        					st.push(next);
+//        					visited[tmp.x][tmp.y+1] = true;
+//        				}
+//        			}
+//        		}
+//        	}	
+//        }
+//        for(int i=0; i<board.length; i++){
+//        	for(int j=0; j<board[0].length; j++){
+//        		if(!visited[i][j]){
+//        			board[i][j] = 'X';
+//        		}
+//        	}
+//    		
+//    	}
+//    }
+//    
+//    public class Point{
+//    	int x;
+//    	int y;
+//    	Point(int x, int y){
+//    		this.x = x;
+//    		this.y = y;
+//    	}
+//    }
+//}
 
 
 

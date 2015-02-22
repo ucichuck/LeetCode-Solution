@@ -9,7 +9,7 @@ public class PermutationSequence {
  * For example, assuming we are going to solve the problem when n = 3 and k = 5. 
  * In fact, because k starts from 1, we need to subtract 1 from it to make it starting from 0. 
  * So we are going to find the permutation 4 now. 
- * To calculate the first digit, we can calculate it by k % (n ¨C 1)! = 4 / 2! = 2, 
+ * To calculate the first digit, we can calculate it by k / (n ¨C 1)! = 4 / 2! = 2, 
  * which is the position of 3 in array [1,2,3]. Now we need to delete 3 from the array, 
  * so the array becomes [1, 2]. And k should become 4 % 2! = 0. Now we calculate k / (n ¨C 2)! = 0 / 1 = 0,
  *  which is the position of 1 in array [1, 2]. So the second digit should be 1. We need to delete 1 from the array.
