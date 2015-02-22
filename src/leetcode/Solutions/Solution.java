@@ -7,6 +7,102 @@ package leetcode.Solutions;
 
 
 //public class Solution {
+//    public int calculateMinimumHP(int[][] dungeon) {
+//        int[][] arr = new int[dungeon.length][dungeon[0].length];
+//        
+//        for(int i= dungeon.length-1; i>=0; i--){
+//        	for(int j=dungeon[0].length-1; j>=0; j--){
+//        		if(i == dungeon.length-1 && j == dungeon[0].length-1){
+//        			arr[i][j] = Math.max(1, 1-dungeon[i][j]);
+//        		}else if(i==dungeon.length-1){
+//        			arr[i][j] = Math.max(1, arr[i][j+1] - dungeon[i][j]);
+//        		}else if(j == dungeon[0].length-1){
+//        			arr[i][j] = Math.max(1, arr[i+1][j] - dungeon[i][j]);
+//        		}else{
+//        			arr[i][j] = Math.max(1, Math.min(arr[i+1][j], arr[i][j+1])-dungeon[i][j]);
+//        		}
+//        	}
+//        }
+//        return arr[0][0];
+//    }
+//}
+
+
+
+
+
+//import java.util.Arrays;
+//import java.util.Comparator;
+//
+//public class Solution {
+//    public String largestNumber(int[] num) {
+//     if(num.length == 0){
+//    	 return "0";
+//     }
+//     String[] arr = new String[num.length];
+//     
+//     for(int i=0; i<num.length; i++){
+//    	 arr[i] = String.valueOf(num[i]);
+//     }
+//     Arrays.sort(arr, new Sort());
+//     StringBuilder res = new StringBuilder();
+//     for(int i=0; i<arr.length; i++){
+//    	 res.append(arr[i]);
+//     }
+//     
+//     if(res.toString().replace("0", "").equals("")){
+//    	 return "0";
+//     }
+//     
+//     return res.toString();
+//    }
+//    
+//    public class Sort implements Comparator<String>{
+//    	public int compare(String a, String b){
+//    		int res = (b + a).compareTo(a + b);
+//    		return res;
+//    	}
+//    }
+//}
+
+
+
+
+
+//public class Solution {
+//	public boolean isMatch(String s, String p) {
+//	int si = 0;
+//	int pi = 0;
+//	int start = -1;
+//	int mark = -1;
+//	
+//	while(si < s.length()){
+//		if(pi<p.length() && (p.charAt(pi) == '?' || p.charAt(pi) == s.charAt(si))){
+//			pi++;
+//			si++;
+//		}else if(pi<p.length() && p.charAt(pi) == '*'){
+//			start = pi++;
+//			mark = si;
+//		}else if(start != -1){
+//			pi = start + 1;
+//			si = ++mark;
+//		}else{
+//			return false;
+//		}
+//	}
+//	
+//	while(pi < p.length() && p.charAt(pi)=='*'){
+//		pi++;
+//	}
+//	return pi == p.length();
+//	}
+//}
+
+
+
+
+
+//public class Solution {
 //    public boolean isMatch(String s, String p) {
 //        if(p.length() == 0){
 //        	return s.length() == 0;
