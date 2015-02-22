@@ -22,3 +22,28 @@ package leetcode.Solutions;
 //		   }
 //		}   
 //}
+
+//public class Solution extends Reader4 {
+//    /**
+//     * @param buf Destination buffer
+//     * @param n   Maximum number of characters to read
+//     * @return    The number of characters read
+//     */
+//    public int read(char[] buf, int n) {
+//        int index = 0;
+//    	while(index < n){
+//        	char[] tmp = new char[4];
+//        	int next = read4(tmp);
+//        	if(next == 0){
+//        		return index;
+//        	}
+//        	
+//        	int nextIndex = Math.min(next, n-index);
+//        	
+//        	for(int i=0; i<nextIndex; i++){
+//        		buf[index++] = tmp[i];
+//        	}
+//        }
+//    	return index;
+//    }
+//}

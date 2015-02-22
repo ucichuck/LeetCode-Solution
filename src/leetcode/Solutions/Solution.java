@@ -6,6 +6,153 @@ package leetcode.Solutions;
 
 
 
+//import java.util.Arrays;
+//
+//public class Solution {
+//    public boolean isScramble(String s1, String s2) {
+//        if(s1.length() != s2.length()){
+//        	return false;
+//        }
+//        if(s1.length() == 1){
+//        	return s1.equals(s2);
+//        }
+//        
+//        char[] arr1 = s1.toCharArray();
+//        char[] arr2 = s2.toCharArray();
+//        Arrays.sort(arr1);
+//        Arrays.sort(arr2);
+//        
+//        if(!new String(arr1).equals(new String(arr2))){  
+//            return false;  
+//        }  
+//        
+//        for(int i=1; i<s1.length()-1; i++){
+//        	String s11 = s1.substring(0,i);
+//        	String s12 = s1.substring(i);
+//        	String s21 = s2.substring(0,i);
+//        	String s22 = s2.substring(i);
+//        	if(isScramble(s11, s21) && isScramble(s12, s22)){
+//        		return true;
+//        	}
+//        	s21 = s2.substring(0,s2.length()-i);
+//        	s22 = s2.substring(s2.length()-i);
+//        	
+//        	if(isScramble(s11, s22) && isScramble(s12, s21)){
+//        		return true;
+//        	}
+//        }
+//        return false;
+//    }
+//}
+
+
+
+
+
+//public class Solution extends Reader4 {
+//    /**
+//     * @param buf Destination buffer
+//     * @param n   Maximum number of characters to read
+//     * @return    The number of characters read
+//     */
+//    public int read(char[] buf, int n) {
+//        int index = 0;
+//    	while(index < n){
+//        	char[] tmp = new char[4];
+//        	int next = read4(tmp);
+//        	if(next == 0){
+//        		return index;
+//        	}
+//        	
+//        	int nextIndex = Math.min(next, n-index);
+//        	
+//        	for(int i=0; i<nextIndex; i++){
+//        		buf[index++] = tmp[i];
+//        	}
+//        }
+//    	return index;
+//    }
+//}
+
+
+
+
+
+//import java.util.ArrayList;
+//
+//public class Solution extends Reader4 {
+//    /**
+//     * @param buf Destination buffer
+//     * @param n   Maximum number of characters to read
+//     * @return    The number of characters read
+//     */
+//	private ArrayList<Character> rest = null;
+//    public int read(char[] buf, int n) {
+//        if(rest == null){
+//        	rest = new ArrayList<Character>();
+//        }
+//        
+//        int index = Math.min(n, rest.size());
+//        
+//        for(int i=0; i<index; i++){
+//        	buf[i] = rest.get(i);
+//        }
+//        
+//        rest.subList(0, index).clear();
+//        if(index == n){
+//        	return index;
+//        }
+//        
+//        while(index < n){
+//        	char[] tmp = new char[4];
+//        	int next = read(tmp);
+//        	if(next==0) return index;
+//        	int nextIndex = Math.min(next, n-index);
+//        	
+//        	for(int i=0; i<nextIndex; i++){
+//        		buf[index] = tmp[i];
+//        		index ++;
+//        	}
+//        	if(nextIndex < next){
+//        		for(int i=nextIndex; i<next; i++){
+//        			rest.add(tmp[i]);
+//        		}
+//        	}
+//        }
+//        return index;
+//    }
+//}
+
+
+
+
+
+//import java.util.ArrayList;
+//import java.util.List;
+//
+//public class Solution {
+//    public List<String> findMissingRanges(int[] A, int lower, int upper) {
+//        int start = lower-1;
+//        List<String> res = new ArrayList<String>();
+//        for(int i=0; i<=A.length; i++){
+//        	int cur = i==A.length? upper+1 : A[i];
+//        	
+//        	if(cur-start >=2){
+//        		res.add(cal(start+1,cur-1));
+//        	}
+//        	start = cur;
+//        }
+//        return res;
+//    }
+//    private String cal(int left, int right){
+//    	return left == right ? String.valueOf(left) : String.valueOf(left)+"->"+String.valueOf(right);
+//    }
+//}
+
+
+
+
+
 //public class Solution {
 //    public int maximumGap(int[] num) {
 //        if(num == null || num.length < 2){
