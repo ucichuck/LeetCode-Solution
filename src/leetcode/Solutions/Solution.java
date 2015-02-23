@@ -9,6 +9,41 @@ package leetcode.Solutions;
 //import leetcode.Utility.ListNode;
 //
 //public class Solution {
+//    public ListNode insertionSortList(ListNode head) {
+//        if(head == null || head.next == null){
+//        	return head;
+//        }
+//        
+//        ListNode p1 = new ListNode(Integer.MIN_VALUE);
+//        ListNode p2 = head;
+//        while(p2 != null){
+//        	ListNode pre = findInsertPlace(p1,p2);
+//        	ListNode nextNode = p2.next;
+//        	ListNode next =pre.next;
+//        	pre.next = p2;
+//        	p2.next = next;
+//        	p2 = nextNode;
+//        }
+//        return p1.next;
+//    }
+//    private ListNode findInsertPlace(ListNode p1, ListNode p2){
+//    	ListNode pre = null, cur = p1;
+//    	
+//    	while(cur!=null && cur.val < p2.val){
+//    		pre = cur;
+//    		cur = cur.next;
+//    	}
+//    	return pre;
+//    }
+//}
+
+
+
+
+
+//import leetcode.Utility.ListNode;
+//
+//public class Solution {
 //    public void reorderList(ListNode head) {
 //        if(head == null || head.next == null){
 //        	return ;
