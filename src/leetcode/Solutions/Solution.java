@@ -6,6 +6,168 @@ package leetcode.Solutions;
 
 
 
+//import leetcode.Utility.ListNode;
+//
+//public class Solution {
+//    public void reorderList(ListNode head) {
+//        if(head == null || head.next == null){
+//        	return ;
+//        }
+//        
+//        ListNode slow = head;
+//        ListNode fast = head;
+//        while(fast.next != null && fast.next.next != null){
+//        	slow = slow.next;
+//        	fast = fast.next.next;
+//        }
+//        
+//        ListNode mid = slow.next;
+//        
+//        ListNode pre = null;
+//        while(mid != null){
+//        	ListNode next = mid.next;
+//        	mid.next = pre;
+//        	pre = mid;
+//        	mid = next;
+//        }
+//        slow.next = null;
+//        while(head != null && pre != null){
+//        	ListNode next = head.next;
+//        	head.next = pre;
+//        	pre = pre.next;
+//        	head.next.next = next;
+//        	head = next;
+//        }
+//    }
+//}
+
+
+
+
+
+//import java.util.HashMap;
+//
+//import leetcode.Utility.Point;
+//
+//public class Solution {
+//    public int maxPoints(Point[] points) {
+//        if(points.length < 2){
+//        	return points.length;
+//        }
+//        
+//        int max = 0;
+//        for(int i=0; i<points.length; i++){
+//        	Point cur = points[i];
+//        	int duplicate = 1;
+//        	HashMap<Double,Integer> map = new HashMap<Double,Integer>();
+//        	for(int j=0; j<points.length; j++){
+//        		if(i == j){
+//        			continue;
+//        		}
+//        		
+//        		Point tmp = points[j];
+//        		double slope = 0.0;
+//        		if(tmp.x == cur.x && tmp.y == cur.y){
+//        			duplicate ++;
+//        			continue;
+//        		}else if(tmp.x == cur.x){
+//        			slope = Integer.MAX_VALUE;
+//        		}else{
+//        			slope = cur.y == tmp.y ? 0 : 1.0*(cur.y-tmp.y)/(cur.x-tmp.x);
+//        		}
+//    			if(!map.containsKey(slope)){
+//    				map.put(slope, 0);
+//    			}
+//    			map.put(slope, map.get(slope)+1);
+//        	}
+//        	
+//        	if(map.keySet().isEmpty()){
+//        		max = Math.max(max, duplicate);
+//        	}else{
+//        		for(double key : map.keySet()){
+//        			max = Math.max(max, duplicate+map.get(key));
+//        		}
+//        	}
+//        }
+//        return max;
+//    }
+//}
+
+
+
+
+//public class Solution {
+//    public int lengthOfLongestSubstringTwoDistinct(String s) {
+//        if(s == null || s.length() == 0 ){
+//        	return 0;
+//        }
+//        
+//        int start =0, last = -1, max = 0;
+//        
+//        for(int i=1; i<s.length(); i++){
+//        	if(s.charAt(i) == s.charAt(i-1)){
+//        		continue;
+//        	}else if(last>=0 && s.charAt(i)!=s.charAt(last)){
+//        		int dis = i - start;
+//        		max = Math.max(max, dis);
+//        		start = last+1;
+//        	}
+//        	last = i-1;
+//        }
+//        
+//        max = Math.max(max, s.length()-start);
+//        return max;
+//    }
+//}
+
+
+
+
+
+//import java.util.HashMap;
+//
+//public class Solution {
+//    public String fractionToDecimal(int numerator, int denominator) {
+//        StringBuilder res = new StringBuilder();
+//        
+//        if(numerator < 0 ^ denominator < 0){
+//        	res.append("-");
+//        }
+//        
+//        int num = Math.abs(numerator);
+//        int den = Math.abs(denominator);
+//        
+//        res.append(num/den);
+//        
+//        int rest = (num%den)*10;
+//        if(rest == 0){
+//        	return res.toString();
+//        }
+//        
+//        HashMap<Integer,Integer> map = new HashMap<Integer,Integer>();
+//        res.append(".");
+//        while(rest > 0){
+//        	int tmp = rest/den;
+//        	rest = (rest%den)*10;
+//        	res.append(tmp);
+//        	if(map.containsKey(rest)){
+//        		int index = map.get(rest);
+//        		String part1 = res.toString().substring(0,index);
+//        		String part2 = res.toString().substring(index);
+//        		return part1+"("+part2+")";
+//        	}else{
+//        		map.put(rest, res.toString().length()-1);
+//        	}
+//        	
+//        }
+//        return res.toString();
+//    }
+//}
+
+
+
+
+
 //import leetcode.Utility.TreeNode;
 //
 //public class Solution {
