@@ -6,6 +6,56 @@ package leetcode.Solutions;
 
 
 
+//import leetcode.Utility.TreeNode;
+//
+//public class Solution {
+//    public TreeNode UpsideDownBinaryTree(TreeNode root) {
+//        if(root == null){
+//        	return root;
+//        }
+//        TreeNode parent = null, parentRight = null;
+//        while(root != null){
+//        	TreeNode left = root.left;
+//        	TreeNode right = root.right;
+//        	root.right = parent;
+//        	root.right = parentRight;
+//        	parent = root;
+//        	parentRight = right;
+//        	root = left;
+//        }
+//        return root;
+//    }
+//}
+
+
+
+
+
+//public class Solution {
+//    public String reverseWords(String s) {
+//        if(s == null || s.length() == 0){
+//        	return s;
+//        }
+//        StringBuilder res = new StringBuilder();
+//        int j = s.length();
+//        for(int i= s.length()-1; i>=0; i--){
+//        	if(s.charAt(i) == ' '){
+//        		j = i;
+//        	}else if(i ==0 || s.charAt(i-1) == ' '){
+//        		if(res.length() != 0){
+//        			res.append(' ');
+//        		}
+//        		res.append(s.substring(i,j));
+//        	}
+//        }
+//        return res.toString();
+//    }
+//}
+
+
+
+
+
 //import java.util.Arrays;
 //
 //public class Solution {
