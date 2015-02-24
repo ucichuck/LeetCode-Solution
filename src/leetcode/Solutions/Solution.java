@@ -6,6 +6,93 @@ package leetcode.Solutions;
 
 
 
+//import java.util.Stack;
+//
+//public class Solution {
+//    public int largestRectangleArea(int[] height) {
+//        if(height == null || height.length == 0){
+//        	return 0;
+//        }
+//        
+//        int[] lastIndex = new int[height.length];
+//        Stack<Integer> st = new Stack<Integer>();
+//        int max = 0;
+//        for(int i=0; i<height.length; i++){
+//        	if(st.isEmpty() || height[st.peek()] < height[i] ){
+//        		lastIndex[i] = i;
+//        		st.push(i);
+//        	}else{
+//        		while(!st.isEmpty() && height[st.peek()] >= height[i]){
+//        			int last = st.pop();
+//        			lastIndex[i] = last;
+//        			max = Math.max(max, height[st.peek()] * (i-last));
+//        		}
+//        	}
+//        }
+//        
+//        while(!st.isEmpty()){
+//        	int last = st.pop();
+//        	max = Math.max(max, height[st.peek()] * (height.length-last));
+//        }
+//        return max;
+//    }
+//}
+
+
+
+
+
+//import leetcode.Utility.ListNode;
+//
+//public class Solution {
+//    public ListNode reverseKGroup(ListNode head, int k) {
+//        if(head == null || head.next == null || k == 1){
+//        	return head;
+//        }
+//        
+//        ListNode p1 = head;
+//        int len =0;
+//        while(p1 != null){
+//        	len++;
+//        	p1 = p1.next;
+//        }
+//        
+//        int m = len / k;
+//        
+//        ListNode pre = new ListNode(-1);
+//        pre.next = head;
+//        ListNode res = pre;
+//        
+//        ListNode cur = head;
+//        ListNode post = head.next;
+//        
+//        for(int i=0; i<m; i++){
+//        	int count = 1;
+//        	post = cur.next;
+//        	while(cur != null && post != null){
+//        		ListNode next = post.next;
+//        		post.next = cur;
+//        		cur = post;
+//        		post = next;
+//        		count++;
+//        		if(count == k){
+//        			ListNode tmp = pre.next;
+//        			tmp.next = post;
+//        			pre.next = cur;
+//        			pre = tmp;
+//        			cur = post;
+//        			break;
+//        		}
+//        	}
+//        }
+//        return res.next;
+//    }
+//}
+
+
+
+
+
 //import java.util.HashMap;
 //
 //import leetcode.Solutions.LRUCache.DoubleLinkedListNode;
