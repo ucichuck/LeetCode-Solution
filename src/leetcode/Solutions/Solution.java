@@ -6,6 +6,107 @@ package leetcode.Solutions;
 
 
 
+//import java.util.HashMap;
+//
+//import leetcode.Solutions.LRUCache.DoubleLinkedListNode;
+//
+//public class LRUCache {
+//	private DoubleLinkedListNode head;
+//	private DoubleLinkedListNode end;
+//	private int len;
+//	private int capacity;
+//	private HashMap<Integer, LRUCache.DoubleLinkedListNode> table = new HashMap<Integer, LRUCache.DoubleLinkedListNode>();
+//
+//    public LRUCache(int capacity) {
+//        this.capacity = capacity;
+//        head = null;
+//        end = null;
+//        len = 0;
+//    }
+//    
+//    public int get(int key) {
+//        if(!table.containsKey(key)){
+//        	return -1;
+//        }else{
+//        	DoubleLinkedListNode cur = table.get(key);
+//        	remove(cur);
+//        	setHead(cur);
+//        	return cur.value;
+//        }
+//    }
+//    
+//    private void setHead(DoubleLinkedListNode cur){
+//    	cur.pre = null;
+//    	if(head != null){
+//    		cur.next = head;
+//    		
+//    		head.pre = cur;
+//    		head = cur;
+//    	}else{
+//    		head = cur;
+//    		if(end == null){
+//    			end = cur;
+//    		}
+//    	}
+//    }
+//    
+//    private void remove(DoubleLinkedListNode cur){
+//    	DoubleLinkedListNode pre = cur.pre;
+//        DoubleLinkedListNode post = cur.next;
+//        if(pre!=null){
+//            pre.next = post;
+//        }else{
+//        	head = post;
+//        	head.pre = null;
+//        }
+//        if(post != null){
+//            post.pre = pre;
+//        }else{
+//        	end = pre;
+//        	end.next = null;
+//        }
+//    }
+//    
+//    public void set(int key, int value) {
+//    	DoubleLinkedListNode cur = new DoubleLinkedListNode(key,value);
+//        if(!table.containsKey(key)){
+//        	
+//        	if(len < capacity){
+//        		table.put(key, cur);
+//        		setHead(cur);
+//        		len++;
+//        	}else{
+//        		table.remove(end.key);
+//        		end = end.pre;
+//        		if(end != null){
+//                	end.next = null;
+//                }
+//        		setHead(cur);
+//        		table.put(key, cur);
+//        	}
+//        }else{
+//        	remove(table.get(key));
+//        	setHead(cur);
+//        }
+//    }
+//    
+//    private class DoubleLinkedListNode{
+//    	private int key;
+//    	private int value;
+//    	DoubleLinkedListNode pre;
+//    	DoubleLinkedListNode next;
+//    	
+//    	private DoubleLinkedListNode(int key, int value){
+//    		this.key = key;
+//    		this.value = value;
+//    	}
+//    }
+//}
+
+
+
+
+
 //import leetcode.Utility.ListNode;
 //
 //public class Solution {
