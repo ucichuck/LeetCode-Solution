@@ -6,6 +6,79 @@ package leetcode.Solutions;
 
 
 
+//public class Solution {
+//    public boolean exist(char[][] board, String word) {
+//        if(board.length == 0 || board[0].length == 0){
+//        	return false;
+//        }
+//        
+//        if(word.isEmpty()){
+//        	return true;
+//        }
+//        
+//        int m = board.length;
+//        int n = board[0].length;
+//        
+//        boolean[][] arr = new boolean[m][n];
+//        
+//        for(int i=0; i<m; i++){
+//        	for(int j=0; j<n; j++){
+//        		if(!arr[i][j] && board[i][j] == word.charAt(0)){
+//        			arr[i][j] = true;
+//        			if(cal(arr,board,i,j, word.substring(1))){
+//        				return true;
+//        			}
+//        			arr[i][j] = false;
+//        		}
+//        	}
+//        }
+//        return false;
+//    }
+//    
+//    private boolean cal(boolean[][] arr, char[][] board, int i, int j, String word){
+//    	if(word.isEmpty()){
+//    		return true;
+//    	}
+//    	
+//    	if(i>0 && !arr[i-1][j] && board[i-1][j] == word.charAt(0)){
+//    		arr[i-1][j] = true;
+//    		if(cal(arr,board,i-1,j,word.substring(1))){
+//    			return true;
+//    		}
+//    		arr[i-1][j] = false;
+//    	}
+//    	
+//    	if(j>0 && !arr[i][j-1] && board[i][j-1] == word.charAt(0)){
+//    		arr[i][j-1] = true;
+//    		if(cal(arr,board,i,j-1,word.substring(1))){
+//    			return true;
+//    		}
+//    		arr[i][j-1] = false;
+//    	}
+//    	
+//    	if(i<arr.length-1 && !arr[i+1][j] && board[i+1][j] == word.charAt(0) ){
+//    		arr[i+1][j] = true;
+//    		if(cal(arr,board,i+1,j,word.substring(1))){
+//    			return true;
+//    		}
+//    		arr[i+1][j] = false;
+//    	}
+//    	
+//    	if(j<arr[0].length-1 && !arr[i][j+1] && board[i][j+1] == word.charAt(0)){
+//    		arr[i][j+1] = true;
+//    		if(cal(arr,board,i,j+1,word.substring(1))){
+//    			return true;
+//    		}
+//    		arr[i][j+1] = false;
+//    	}
+//    	return false;
+//    }
+//}
+
+
+
+
+
 //import java.util.ArrayList;
 //import java.util.Arrays;
 //import java.util.List;
