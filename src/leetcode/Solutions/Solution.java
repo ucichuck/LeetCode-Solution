@@ -6,6 +6,42 @@ package leetcode.Solutions;
 
 
 
+//public class Solution {
+//    public int numDistinct(String S, String T) {
+//        if(T.length() > S.length()){
+//        	return 0;
+//        }
+//        
+//        int n= S.length();
+//        int m = T.length();
+//        
+//        int[][] arr = new int[m+1][n+1];
+//        
+//        for(int i=0; i<=m; i++){
+//        	for(int j=0; j<=n; j++){
+//        		if(i == 0 && j == 0){
+//        			arr[i][j] = 1;
+//        		}else if(i == 0){
+//        			arr[i][j] = arr[i][j-1];
+//        		}else if(j == 0){
+//        			arr[i][j] = 0;
+//        		}else{
+//        			if(T.charAt(i-1) != S.charAt(j-1)){
+//        				arr[i][j] = arr[i][j-1];
+//        			}else{
+//        				arr[i][j] = arr[i][j-1] + arr[i-1][j-1];
+//        			}
+//        		}
+//        	}
+//        }
+//        return arr[m][n];
+//    }
+//}
+
+
+
+
+
 //import leetcode.Utility.ListNode;
 //
 //public class Solution {
