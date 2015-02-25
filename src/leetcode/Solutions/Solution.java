@@ -6,6 +6,51 @@ package leetcode.Solutions;
 
 
 
+//import leetcode.Utility.ListNode;
+//
+//public class Solution {
+//    public ListNode reverseBetween(ListNode head, int m, int n) {
+//        if(head == null || m == n){
+//        	return head;
+//        }
+//        
+//        int count = 1;
+//        
+//        ListNode pre = new ListNode(-1);
+//        pre.next = head;
+//        ListNode res = pre;
+//        
+//        ListNode cur = head;
+//        while(m>count){
+//        	cur = cur.next;
+//        	pre = pre.next;
+//        	count++;
+//        }
+//        
+//        ListNode end = cur;
+//        while(n > count){
+//        	end = end.next;
+//        	count++;
+//        }
+//        ListNode post = cur.next;
+//        while(cur != end && post != null){
+//        	ListNode next = post.next;
+//        	post.next = cur;
+//        	cur = post;
+//        	post = next;
+//        }
+//        
+//        ListNode next = pre.next;
+//        pre.next = cur;
+//        next.next = post;
+//        return res.next;
+//    }
+//}
+
+
+
+
+
 //public class Solution {
 //    public boolean exist(char[][] board, String word) {
 //        if(board.length == 0 || board[0].length == 0){
