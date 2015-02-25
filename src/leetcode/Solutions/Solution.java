@@ -6,6 +6,114 @@ package leetcode.Solutions;
 
 
 
+//import java.util.ArrayList;
+//import java.util.List;
+//
+//public class Solution {
+//    public List<List<Integer>> combine(int n, int k) {
+//    	List<List<Integer>> res = new ArrayList<List<Integer>>();
+//    	
+//    	if(n <= 0 || n < k){
+//    		return res;
+//    	}
+//    	List<Integer> tmp = new ArrayList<Integer>();
+//    	
+//    	cal(n,k,1,tmp,res);
+//    	return res;
+//    }
+//    
+//    private void cal(int n, int k, int start, List<Integer> tmp, List<List<Integer>> res){
+//    	if(k == 0){
+//    		List<Integer> tmp2 = new ArrayList<Integer>();
+//    		tmp2.addAll(tmp);
+//    		res.add(tmp2);
+//    		return;
+//    	}
+//    	
+//    	if(start > n){
+//    		return;
+//    	}
+//    	
+//    	for(int i = start; i<=n; i++){
+//    		tmp.add(i);
+//    		cal(n,k-1,i+1,tmp,res);
+//    		tmp.remove(tmp.size()-1);
+//    	}
+//    }
+//}
+
+
+
+
+
+//public class Solution {
+//    public void setZeroes(int[][] matrix) {
+//    	if(matrix.length == 0|| matrix[0].length == 0){
+//    		return;
+//    	}
+//    	
+//    	int[] x = new int[matrix.length];
+//    	int[] y = new int[matrix[0].length];
+//    	
+//    	for(int i=0; i<matrix.length; i++){
+//    		for(int j=0; j<matrix[0].length; j++){
+//    			if(matrix[i][j] == 0){
+//    				x[i] = 0;
+//    				y[j] = 0;
+//    			}
+//    		}
+//    	}
+//    	
+//    	for(int i=0; i<matrix.length; i++){
+//    		for(int j=0; j<matrix[0].length; j++){
+//    			if(x[i] == 0 || y[j] == 0){
+//    				matrix[i][j] = 0;
+//    			}
+//    		}
+//    	}
+//    }
+//}
+
+
+
+
+
+//public class Solution {
+//    public int minDistance(String word1, String word2) {
+//        if(word1 == null || word2 == null){
+//        	return 0;
+//        }
+//        
+//        int m = word1.length();
+//        int n = word2.length();
+//        
+//        int[][] arr = new int[m+1][n+1];
+//        
+//        for(int i=0; i<=m; i++){
+//        	for(int j=0; j<=n; j++){
+//        		if(i == 0 && j == 0){
+//        			arr[i][j] = 0;
+//        		}else if(i == 0){
+//        			arr[i][j] = arr[i][j-1] + 1;
+//        		}else if(j == 0){
+//        			arr[i][j] = arr[i-1][j] + 1;
+//        		}else{
+//        			if(word1.charAt(i) == word2.charAt(j)){
+//        				arr[i][j] = arr[i-1][j-1];
+//        			}else{
+//        				arr[i][j] = 1 + Math.min(arr[i-1][j-1], Math.min(arr[i][j-1], arr[i-1][j]));
+//        			}
+//        		}
+//        	}
+//        }
+//        return arr[m][n];
+//    }
+//}
+
+
+
+
+
 //import java.util.List;
 //
 //public class Solution {
