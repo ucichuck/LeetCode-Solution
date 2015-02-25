@@ -7,6 +7,51 @@ package leetcode.Solutions;
 
 
 //import java.util.ArrayList;
+//import java.util.Arrays;
+//import java.util.List;
+//
+//public class Solution {
+//    public List<List<Integer>> subsets(int[] S) {
+//        List<List<Integer>> res = new ArrayList<List<Integer>>();
+//        Arrays.sort(S);
+//        
+//        if(S == null || S.length == 0){
+//        	return res;
+//        }
+//        
+//        return cal(S,0);
+//    }
+//    
+//    private List<List<Integer>> cal(int[] S, int index){
+//    	List<List<Integer>> res = new ArrayList<List<Integer>>();
+//    	if(index == S.length){
+//    		List<Integer> tmp = new ArrayList<Integer>();
+//    		res.add(tmp);
+//    		return res;
+//    	}
+//    	
+//    	res = cal(S,index+1);
+//    	
+//    	List<List<Integer>> res2 = new ArrayList<List<Integer>>();
+//    	
+//    	for(List<Integer> tmp : res){
+//    		List<Integer> tmp2 = new ArrayList<Integer>();
+//    		tmp2.addAll(tmp);
+//    		tmp2.add(0,S[index]);
+//    		res2.add(tmp2);
+//    	}
+//    	
+//    	res2.addAll(res);
+//    	
+//    	return res2;
+//    }
+//}
+
+
+
+
+
+//import java.util.ArrayList;
 //import java.util.List;
 //
 //public class Solution {
