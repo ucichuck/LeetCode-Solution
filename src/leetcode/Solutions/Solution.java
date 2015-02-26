@@ -6,6 +6,50 @@ package leetcode.Solutions;
 
 
 
+//import java.util.Stack;
+//
+//class MinStack {
+//	private Stack<Integer> mainST = new Stack<Integer>();
+//	private Stack<Integer> minST = new Stack<Integer>();
+//	
+//    public void push(int x) {
+//        mainST.push(x);
+//        if(x <= getMin()){
+//        	minST.push(x);
+//        }
+//    }
+//
+//    public void pop() {
+//        if(mainST.isEmpty()){
+//        	throw new IllegalArgumentException("wrong input");
+//        }
+//        
+//        int value = mainST.pop();
+//        if(value == getMin()){
+//        	minST.pop();
+//        }
+//    }
+//
+//    public int top() {
+//    	if(mainST.isEmpty()){
+//        	throw new IllegalArgumentException("wrong input");
+//        }
+//    	return mainST.peek();
+//    }
+//
+//    public int getMin() {
+//    	if(minST.isEmpty()){
+//    		return Integer.MAX_VALUE;
+//    	}else{
+//    		return minST.peek();
+//    	}
+//    }
+//}
+
+
+
+
+
 //public class Solution {
 //    public int findMin(int[] num) {
 //        if(num == null || num.length == 0){
