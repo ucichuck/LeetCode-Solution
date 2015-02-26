@@ -7,6 +7,32 @@ package leetcode.Solutions;
 
 
 //public class Solution {
+//    public int findMin(int[] num) {
+//        if(num == null || num.length == 0){
+//        	return -1;
+//        }
+//        
+//        int left = 0;
+//        int right = num.length-1;
+//        
+//        while(left < right){
+//        	int mid = (left+right)/2;
+//        	
+//        	if(num[mid] > num[right]){
+//        		left = mid+1;
+//        	}else{
+//        		right = mid;
+//        	}
+//        }
+//        return num[left];
+//    }
+//}
+
+
+
+
+
+//public class Solution {
 //    public int maxProduct(int[] A) {
 //        if(A == null || A.length == 0){
 //        	return 0;
