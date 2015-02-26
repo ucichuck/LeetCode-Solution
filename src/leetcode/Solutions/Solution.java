@@ -6,6 +6,51 @@ package leetcode.Solutions;
 
 
 
+//import java.util.HashMap;
+//import java.util.Set;
+//
+//public class Solution {
+//    public boolean wordBreak(String s, Set<String> dict) {
+//        if(s == null || s.length() == 0){
+//        	return false;
+//        }
+//        
+//        if(dict.contains(s)){
+//        	return true;
+//        }
+//        
+//        HashMap<String, Boolean> map = new HashMap<String,Boolean>();
+//        return cal(map,dict,s);
+//    }
+//    
+//    private boolean cal(HashMap<String, Boolean> map,  Set<String> dict, String s){
+//    	if(s.isEmpty() || dict.contains(s)){
+//    		return true;
+//    	}
+//    	
+//    	if(map.containsKey(s)){
+//    		return map.get(s);
+//    	}
+//    	
+//    	for(int i=1; i<s.length(); i++){
+//    		String part1 = s.substring(0,i);
+//    		if(dict.contains(part1)){
+//    			String part2 = s.substring(i);
+//    			if(cal(map,dict,part2)){
+//    				map.put(s, true);
+//    				return true;
+//    			}
+//    		}
+//    	}
+//    	map.put(s, false);
+//    	return false;
+//    }
+//}
+
+
+
+
+
 //import leetcode.Utility.RandomListNode;
 //
 //public class Solution {
