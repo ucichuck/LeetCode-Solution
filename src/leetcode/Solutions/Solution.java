@@ -6,6 +6,282 @@ package leetcode.Solutions;
 
 
 
+//import java.util.List;
+//
+//import leetcode.Utility.ListNode;
+//
+//public class Solution {
+//    public ListNode mergeKLists(List<ListNode> lists) {
+//        if(lists == null || lists.size() == 0){
+//        	return null;
+//        }
+//        
+//        int left = 0;
+//        int right =lists.size()-1;
+//        
+//        while(right > 0){
+//        	while(left < right){
+//        		lists.set(left, merge(lists.get(left),lists.get(right)));
+//        	}
+//        	left = 0;
+//        }
+//        
+//        return lists.get(0);
+//    }
+//    
+//    private ListNode merge(ListNode a, ListNode b){
+//    	ListNode res = new ListNode(-1);
+//    	ListNode pre = res;
+//    	
+//    	while(a != null && b != null){
+//    		if(a.val <= b.val){
+//    			pre.next = a;
+//    			a = a.next;
+//    		}else{
+//    			pre.next = b;
+//    			b = b.next;
+//    		}
+//    		pre = pre.next;
+//    	}
+//    	if(a!= null){
+//    		pre.next = a;
+//    	}
+//    	if(b != null){
+//    		pre.next = b;
+//    	}
+//    	return res.next;
+//    }
+//}
+
+
+
+
+
+//import java.util.HashMap;
+//
+//public class Solution {
+//    public int romanToInt(String s) {
+//    	HashMap<Character, Integer> table = new HashMap<Character,Integer>();
+//        table.put('I', 1);
+//        table.put('V', 5);
+//        table.put('X', 10);
+//        table.put('L', 50);
+//        table.put('C', 100);
+//        table.put('D', 500);
+//        table.put('M', 1000);
+//        
+//        if(s.isEmpty()){
+//        	return 0;
+//        }
+//        int count = 0;
+//        int pre = Integer.MAX_VALUE;
+//        
+//        for(int i=0; i<s.length(); i++){
+//        	int cur = table.get(s.charAt(i));
+//        	if(cur < pre){
+//        		count += cur;
+//        		pre = cur;
+//        	}else{
+//        		count = count +cur - 2*pre;
+//        		pre = cur;
+//        	}
+//        }
+//        return count;
+//        
+//    }
+//}
+
+
+
+
+
+//public class Solution {
+//    public String intToRoman(int num) {
+//    	 int[] values = new int[]{1000,900,500,400,100,90,50,40,10,9,5,4,1};
+//         String[] strings = new String[]{"M", "CM", "D", "CD", "C", "XC", "L","XL","X","IX","V","IV","I"}; 
+//         
+//         if(num <= 0){
+//        	 return "";
+//         }
+//         
+//         StringBuilder res = new StringBuilder();
+//         for(int i=0; i<values.length; i++){
+//        	 while(num > values[i]){
+//        		 num -= values[i];
+//        		 res.append(strings[i]);
+//        	 }
+//         }
+//         
+//         return res.toString();
+//    }
+//}
+
+
+
+
+
+//public class Solution {
+//    public boolean isMatch(String s, String p) {
+//        if(p.isEmpty()){
+//        	return s.isEmpty();
+//        }
+//        
+//        if(p.length() == 1 || p.charAt(1) != '*'){
+//        	if(p.charAt(0)!='.' && p.charAt(0) != s.charAt(0)){
+//        		return false;
+//        	}
+//        	return isMatch(s.substring(1),p.substring(1));
+//        }else{
+//        	int cur = -1;
+//        	while(cur<s.length() && (cur<0 ||p.charAt(0) == '.' || p.charAt(0)==s.charAt(cur))){
+//        		if(isMatch(s.substring(cur+1), p.substring(2))){
+//        			return true;
+//        		}
+//        		cur++;
+//        	}
+//        	return false;
+//        }
+//    }
+//}
+
+
+
+
+
+//public class Solution {
+//    public boolean isPalindrome(int x) {
+//        if(x < 0){
+//        	return false;
+//        }
+//        
+//        if(x >= 0 && x <= 9){
+//        	return true;
+//        }
+//        
+//        int carry = 1;
+//        while(x/carry >= 10){
+//        	carry = carry*10;
+//        }
+//        
+//        while(x > 0){
+//        	int left = x/carry;
+//        	int right = x%10;
+//        	if(left != right){
+//        		return false;
+//        	}
+//        	
+//        	x = x - (x/carry)*carry;
+//        	x = x/10;
+//        	carry = carry/100;
+//        }
+//        return true;
+//        
+//    }
+//}
+
+
+
+
+
+//public class Solution {
+//    public String convert(String s, int nRows) {
+//        if(s.length() <= 1 || nRows < 2){
+//        	return s;
+//        }
+//        
+//        StringBuilder res = new StringBuilder();
+//        
+//        for(int i=0; i<nRows; i++){
+//        	for(int j=i; j<s.length(); ){
+//        		res.append(s.charAt(j));
+//        		if(i != 0 && i != nRows-1){
+//         
+//        			if(j+2*nRows-2-2*i < s.length()){
+//        				res.append(s.charAt(j+2*nRows-2-2*i));
+//        			}
+//        		}
+//        		j = j+2*nRows-2;
+//        	}
+//        }
+//        return res.toString();
+//    }
+//}
+
+
+
+
+
+//import java.util.HashMap;
+//
+//public class Solution {
+//    public int lengthOfLongestSubstring(String s) {
+//        HashMap<Character,Integer> map = new HashMap<Character,Integer>();
+//        
+//        int start = 0;
+//        int cur = 0;
+//        int max = 0;
+//        
+//        while(cur < s.length()){
+//        	char tmp = s.charAt(cur);
+//        	
+//        	if(!map.containsKey(tmp)){
+//        		map.put(tmp, cur);
+//        	}else{
+//        		int dis = cur - start;
+//        		max = Math.max(max, dis);
+//        		
+//        		while(s.charAt(start) != tmp){
+//        			map.remove(s.charAt(start));
+//        			start++;
+//        		}
+//        		
+//        		map.put(tmp,cur);
+//        		start++;
+//        	}
+//        	cur++;
+//        }
+//        
+//        max = Math.max(max, cur-start);
+//        return max;
+//    }
+//}
+
+
+
+
+
+//public class TwoSum {
+//	HashMap<Integer,Integer> map = new HashMap<Integer,Integer>();
+//	public void add(int number) {
+//	   if(!map.containsKey(number)){
+//		   map.put(number, 1);
+//	   }else{
+//		   map.put(number, map.get(number)+1);
+//	   }
+//	}
+//
+//	public boolean find(int value) {
+//	    for(int tmp : map.keySet()){
+//	    	int another = value - tmp;
+//	    	
+//	    	if(another == tmp){
+//	    		if(map.get(tmp) >= 2){
+//	    			return true;
+//	    		}
+//	    	}else{
+//	    		if(map.containsKey(another)){
+//	    			return true;
+//	    		} 
+//	    	}
+//	    }
+//	    return false;
+//	}
+//}
+
+
+
+
+
 //public class Solution {
 //    public int majorityElement(int[] num) {
 //        if(num == null || num.length == 0){
