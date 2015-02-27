@@ -6,6 +6,44 @@ package leetcode.Solutions;
 
 
 
+//public class Solution {
+//    public int majorityElement(int[] num) {
+//        if(num == null || num.length == 0){
+//        	throw new IllegalArgumentException("wrong input");
+//        }
+//        
+//        int cur = num[0];
+//        int count = 1;
+//        for(int i=1; i < num.length; i++){
+//        	if(cur == num[i]){
+//        		count++;
+//        	}else{
+//        		if(count == 0){
+//        			cur = num[i];
+//        			count = 1;
+//        		}else{
+//        			count -- ;
+//        		}
+//        	}
+//        }
+//        count = 0;
+//        for(int i=0; i<num.length; i++){
+//        	if(num[i] == cur){
+//        		count++;
+//        	}
+//        }
+//        
+//        if(count < num.length/2){
+//        	throw new IllegalArgumentException("wrong input");
+//        }
+//        return cur;
+//    }
+//}
+
+
+
+
+
 //import java.util.Stack;
 //
 //class MinStack {
