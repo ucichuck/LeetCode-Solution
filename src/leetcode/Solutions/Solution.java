@@ -6,6 +6,82 @@ package leetcode.Solutions;
 
 
 
+//import java.util.Stack;
+//
+//public class Solution {
+//    public int longestValidParentheses(String s) {
+//        if(s == null || s.length() < 2){
+//        	return 0;
+//        }
+//        
+//        int start = -1;
+//        Stack<Integer> lefts = new Stack<Integer>();
+//        int cur = 0;
+//        int max = 0;
+//        while(cur < s.length()){
+//        	if(s.charAt(cur) == '('){
+//        		lefts.add(cur);
+//        	}else{
+//        		if(!lefts.isEmpty()){
+//        			lefts.pop();
+//        			if(!lefts.isEmpty()){
+//        				max = Math.max(max, cur-lefts.peek());
+//        			}else{
+//        				max = Math.max(max, cur-start);
+//        			}
+//        		}else{
+//        			start = cur;
+//        		}
+//        	}
+//        	cur++;
+//        }
+//        return max;
+//    }
+//}
+
+
+
+
+
+//public class Solution {
+//    public int divide(int dividend, int divisor) {
+//        if(dividend == 0){
+//        	return 0;
+//        }
+//        if(divisor == 0 ){
+//        	return -1;
+//        }
+//        boolean isNegative = false;
+//        if(divisor <0 ^ dividend < 0 ){
+//        	isNegative = true;
+//        }
+//        long div = Math.abs(dividend);
+//        long divis = Math.abs(divisor);
+//        int carry = 0;
+//        
+//        while(div > (divis<<carry)){
+//        	carry ++;
+//        }
+//        long res = 0;
+//        for(int i=carry; i>=0; i++){
+//        	if((divis<<i) <= div){
+//        		res+=1<<i;
+//        		div -= divis<<i;
+//        	}
+//        }
+//        
+//        if(isNegative){
+//        	return res >= Integer.MAX_VALUE ? Integer.MIN_VALUE : (int)-res;
+//        }else{
+//        	return res >= Integer.MAX_VALUE ? Integer.MAX_VALUE : (int)res;
+//        }
+//    }
+//}
+
+
+
+
+
 //public class Solution {
 //    public int removeDuplicates(int[] A) {
 //        if(A.length < 2){

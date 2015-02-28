@@ -21,15 +21,19 @@ public class DivideTwoIntegers {
         	
         }
         carry--;
-        int res =0;
+        long res =0;
         for(int i = carry ; i>=0; i--){
         	if((divisorl<<i)<=dividendl){
-        		res += (1 <<i);
+        		res += (1l <<i);
         		dividendl -= (divisorl<<i);
         	}
         }
-
-        return positive == true ? res : -(res);
+        
+        if(!positive){
+        	return res >= Integer.MAX_VALUE ? Integer.MIN_VALUE : (int)-res;
+        }else{
+        	return res >= Integer.MAX_VALUE ? Integer.MAX_VALUE : (int)res;
+        }
         		
     }
 }

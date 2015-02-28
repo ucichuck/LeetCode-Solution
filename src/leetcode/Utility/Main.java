@@ -1,6 +1,6 @@
 package leetcode.Utility;
 
-import leetcode.Solutions.Solution;
+import leetcode.Solutions.DivideTwoIntegers;
 
 
 
@@ -10,9 +10,9 @@ public class Main {
 	public static void main(String[] args){
 		
 //		Solution solut = new Solution();
-		Solution st = new Solution();
-		
-		System.out.println(st.largestNumber(new int[]{3, 30, 34, 5, 9}));
+		DivideTwoIntegers st = new DivideTwoIntegers();
+		st.divide(Integer.MIN_VALUE, -1);
+//		System.out.println(st.largestNumber(new int[]{3, 30, 34, 5, 9}));
 //		st.numDecodings("0");
 //		st.numDistinct("ccc", "c");
 //		st.isPalindrome(1874994781);
