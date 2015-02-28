@@ -6,6 +6,112 @@ package leetcode.Solutions;
 
 
 
+//public class Solution {
+//    public int firstMissingPositive(int[] A) {
+//        if(A == null || A.length == 0){
+//        	return 1;
+//        }
+//        int i = 0;
+//        while(i < A.length){
+//        	if(A[i] != i){
+//        		if(A[i]>=0 && A[i] < A.length && A[A[i]] != A[i]){
+//        			int tmp = A[A[i]];
+//        			A[A[i]] = A[i];
+//        			A[i] = tmp;
+//        		}else{
+//        			i++;
+//        		}
+//        	}else{
+//        		i++;
+//        	}
+//        }
+//        
+//        
+//        for(int j=1; j<A.length; j++){
+//        	if(A[j] != j){
+//        		return j;
+//        	}
+//        }
+//        
+//        if(A[0] == A.length){
+//        	return A.length+1;
+//        }else{
+//        	return A.length;
+//        }
+//    }
+//}
+
+
+
+
+
+//public class Solution {
+//    public int searchInsert(int[] A, int target) {
+//        if(A == null || A.length == 0){
+//        	return 0;
+//        }
+//        
+//        int left = 0;
+//        int right = A.length-1;
+//        
+//        while(left <= right){
+//        	int mid = (left+right)/2;
+//        	if(A[mid] == target){
+//        		return mid;
+//        	}else if(A[mid] < target){
+//        		left = mid+1;
+//        	}else{
+//        		right = mid-1;
+//        	}
+//        }
+//        return left;
+//    }
+//}
+
+
+
+
+
+//public class Solution {
+//    public int[] searchRange(int[] A, int target) {
+//        int[] res = new int[]{-1,-1};
+//        if(A== null || A.length < 1){
+//        	return res;
+//        }
+//        
+//        res[0] = find(A,target,0,A.length-1,true);
+//        res[1] = find(A,target,0,A.length-1,false);
+//        
+//        return res;
+//    }
+//    
+//    private int find(int[] A, int target, int left, int right, boolean goLeft){
+//    	if(left > right){
+//    		return -1;
+//    	}
+//    	
+//    	int mid = (left+right)/2;
+//    	
+//    	if(A[mid] > target){
+//    		return find(A,target,left,mid-1,goLeft);
+//    	}else if(A[mid]<target){
+//    		return find(A,target,mid+1,right,goLeft);
+//    	}else{
+//    		int next = -1;
+//    		if(goLeft){
+//    			next = find(A,target,left,mid-1,goLeft);
+//    		}else{
+//    			next = find(A,target,mid+1,right,goLeft);
+//    		}
+//    		return next == -1? mid : next;
+//    	}
+//    }
+//}
+
+
+
+
+
 //import java.util.Stack;
 //
 //public class Solution {
