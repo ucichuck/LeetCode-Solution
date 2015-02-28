@@ -6,6 +6,58 @@ package leetcode.Solutions;
 
 
 
+//import leetcode.Utility.ListNode;
+//
+//public class Solution {
+//    public ListNode reverseKGroup(ListNode head, int k) {
+//        if(head == null || head.next == null || k <= 1){
+//        	return head;
+//        }
+//        
+//        int len = 0;
+//        ListNode pre = new ListNode(-1);
+//        pre.next = head;
+//        ListNode res = pre;
+//        
+//        ListNode cur = head;
+//        while(cur != null){
+//        	cur = cur.next;
+//        	len ++;
+//        }
+//        
+//        int num = len/k;
+//        
+//        cur = head;
+//        ListNode post = cur.next;
+//        
+//        for(int i=0; i<num; i++){
+//        	int count = 0;
+//        	post = cur.next;
+//        	while(cur != null && post != null){
+//        		ListNode next = post.next;
+//        		post.next = cur;
+//        		cur = post;
+//        		post = next;
+//        		count ++;
+//        		if(count == k-1){
+//        			ListNode tmp = pre.next;
+//        			tmp.next = post;
+//        			pre.next = cur;
+//        			pre = tmp;
+//        			cur = post;
+//        			break;
+//        		}
+//        	}
+//        }
+//        return res.next;
+//        
+//    }
+//}
+
+
+
+
+
 //import java.util.List;
 //
 //import leetcode.Utility.ListNode;
