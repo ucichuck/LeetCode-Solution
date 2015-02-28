@@ -6,6 +6,31 @@ package leetcode.Solutions;
 
 
 
+//public class Solution {
+//    public int removeDuplicates(int[] A) {
+//        if(A.length < 2){
+//        	return A.length;
+//        }
+//        
+//        int start = 0;
+//        int left = 1;
+//        while(left < A.length){
+//        	if(A[left] == A[start]){
+//        		left++;
+//        	}else{
+//        		A[start+1] = A[left];
+//        		start++;
+//        		left++;
+//        	}
+//        }
+//        return start+1;
+//    }
+//}
+
+
+
+
+
 //import leetcode.Utility.ListNode;
 //
 //public class Solution {
