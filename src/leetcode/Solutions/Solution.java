@@ -6,6 +6,147 @@ package leetcode.Solutions;
 
 
 
+//import java.util.ArrayList;
+//import java.util.List;
+//
+//import leetcode.Utility.TreeNode;
+//
+//public class Solution {
+//    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+//    	List<List<Integer>> res = new ArrayList<List<Integer>>();
+//    	if(root == null){
+//    		return res;
+//    	}
+//    	
+//    	List<TreeNode> lev = new ArrayList<TreeNode>();
+//    	List<TreeNode> newlev = new ArrayList<TreeNode>();
+//    	List<Integer> val = new ArrayList<Integer>();
+//    	
+//    	lev.add(root);
+//    	int count = 0;
+//    	
+//    	while(!lev.isEmpty()){
+//    		TreeNode cur = lev.remove(0);
+//    		val.add(cur.val);
+//    		
+//    		if(count % 2 == 0){
+//    			if(cur.left != null){
+//    				newlev.add(0,cur.left);
+//    			}
+//    			
+//    			if(cur.right != null){
+//    				newlev.add(0,cur.right);
+//    			}
+//    		}else{
+//    			if(cur.right != null){
+//    				newlev.add(0,cur.right);
+//    			}
+//    			if(cur.left != null){
+//    				newlev.add(0,cur.left);
+//    			}
+//    		}
+//    		
+//    		if(lev.isEmpty()){
+//    			res.add(val);
+//    			val = new ArrayList<Integer>();
+//    			lev.addAll(newlev);
+//    			newlev = new ArrayList<TreeNode>();
+//    		}
+//    	}
+//    	
+//    	return res;
+//    }
+//}
+//
+
+
+
+
+//import java.util.Arrays;
+//
+//public class Solution{
+//	public int change(int target, int[] coins){
+//		if(coins.length == 0 || target == 0){
+//			throw new IllegalArgumentException("Wrong input");
+//		}
+//		Arrays.sort(coins);
+//		int[] res = new int[target+1];
+//		for(int i=0; i<res.length; i++){
+//			if(i == 0){
+//				res[i] = 0;
+//			}else{
+//				res[i] = Integer.MAX_VALUE;
+//			}
+//		}
+//		
+//		for(int i=1; i<=target; i++){
+//			for(int j = 0; j<coins.length; j++){
+//				if(coins[j] <= i && res[i-coins[j]] < res[i]-1){
+//					res[i] = res[i-coins[j]]+1;
+//				}
+//			}
+//		}
+//		
+//		return res[target];
+//		
+//		
+//	}
+//}
+
+
+
+
+
+//import java.util.ArrayList;
+//import java.util.Arrays;
+//import java.util.List;
+//
+//public class Solution{ 
+//	public List<Integer> findCombination(int target, int[] nums){		
+//		List<Integer> res = new ArrayList<Integer>();
+//		if(nums.length == 0){
+//			return res;
+//		}
+//		Arrays.sort(nums);
+//		 res = findCom(target,nums,nums.length-1);
+//		 res.remove(res.size()-1);
+//		 return res;
+//	}
+//	
+//	private List<Integer> findCom(int target, int[] nums, int index){
+//		List<Integer> res = new ArrayList<Integer>();
+//		if(target < 0){
+//			return res;
+//		}
+//		if(target == 0){	
+//			 res.add(0);
+//			 return res;
+//		}
+//		
+//		int len = Integer.MAX_VALUE;
+//		
+//		for(int i=index; i>=0; i--){
+//			if(target >= nums[i]){
+//				List<Integer> tmp = findCom(target-nums[i], nums, i);
+//				if(!tmp.isEmpty()){
+//					tmp.add(0,nums[i]);
+//					if(tmp.size() < len){
+//						len = tmp.size();
+//						res = new ArrayList<Integer>();
+//						res.addAll(tmp);
+//					}
+//				}
+//			}
+//		}
+//		
+//		return res;
+//	}
+//}
+
+
+
+
+
 //public class Solution {
 //    public int firstMissingPositive(int[] A) {
 //        if(A == null || A.length == 0){

@@ -1,6 +1,8 @@
 package leetcode.Utility;
 
-import leetcode.Solutions.DivideTwoIntegers;
+import java.util.List;
+
+import leetcode.Solutions.Solution;
 
 
 
@@ -9,9 +11,32 @@ import leetcode.Solutions.DivideTwoIntegers;
 public class Main {
 	public static void main(String[] args){
 		
-//		Solution solut = new Solution();
-		DivideTwoIntegers st = new DivideTwoIntegers();
-		st.divide(Integer.MIN_VALUE, -1);
+		Solution solut = new Solution();
+		System.out.println(solut.change(11, new int[]{1,3,5}));
+		System.out.println(solut.change(1, new int[]{2,3,5}));
+		System.out.println(solut.change(5, new int[]{2,3,5}));
+		System.out.println(solut.change(6, new int[]{2,3,5}));
+//		List<Integer> res = solut.findCombination(12, new int[]{10,5,1,6});
+//		
+//		for(int tmp : res){
+//			System.out.println(tmp);
+//		}
+//		
+//		List<Integer> res2 = solut.findCombination(12, new int[]{10,5,1,6,11});
+//		
+//		for(int tmp : res2){
+//			System.out.println(tmp);
+//		}
+//		
+//		List<Integer> res3 = solut.findCombination(12, new int[]{10,5,1,6,12});
+//		
+//		for(int tmp : res3){
+//			System.out.println(tmp);
+//		}
+		
+		
+//		DivideTwoIntegers st = new DivideTwoIntegers();
+//		st.divide(Integer.MIN_VALUE, -1);
 //		System.out.println(st.largestNumber(new int[]{3, 30, 34, 5, 9}));
 //		st.numDecodings("0");
 //		st.numDistinct("ccc", "c");
