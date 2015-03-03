@@ -6,6 +6,313 @@ package leetcode.Solutions;
 
 
 
+//public class Solution {
+//    public int maxSubArray(int[] A) {
+//       if(A.length == 0){
+//           return 0;
+//       } 
+//       
+//       int max = Integer.MIN_VALUE;
+//       int last = 0;
+//       for(int i=0; i<A.length; i++){
+//           last = Math.max(A[i],A[i]+last);
+//           if(last > max){
+//               max = last;
+//           }
+//       }
+//       return max;
+//    }
+//}
+
+
+
+
+
+//public class Solution {
+//    public boolean searchMatrix(int[][] matrix, int target) {
+//        if(matrix.length == 0 || matrix[0].length == 0){
+//        	return false;
+//        }
+//        
+//        int x = matrix.length-1;
+//        int y = 0;
+//        
+//        while(x>=0 && y<matrix[0].length){
+//        	if(matrix[x][y] == target){
+//        		return true;
+//        	}else if(matrix[x][y] > target){
+//        		x--;
+//        	}else{
+//        		y++;
+//        	}
+//        }
+//        return false;
+//    }
+//}
+
+
+
+
+
+//public class Solution {
+//    public double pow(double x, int n) {
+//        if(x == 0){
+//        	return 0;
+//        }
+//        if(n == 0){
+//        	return 1;
+//        }
+//        if(n == 1){
+//        	return x;
+//        }
+//       
+//        
+//        if(n < 0){
+//        	x = 1/x;
+//        	n = -n;
+//        }
+//        
+//        Double m = x;
+//        
+//        if(n%2==0){
+//        	m = pow(x*x,n/2);
+//        }else{
+//        	m = pow(x*x, n/2) * x;
+//        }
+//        
+//        return m;
+//    }
+//}
+
+
+
+
+
+//public class Solution {
+//    public int[] twoSum(int[] numbers, int target) {
+//        int[] res = new int[]{-1,-1};
+//        if(numbers.length == 0){
+//            return res;
+//        }
+//        HashMap<Integer,Integer> map = new HashMap<Integer,Integer>();
+//        
+//        for(int i=0; i<numbers.length; i++){
+//            int another = target - numbers[i];
+//            if(map.containsKey(another)){
+//                res[0] = map.get(another);
+//                res[1] = i+1;
+//                return res;
+//            }else{
+//                map.put(numbers[i], i+1);
+//            }
+//        }
+//        return res;
+//    }
+//}
+
+
+
+
+
+//import java.util.Stack;
+//
+//import leetcode.Utility.TreeNode;
+//
+//public class BSTIterator {
+//	public Stack<TreeNode> st;
+//    public BSTIterator(TreeNode root) {
+//        st = new Stack<TreeNode>();
+//        while(root != null){
+//        	st.push(root);
+//        	root = root.left;
+//        }
+//    }
+//
+//    /** @return whether we have a next smallest number */
+//    public boolean hasNext() {
+//       return !st.isEmpty();
+//    }
+//
+//    /** @return the next smallest number */
+//    public int next() {
+//        if(st.isEmpty()){
+//        	return -1;
+//        }else{
+//        	TreeNode cur = st.pop();
+//        	TreeNode next =cur.right;
+//        	if(next != null){
+//        		st.push(next);
+//        		next = next.right;
+//        	}
+//        	
+//        	return cur.val;
+//        }
+//    }
+//}
+
+
+
+
+
+//import java.util.ArrayList;
+//import java.util.Hashtable;
+//import java.util.List;
+//
+//public class Solution{
+//    Hashtable<String,String> table = new Hashtable<String,String>();
+//	
+//	public List<String> combinFactors (int target){
+//		List<String> res = new ArrayList<String>();
+//		
+//		if(target < 1){
+//			return res;
+//		}
+//		
+//		if(target == 1){
+//			res.add("1");
+//			return res;
+//		}
+//		
+//		cal(target,1,2,res,"");
+//		res.add(0,"1*"+target);
+//		return res;
+//	}
+//	
+//	private void cal(int target, int val, int start,List<String> res, String tmp ){
+//		if(val == target){
+//			res.add(tmp);
+//			return;
+//		}
+//		if(val > target){
+//			return;
+//		}
+//		
+//		for(int i= start; i<target; i++){
+//			String next = tmp.isEmpty() ? tmp+i : tmp+"*"+i;
+//			
+//				cal(target,val*i,i,res,next);
+//		}
+//	}
+//}
+
+
+
+
+
+//import java.util.HashSet;
+//
+//public class Solution{
+//	public boolean isWord(String str, HashSet<String> dic){
+//		if(str.length() == 0){
+//			return true;
+//		}
+//		
+//		boolean[] arr = new boolean[str.length()];
+//		
+//		for(int i=0; i<arr.length; i++){
+//			if(dic.contains(str.substring(0,i+1))){
+//				arr[i] = true;
+//			}
+//		}
+//		
+//		for(int i=0; i<arr.length; i++){
+//			if(arr[i] == true){
+//				if(i == arr.length-1){
+//					return true;
+//				}
+//				
+//				for(int j=i+1; j<arr.length; j++){
+//					String sub = str.substring(i+1,j+1);
+//					if(dic.contains(sub)){
+//						arr[j] = true;
+//						if(j ==str.length()-1){
+//							return true;
+//						}
+//					}
+//				}
+//			}
+//		}
+//		
+//		return arr[str.length()-1];
+//	}
+//}
+
+
+
+
+
+//public class Solution{
+//	public String removePattern(String str, String pattern){
+//		if(str.length() < pattern.length()){
+//			return str;
+//		}
+//		
+//		int cur = 0;
+//		int k = pattern.length();
+//		boolean hasDup = false;
+//		StringBuilder res = new StringBuilder();
+//		while(cur+k-1 < str.length()){
+//			String nextPart = str.substring(cur,cur+k);
+//			if(!nextPart.equals(pattern)){
+//				res.append(str.charAt(cur));
+//				cur++;
+//			}else{
+//				cur = cur+k;
+//				hasDup = true;
+//			}
+//		}
+//		for(int i = cur; i<str.length(); i++){
+//			res.append(str.charAt(i));
+//		}
+//		if(hasDup){
+//			return removePattern(res.toString(), pattern);
+//		}
+//		return res.toString();
+//	}
+//}
+
+
+
+
+
+//import java.util.Comparator;
+//import java.util.PriorityQueue;
+//
+//public class Solution{
+//	public int[] getTopK(int[] num, int k){
+//		PriorityQueue<Integer> maxHeap = new PriorityQueue<Integer>(k,new MyComparator());
+//		
+//		for(int tmp : num){
+//			maxHeap.add(tmp);
+//		}
+//		int[] res = new int[k];
+//		for(int i=0; i<res.length; i++){
+//			res[i] = maxHeap.poll();
+//		}
+//		
+//		return res;
+//	}
+//	
+//	public class MyComparator implements Comparator<Integer>{
+//
+//		@Override
+//		public int compare(Integer arg0, Integer arg1) {
+//			if(arg0 < arg1){
+//				return 1;
+//			}else if(arg0 == arg1){
+//				return 0;
+//			}else{
+//				return -1;
+//			}
+//		}
+//		
+//	}
+//}
+
+
+
+
+
 //import java.util.ArrayList;
 //import java.util.List;
 //

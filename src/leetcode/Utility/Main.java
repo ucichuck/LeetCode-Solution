@@ -1,6 +1,6 @@
 package leetcode.Utility;
 
-import java.util.List;
+import java.util.HashSet;
 
 import leetcode.Solutions.Solution;
 
@@ -12,10 +12,35 @@ public class Main {
 	public static void main(String[] args){
 		
 		Solution solut = new Solution();
-		System.out.println(solut.change(11, new int[]{1,3,5}));
-		System.out.println(solut.change(1, new int[]{2,3,5}));
-		System.out.println(solut.change(5, new int[]{2,3,5}));
-		System.out.println(solut.change(6, new int[]{2,3,5}));
+
+		for(String tmp : solut.combinFactors(12)){
+			System.out.println(tmp);
+		}
+		
+		for(String tmp : solut.combinFactors(1)){
+			System.out.println(tmp);
+		}
+		
+		for(String tmp : solut.combinFactors(8)){
+			System.out.println(tmp);
+		}
+		
+		
+		
+		//		HashSet<String> dic = new HashSet<String>();
+//		dic.add("sam");
+//		dic.add("sung");
+//		dic.add("I");
+//		dic.add("like");
+//		
+//		System.out.println(solut.isWord("Ilikesamsung", dic));
+//		System.out.println(solut.isWord("Ilike2samsung", dic));
+//		System.out.println(solut.isWord("IsamsungIlike", dic));
+		
+		//		System.out.println(solut.change(11, new int[]{1,3,5}));
+//		System.out.println(solut.change(1, new int[]{2,3,5}));
+//		System.out.println(solut.change(5, new int[]{2,3,5}));
+//		System.out.println(solut.change(6, new int[]{2,3,5}));
 //		List<Integer> res = solut.findCombination(12, new int[]{10,5,1,6});
 //		
 //		for(int tmp : res){
