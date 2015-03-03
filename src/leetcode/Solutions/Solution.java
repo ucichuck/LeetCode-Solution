@@ -7,6 +7,31 @@ package leetcode.Solutions;
 
 
 //public class Solution {
+//    public int maxProduct(int[] A) {
+//        if(A.length == 0){
+//            return 0;
+//        }
+//        
+//        int maxNow = A[0];
+//        int minNow = A[0];
+//        int max = A[0];
+//        for(int i=1; i<A.length; i++){
+//            int maxCur = Math.max(A[i], Math.max(A[i]*maxNow, A[i]*minNow));
+//            int minCur = Math.min(A[i], Math.min(A[i]*maxNow, A[i]*minNow));
+//            
+//            max = Math.max(max,maxCur);
+//            maxNow = maxCur;
+//            minNow = minCur;
+//        }
+//        return max;
+//    }
+//}
+
+
+
+
+
+//public class Solution {
 //    public int maxSubArray(int[] A) {
 //       if(A.length == 0){
 //           return 0;
