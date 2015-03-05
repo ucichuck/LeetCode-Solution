@@ -7,6 +7,180 @@ package leetcode.Solutions;
 
 
 //public class Solution {
+//    public boolean search(int[] A, int target) {
+//        if(A == null || A.length == 0){
+//        	return false;
+//        }
+//        
+//        int index = find(A,0,A.length-1,target);
+//        
+//        return index != -1;
+//    }
+//    
+//    private int find(int[] A, int left, int right, int target){
+//    	if(left > right){
+//    		return -1;
+//    	}
+//    	
+//    	int mid = (left+right)/2;
+//    	
+//    	if(A[mid] == target){
+//    		return mid;
+//    	}
+//    	
+//    	if(A[mid] < A[right]){
+//    		if(target > A[mid] && target <= A[right]){
+//    			return find(A,mid+1,right,target);
+//    		}else{
+//    			return find(A,left,mid-1,target);
+//    		}
+//    	}else if(A[mid] > A[right]){
+//    		if(target < A[mid] && target >= A[left]){
+//    			return find(A,left,mid-1,target);
+//    		}else{
+//    			return find(A,mid+1,right,target);
+//    		}
+//    	}else{
+//    		if(A[left] != A[mid]){
+//    			return find(A,left,mid-1,target);
+//    		}else{
+//    			int leftRes = find(A,left,mid-1,target);
+//    			int rightRes = find(A,mid+1,right,target);
+//    			
+//    			return leftRes == -1 ? rightRes : leftRes;
+//    		}
+//    	}
+//    }
+//}
+
+
+
+
+
+//public class Solution {
+//    public int search(int[] A, int target) {
+//        if(A == null || A.length == 0){
+//        	return -1;
+//        }
+//        
+//        int left = 0;
+//        int right = A.length-1;
+//        
+//        while(left <= right){
+//        	int mid = (left+right)/2;
+//        	if(A[mid] == target){
+//        		return mid;
+//        	}
+//        	
+//        	if(A[mid] < A[right]){
+//        		if(target > A[mid] && target <= A[right]){
+//        			left = mid+1;
+//        		}else{
+//        			right = mid - 1;
+//        		}
+//        	}else{
+//        		if(target < A[mid] && target >= A[left]){
+//        			right = mid - 1;
+//        		}else{
+//        			left = mid +1;
+//        		}
+//        	}
+//        }
+//        return -1;
+//    }
+//}
+
+
+
+
+
+//public class Solution {
+//    public boolean isNumber(String s) {
+//        if(s == null || s.isEmpty()){
+//        	return false;
+//        }
+//        s = s.trim();
+//        if(s.isEmpty()){
+//        	return false;
+//        }
+//        int left = 0;
+//        int right = s.length()-1;
+//        
+//        if(s.charAt(left) == '-' || s.charAt(left) == '+'){
+//        	left++;
+//        }
+//        
+//        boolean isNum = false;
+//        boolean isDot = false;
+//        boolean isE = false;
+//        
+//        while(left <= right){
+//        	char cur = s.charAt(left);
+//        	if(cur>= '0' && cur <= '9'){
+//        		isNum = true;
+//        	}else if(cur == '.'){
+//        		if(isDot || isE){
+//        			return false;
+//        		}
+//        		isDot = true;
+//        	}else if(cur == 'e'){
+//        		if(!isNum || isE){
+//        			return false;
+//        		}
+//        		isE = true;
+//        		isNum = false;
+//        		if((left+1 <= right) && (s.charAt(left+1) == '-' || s.charAt(left+1) == '+')){
+//        			left++;
+//        		}
+//        	}else{
+//        		return false;
+//        	}
+//        	left ++;
+//        }
+//        return isNum;
+//    }
+//}
+
+
+
+
+
+//import java.util.HashMap;
+//
+//public class Solution {
+//    public int romanToInt(String s) {
+//    	if(s.isEmpty()){
+//    		return 0;
+//    	}
+//        HashMap<Character,Integer> map = new HashMap<Character,Integer>();
+//        map.put('I', 1);
+//        map.put('V', 5);
+//        map.put('X', 10);
+//        map.put('L', 50);
+//        map.put('C', 100);
+//        map.put('D', 500);
+//        map.put('M', 1000);
+//        
+//        int res = map.get(s.charAt(0));
+//        int pre = map.get(s.charAt(0));
+//        for(int i=1; i<s.length(); i++){
+//        	int cur = map.get(s.charAt(i));
+//        	if(cur <= pre){
+//        		res += cur;
+//        	}else{
+//        		res = res+cur-2*pre;
+//        	}
+//        	pre = cur;
+//        }
+//        return res;
+//    }
+//}
+
+
+
+
+
+//public class Solution {
 //    public int maxProduct(int[] A) {
 //        if(A.length == 0){
 //            return 0;
