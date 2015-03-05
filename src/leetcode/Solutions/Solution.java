@@ -6,6 +6,50 @@ package leetcode.Solutions;
 
 
 
+//import java.util.ArrayList;
+//import java.util.List;
+//
+//import leetcode.Utility.Interval;
+//
+//public class Solution {
+//    public List<Interval> insert(List<Interval> intervals, Interval newInterval) {
+//    	List<Interval> res = new ArrayList<Interval>();
+//    	
+//    	if(intervals.size() == 0){
+//    		res.add(newInterval);
+//    		return res;
+//    	}
+//    	
+//    	int i = 0;
+//    	while(i < intervals.size()){
+//    		Interval cur = intervals.get(i);
+//    		
+//    		if(cur.end < newInterval.start){
+//    			res.add(cur);
+//    			i++;
+//    		}else if(cur.start > newInterval.end){
+//    			break;
+//    		}else{
+//    			newInterval.start = Math.min(newInterval.start, cur.start);
+//    			newInterval.end = Math.max(newInterval.end, cur.end);
+//    			i++;
+//    		}
+//    	}
+//    	
+//    	res.add(newInterval);
+//    	while(i < intervals.size()){
+//    		res.add(intervals.get(i));
+//    		i++;
+//    	}
+//    	
+//    	return res;
+//    }
+//}
+
+
+
+
+
 //public class Solution {
 //    public int findMin(int[] num) {
 //      if(num == null || num.length == 0){
