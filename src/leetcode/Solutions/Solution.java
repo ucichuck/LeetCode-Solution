@@ -1,6 +1,148 @@
 package leetcode.Solutions;
 
+import java.util.ArrayList;
+import java.util.List;
 
+import leetcode.Utility.NestedInteger;
+
+public class Solution{
+	public int getLevelSum_bfs(List<NestedInteger> inputList){
+		if(inputList == null || inputList.size() == 0){
+			return 0;
+		}
+		
+		List<NestedInteger> cur = new ArrayList<NestedInteger>();
+		List<NestedInteger> next = new ArrayList<NestedInteger>();
+		
+		cur.addAll(inputList);
+		int res = 0;
+		int level = 1;
+		while(!cur.isEmpty()){
+			NestedInteger curNode = cur.remove(0);
+			if(curNode.isInteger()){
+				res += curNode.getVal()*level;
+			}else{
+				next.addAll(curNode.getListVal());
+			}
+			
+			if(cur.isEmpty()){
+				cur.addAll(next);
+				next = new ArrayList<NestedInteger>();
+				level++;
+			}
+		}
+		
+		return res;
+	}
+	
+	public int getLevelSum_dfs(List<NestedInteger> inputList){
+		if(inputList == null || inputList.size() == 0){
+			return 0;
+		}
+		
+		return getSum(inputList,1);
+	}
+	private int getSum(List<NestedInteger> inputList, int level){
+		if(inputList == null || inputList.size() == 0){
+			return 0;
+		}
+		int res = 0;
+		for(NestedInteger nestedNode : inputList){
+			if(nestedNode.isInteger()){
+				res += nestedNode.getVal()*level;
+			}else{
+				res += getSum(nestedNode.getListVal(), level+1);
+			}
+		}
+		return res;
+	}
+}
+
+
+
+
+
+//public class Solution {
+//	public class BestResult {
+//		public int[] colors;
+//		public int cost;
+//		public BestResult(int[] colors, int cost) {
+//			this.colors = colors;
+//			this.cost = cost;
+//		}
+//		
+//	}	
+//	private int[][] cost;
+//	private BestResult[][] best;	
+//	public Solution(int[][] cost) {
+//		this.cost = cost;
+//		this.best = new BestResult[cost.length][cost[0].length];
+//	}	
+//	public BestResult calc() {
+//		return calc(cost[0].length, -1);
+//	}
+//	private BestResult calc(int n, int forbiden) {
+//		if (forbiden >= 0 && best[forbiden][n-1] != null)
+//			return best[forbiden][n-1];
+//		BestResult min = null;
+//		for (int c = 0, h = cost[0].length - n; c< cost.length; ++c) {
+//			if (c != forbiden) {
+//				 if (n == 1) {
+//					 if (min == null || min.cost > cost[c][h]) {
+//						 min = new BestResult(new int[] {c}, cost[c][h]);
+//					 }
+//				 } else {
+//					 BestResult next = calc(n-1, c);
+//					 if (min == null 
+//                                            || min.cost > (next.cost + cost[c][h])) {
+//						 min = new BestResult(new int[next.colors.length+1], 
+//                                                   next.cost + cost[c][h]);
+//						 min.colors[0] = c;
+//						 System.arraycopy(next.colors, 0, 
+//                                                  min.colors, 1, next.colors.length);
+//					 }
+//				 }
+//			}
+//		}
+//		if (forbiden >= 0)
+//			best[forbiden][n-1] = min;
+//		return min;
+//	}
+//
+//}
+
+
+
+
+
+//import java.util.ArrayList;
+//import java.util.Arrays;
+//import java.util.List;
+//
+//public class Solution{
+//	public int validTriangle (int[] arr){
+//		List<String> res = new ArrayList<String>();
+//		if(arr == null || arr.length == 0){
+//			return 0;
+//		}
+//		
+//		Arrays.sort(arr);
+//		
+//		int count = 0;
+//		for(int i=0; i<arr.length-2; i++){
+//			int z = i+2;
+//			for(int j = i+1; j<arr.length-1; j++){
+//				while(z < arr.length && arr[i]+arr[j]>arr[z]){
+//					z++;
+//				}
+//				
+//				count += z - j - 1;
+//			}
+//		}
+//		return count ;
+//		
+//	}
+//}
 
 
 

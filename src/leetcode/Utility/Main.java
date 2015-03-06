@@ -1,6 +1,7 @@
 package leetcode.Utility;
 
-import java.util.HashSet;
+import java.util.ArrayList;
+import java.util.List;
 
 import leetcode.Solutions.Solution;
 
@@ -10,126 +11,64 @@ import leetcode.Solutions.Solution;
 
 public class Main {
 	public static void main(String[] args){
+		// {{1,1},2,{1,1}}
+		NestedInteger a1 = new NestedInteger();
+		NestedInteger a2 = new NestedInteger();
+		NestedInteger a3 = new NestedInteger();
+		NestedInteger a4 = new NestedInteger();
+		NestedInteger a5 = new NestedInteger();
 		
-		Solution solut = new Solution();
-
-		for(String tmp : solut.combinFactors(12)){
-			System.out.println(tmp);
-		}
+		NestedInteger a6 = new NestedInteger();
+		NestedInteger a7 = new NestedInteger();
 		
-		for(String tmp : solut.combinFactors(1)){
-			System.out.println(tmp);
-		}
+		a1.setVal(1);
+		a3.setVal(1);
+		a4.setVal(1);
+		a5.setVal(1);
+		a2.setVal(2);
+		List<NestedInteger> arrlist = new ArrayList<NestedInteger>();
+		List<NestedInteger> arrlist2 = new ArrayList<NestedInteger>();
+		List<NestedInteger> arrlist3 = new ArrayList<NestedInteger>();
 		
-		for(String tmp : solut.combinFactors(8)){
-			System.out.println(tmp);
-		}
+		arrlist2.add(a1);
+		arrlist2.add(a3);
+		arrlist3.add(a4);
+		arrlist3.add(a5);
+		a6.setListVal(arrlist2);
+		a7.setListVal(arrlist3);
+		arrlist.add(a6);
+		arrlist.add(a2);
+		arrlist.add(a7);
 		
+		Solution solt = new Solution();
+		System.out.println(solt.getLevelSum_bfs(arrlist));
+		System.out.println(solt.getLevelSum_dfs(arrlist));
 		
-		
-		//		HashSet<String> dic = new HashSet<String>();
-//		dic.add("sam");
-//		dic.add("sung");
-//		dic.add("I");
-//		dic.add("like");
-//		
-//		System.out.println(solut.isWord("Ilikesamsung", dic));
-//		System.out.println(solut.isWord("Ilike2samsung", dic));
-//		System.out.println(solut.isWord("IsamsungIlike", dic));
-		
-		//		System.out.println(solut.change(11, new int[]{1,3,5}));
-//		System.out.println(solut.change(1, new int[]{2,3,5}));
-//		System.out.println(solut.change(5, new int[]{2,3,5}));
-//		System.out.println(solut.change(6, new int[]{2,3,5}));
-//		List<Integer> res = solut.findCombination(12, new int[]{10,5,1,6});
-//		
-//		for(int tmp : res){
-//			System.out.println(tmp);
-//		}
-//		
-//		List<Integer> res2 = solut.findCombination(12, new int[]{10,5,1,6,11});
-//		
-//		for(int tmp : res2){
-//			System.out.println(tmp);
-//		}
-//		
-//		List<Integer> res3 = solut.findCombination(12, new int[]{10,5,1,6,12});
-//		
-//		for(int tmp : res3){
-//			System.out.println(tmp);
-//		}
+		//{1,{4,{6}}}
+		NestedInteger b1 = new NestedInteger();
+		NestedInteger b2= new NestedInteger();
+		NestedInteger b3 = new NestedInteger();
+		NestedInteger b4 = new NestedInteger();
+		NestedInteger b5 = new NestedInteger();
 		
 		
-//		DivideTwoIntegers st = new DivideTwoIntegers();
-//		st.divide(Integer.MIN_VALUE, -1);
-//		System.out.println(st.largestNumber(new int[]{3, 30, 34, 5, 9}));
-//		st.numDecodings("0");
-//		st.numDistinct("ccc", "c");
-//		st.isPalindrome(1874994781);
-//		st.exist(new char[][]{{'a','b'},{'c','d'}}, "acdb");
-//		st.setZeroes(new int[][]{{0,1}});
+		b1.setVal(1);
+		b2.setVal(4);
+		b3.setVal(6);
 		
-//		st.push(0);
-//		st.push(1);
-//		st.push(0);
-//		System.out.println(st.trailingZeroes(16));
-//		System.out.println(st.trailingZeroes(26));
-//		System.out.println(st.trailingZeroes(51));
-//		System.out.println(st.lengthOfLongestSubstring("abba"));
-		//
-//		System.out.println(solut.isOneEditDistance("abccd", "aabcd"));
+		List<NestedInteger> arrl = new ArrayList<NestedInteger>();
+		List<NestedInteger> arrl2 = new ArrayList<NestedInteger>();
+		List<NestedInteger> arrl3 = new ArrayList<NestedInteger>();
 		
-		//		ListNode a = new ListNode(-1);
-//		ListNode a2 = new ListNode(5);
-//		ListNode a3 = new ListNode(11);
-//		
-//		ListNode b1 = new ListNode(6);
-//		ListNode b2 = new ListNode(10);
-//		
-//		a.next = a2;
-//		a2.next = a3;
-//		
-//		b1.next = b2;
-//		List<ListNode> lists = new ArrayList<ListNode>();
-//		lists.add(null);
-//		lists.add(a);
-//		lists.add(null);
-//		lists.add(b1);
-//		
-//		ListNode res = solut.mergeKLists(lists);
-//		
-//		while(res != null){
-//			System.out.println(res.val);
-//		}
-//		System.out.println(solut.maxProduct(new int[]{-4,-3,-2}));
+		arrl2.add(b3);
+		b4.setListVal(arrl2);
 		
-//		System.out.println(solut.isInterleave("aabcc", "dbbca", "aadbbcbcac"));
-//		System.out.println(solut.isInterleave("aabcc", "dbbca", "aadbbbaccc"));
-		
-//		ListNode a1 = new ListNode(1);
-//		ListNode a2 = new ListNode(2);
-//		ListNode a3 = new ListNode(3);
-//		ListNode a4 = new ListNode(4);
-//		ListNode a5 = new ListNode(5);
-//		ListNode a6 = new ListNode(6);
-//		ListNode a7 = new ListNode(7);
-//		ListNode a8 = new ListNode(8);
-//		ListNode a9 = new ListNode(9);
-		
-//		a1.next = a2;
-//		a2.next = a3;
-//		a3.next = a4;
-//		a4.next = a5;
-//		a5.next = a6;
-//		a6.next = a7;
-//		a7.next = a8;
-//		a8.next = a9;
-		
-		
-//		ListNode res = solut.reverseKGroup(a1, 3);
-//		while(res != null){
-//			System.out.println(res.val);
-//			res = res.next;
-//		}
+		arrl3.add(b2);
+		arrl3.add(b4);
+		b5.setListVal(arrl3);
+		arrl.add(b1);
+		arrl.add(b5);
+		System.out.println(solt.getLevelSum_bfs(arrl));
+		System.out.println(solt.getLevelSum_dfs(arrl));
 	}
 }
