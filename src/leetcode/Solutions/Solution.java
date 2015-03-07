@@ -1,52 +1,91 @@
 package leetcode.Solutions;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
 
-public class Solution {
-    public List<List<Integer>> permuteUnique(int[] num) {
-    	List<List<Integer>> res = new ArrayList<List<Integer>>();
-    	if(num == null || num.length == 0){
-    		return res;
-    	}
-    	
-    	return cal(num, 0);
-    }
-    
-    private List<List<Integer>> cal(int[] num, int index){
-    	List<List<Integer>> res = new ArrayList<List<Integer>>();
-    	if(index == num.length){
-    		List<Integer> tmp = new ArrayList<Integer>();
-    		res.add(tmp);
-    		return res;
-    	}
-    	
-    	res = cal(num,index+1);
-    	
-    	List<List<Integer>> res2 = new ArrayList<List<Integer>>();
-    	HashSet<List<Integer>> set = new HashSet<List<Integer>>();
-    	for(List<Integer> cur : res){
-    		if(cur.isEmpty()){
-    			List<Integer> tmp = new ArrayList<Integer>();
-    			tmp.add(num[index]);
-    			res2.add(tmp);
-    		}else{
-    			
-    			for(int i=0; i<=cur.size(); i++){
-    				List<Integer> tmp = new ArrayList<Integer>();
-    				tmp.addAll(cur);
-    				tmp.add(i,num[index]);
-    				if(!set.contains(tmp)){
-    					set.add(tmp);
-    					res2.add(tmp);
-    				}
-    			}
-    		}
-    	}
-    	return res2;
-    }
-}
+
+
+
+
+
+//import leetcode.Utility.ListNode;
+//
+//public class Solution {
+//    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+//    	ListNode res = new ListNode(-1);
+//    	
+//    	ListNode pre= res;
+//    	
+//    	while(l1 != null && l2 != null){
+//    		if(l1.val <= l2.val){
+//    			pre.next = l1;
+//    			l1 = l1.next;
+//    		}else{
+//    			pre.next = l2;
+//    			l2 = l2.next;
+//    		}
+//    		pre = pre.next;
+//    	}
+//    	
+//    	if(l1 != null){
+//    		pre.next = l1;
+//    	}else if(l2 != null){
+//    		pre.next = l2;
+//    	}
+//    	
+//    	return res.next;
+//    }
+//}
+
+
+
+
+
+//import java.util.ArrayList;
+//import java.util.HashSet;
+//import java.util.List;
+//
+//public class Solution {
+//    public List<List<Integer>> permuteUnique(int[] num) {
+//    	List<List<Integer>> res = new ArrayList<List<Integer>>();
+//    	if(num == null || num.length == 0){
+//    		return res;
+//    	}
+//    	
+//    	return cal(num, 0);
+//    }
+//    
+//    private List<List<Integer>> cal(int[] num, int index){
+//    	List<List<Integer>> res = new ArrayList<List<Integer>>();
+//    	if(index == num.length){
+//    		List<Integer> tmp = new ArrayList<Integer>();
+//    		res.add(tmp);
+//    		return res;
+//    	}
+//    	
+//    	res = cal(num,index+1);
+//    	
+//    	List<List<Integer>> res2 = new ArrayList<List<Integer>>();
+//    	HashSet<List<Integer>> set = new HashSet<List<Integer>>();
+//    	for(List<Integer> cur : res){
+//    		if(cur.isEmpty()){
+//    			List<Integer> tmp = new ArrayList<Integer>();
+//    			tmp.add(num[index]);
+//    			res2.add(tmp);
+//    		}else{
+//    			
+//    			for(int i=0; i<=cur.size(); i++){
+//    				List<Integer> tmp = new ArrayList<Integer>();
+//    				tmp.addAll(cur);
+//    				tmp.add(i,num[index]);
+//    				if(!set.contains(tmp)){
+//    					set.add(tmp);
+//    					res2.add(tmp);
+//    				}
+//    			}
+//    		}
+//    	}
+//    	return res2;
+//    }
+//}
 
 
 
