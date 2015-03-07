@@ -1,62 +1,277 @@
 package leetcode.Solutions;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
-import leetcode.Utility.NestedInteger;
-
-public class Solution{
-	public int getLevelSum_bfs(List<NestedInteger> inputList){
-		if(inputList == null || inputList.size() == 0){
-			return 0;
-		}
-		
-		List<NestedInteger> cur = new ArrayList<NestedInteger>();
-		List<NestedInteger> next = new ArrayList<NestedInteger>();
-		
-		cur.addAll(inputList);
-		int res = 0;
-		int level = 1;
-		while(!cur.isEmpty()){
-			NestedInteger curNode = cur.remove(0);
-			if(curNode.isInteger()){
-				res += curNode.getVal()*level;
-			}else{
-				next.addAll(curNode.getListVal());
-			}
-			
-			if(cur.isEmpty()){
-				cur.addAll(next);
-				next = new ArrayList<NestedInteger>();
-				level++;
-			}
-		}
-		
-		return res;
-	}
-	
-	public int getLevelSum_dfs(List<NestedInteger> inputList){
-		if(inputList == null || inputList.size() == 0){
-			return 0;
-		}
-		
-		return getSum(inputList,1);
-	}
-	private int getSum(List<NestedInteger> inputList, int level){
-		if(inputList == null || inputList.size() == 0){
-			return 0;
-		}
-		int res = 0;
-		for(NestedInteger nestedNode : inputList){
-			if(nestedNode.isInteger()){
-				res += nestedNode.getVal()*level;
-			}else{
-				res += getSum(nestedNode.getListVal(), level+1);
-			}
-		}
-		return res;
-	}
+public class Solution {
+    public List<List<Integer>> permuteUnique(int[] num) {
+    	List<List<Integer>> res = new ArrayList<List<Integer>>();
+    	if(num == null || num.length == 0){
+    		return res;
+    	}
+    	
+    	return cal(num, 0);
+    }
+    
+    private List<List<Integer>> cal(int[] num, int index){
+    	List<List<Integer>> res = new ArrayList<List<Integer>>();
+    	if(index == num.length){
+    		List<Integer> tmp = new ArrayList<Integer>();
+    		res.add(tmp);
+    		return res;
+    	}
+    	
+    	res = cal(num,index+1);
+    	
+    	List<List<Integer>> res2 = new ArrayList<List<Integer>>();
+    	HashSet<List<Integer>> set = new HashSet<List<Integer>>();
+    	for(List<Integer> cur : res){
+    		if(cur.isEmpty()){
+    			List<Integer> tmp = new ArrayList<Integer>();
+    			tmp.add(num[index]);
+    			res2.add(tmp);
+    		}else{
+    			
+    			for(int i=0; i<=cur.size(); i++){
+    			
+    				cur.add(i,num[index]);
+    				if(!set.contains(cur)){
+    					set.add(cur);
+    					res2.add(cur);
+    				}
+    			}
+    		}
+    	}
+    	return res2;
+    }
 }
+
+
+
+
+
+//import java.util.ArrayList;
+//import java.util.List;
+//
+//public class Solution {
+//    public List<List<Integer>> permute(int[] num) {
+//    	List<List<Integer>> res = new ArrayList<List<Integer>>();
+//    	if(num == null || num.length == 0){
+//    		return res;
+//    	}
+//    	
+//    	return cal(num, 0);
+//    }
+//    
+//    private List<List<Integer>> cal(int[] num, int index){
+//    	List<List<Integer>> res = new ArrayList<List<Integer>>();
+//    	if(index == num.length){
+//    		List<Integer> tmp = new ArrayList<Integer>();
+//    		res.add(tmp);
+//    		return res;
+//    	}
+//    	
+//    	res = cal(num, index+1);
+//    	
+//    	List<List<Integer>> nextres = new ArrayList<List<Integer>>();
+//    	
+//    	for(List<Integer> tmp : res){
+//    		if(tmp.isEmpty()){
+//    			List<Integer> tmp2 = new ArrayList<Integer>();
+//    			tmp2.add(num[index]);
+//    			nextres.add(tmp2);
+//    		}else{
+//    			for(int i=0; i<=tmp.size(); i++){
+//    				List<Integer> tmp2 = new ArrayList<Integer>();
+//    				tmp2.addAll(tmp);
+//    				tmp2.add(i,num[index]);
+//    				nextres.add(tmp2);
+//    			}
+//    		}
+//    	}
+//    	
+//    	return nextres;
+//    }
+//}
+
+
+
+
+
+//import java.util.ArrayList;
+//import java.util.List;
+//import java.util.Stack;
+//
+//import leetcode.Utility.NestedInteger;
+//
+//public class Solution{
+//	public int getLevelSum_bfs(List<NestedInteger> inputList){
+//		if(inputList == null || inputList.size() == 0){
+//			return 0;
+//		}
+//		
+//		List<NestedInteger> cur = new ArrayList<NestedInteger>();
+//		List<NestedInteger> next = new ArrayList<NestedInteger>();
+//		
+//		cur.addAll(inputList);
+//		int res = 0;
+//		int level = 1;
+//		while(!cur.isEmpty()){
+//			NestedInteger curNode = cur.remove(0);
+//			if(curNode.isInteger()){
+//				res += curNode.getVal()*level;
+//			}else{
+//				next.addAll(curNode.getListVal());
+//			}
+//			
+//			if(cur.isEmpty()){
+//				cur.addAll(next);
+//				next = new ArrayList<NestedInteger>();
+//				level++;
+//			}
+//		}
+//		
+//		return res;
+//	}
+//	
+//	public int getLevelSum_dfs(List<NestedInteger> inputList){
+//		if(inputList == null || inputList.size() == 0){
+//			return 0;
+//		}
+//		
+//		return getSum(inputList,1);
+//	}
+//	private int getSum(List<NestedInteger> inputList, int level){
+//		if(inputList == null || inputList.size() == 0){
+//			return 0;
+//		}
+//		int res = 0;
+//		for(NestedInteger nestedNode : inputList){
+//			if(nestedNode.isInteger()){
+//				res += nestedNode.getVal()*level;
+//			}else{
+//				res += getSum(nestedNode.getListVal(), level+1);
+//			}
+//		}
+//		return res;
+//	}
+//	
+//	
+//	public int getReversLevelSum_bfs(List<NestedInteger> inputList){
+//		if(inputList == null || inputList.size() == 0){
+//			return 0;
+//		}
+//		
+//		Stack<List<NestedInteger>> st = new Stack<List<NestedInteger>>();
+//		
+//		List<NestedInteger> cur = new ArrayList<NestedInteger>();
+//		List<NestedInteger> next = new ArrayList<NestedInteger>();
+//		List<NestedInteger> numbers = new ArrayList<NestedInteger>();
+//		
+//		cur.addAll(inputList);
+//		
+//		while(!cur.isEmpty()){
+//			NestedInteger curNode = cur.remove(0);
+//			if(curNode.isInteger()){
+//				numbers.add(curNode);
+//			}else{
+//				next.addAll(curNode.getListVal());
+//			}
+//			
+//			if(cur.isEmpty()){
+//				cur.addAll(next);
+//				next = new ArrayList<NestedInteger>();
+//				st.push(numbers);
+//				numbers = new ArrayList<NestedInteger>();
+//			}
+//		}
+//		int level = 1;
+//		int res = 0;
+//		while(!st.isEmpty()){
+//			List<NestedInteger> curNumbers = st.pop();
+//			for(NestedInteger node : curNumbers){
+//				res+=node.getVal()*level;
+//			}
+//			level++;
+//		}
+//		return res;
+//	}
+//	
+//	
+//	
+//	public int getReversLevelSum_dfs(List<NestedInteger> inputList){
+//		if(inputList == null || inputList.size() == 0){
+//			return 0;
+//		}
+//		int depth = getDepth(inputList);
+//		
+//		return getReversSum(inputList,depth);
+//	}
+//	private int getReversSum(List<NestedInteger> inputList, int level){
+//		if(inputList == null || inputList.size() == 0){
+//			return 0;
+//		}
+//		int res = 0;
+//		for(NestedInteger nestedNode : inputList){
+//			if(nestedNode.isInteger()){
+//				res += nestedNode.getVal()*level;
+//			}else{
+//				res += getReversSum(nestedNode.getListVal(), level-1);
+//			}
+//		}
+//		return res;
+//	}
+//	private int getDepth(List<NestedInteger> inputList){
+//		int depth = 0;
+//		for(NestedInteger node : inputList){
+//			if(node.isInteger()){
+//				depth = Math.max(depth, 1);
+//			}else{
+//				depth = Math.max(depth, 1+getDepth(node.getListVal()));
+//			}
+//		}
+//		return depth;
+//	}
+//	
+//	
+//	
+//	
+//	public List<List<NestedInteger>> getLevelTravel_bfs(List<NestedInteger> inputList){
+//		List<List<NestedInteger>> st = new ArrayList<List<NestedInteger>>();
+//		
+//		if(inputList == null || inputList.size() == 0){
+//			return st;
+//		}
+//		
+//		
+//		
+//		List<NestedInteger> cur = new ArrayList<NestedInteger>();
+//		List<NestedInteger> next = new ArrayList<NestedInteger>();
+//		List<NestedInteger> numbers = new ArrayList<NestedInteger>();
+//		
+//		cur.addAll(inputList);
+//		
+//		while(!cur.isEmpty()){
+//			NestedInteger curNode = cur.remove(0);
+//			if(curNode.isInteger()){
+//				numbers.add(curNode);
+//			}else{
+//				next.addAll(curNode.getListVal());
+//			}
+//			
+//			if(cur.isEmpty()){
+//				cur.addAll(next);
+//				next = new ArrayList<NestedInteger>();
+//				st.add(numbers);
+//				numbers = new ArrayList<NestedInteger>();
+//			}
+//		}
+//		
+//		return st;
+//	}
+//	
+//}
 
 
 
