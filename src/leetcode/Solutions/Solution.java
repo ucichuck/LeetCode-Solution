@@ -34,11 +34,12 @@ public class Solution {
     		}else{
     			
     			for(int i=0; i<=cur.size(); i++){
-    			
-    				cur.add(i,num[index]);
-    				if(!set.contains(cur)){
-    					set.add(cur);
-    					res2.add(cur);
+    				List<Integer> tmp = new ArrayList<Integer>();
+    				tmp.addAll(cur);
+    				tmp.add(i,num[index]);
+    				if(!set.contains(tmp)){
+    					set.add(tmp);
+    					res2.add(tmp);
     				}
     			}
     		}
