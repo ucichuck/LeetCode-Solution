@@ -6,6 +6,159 @@ package leetcode.Solutions;
 
 
 
+//import java.util.ArrayList;
+//import java.util.HashMap;
+//import java.util.HashSet;
+//import java.util.List;
+//import java.util.Map;
+//
+//public class Solution {
+//    public List<String> findRepeatedDnaSequences(String s) {
+//    	List<String> res = new ArrayList<String>();
+//    	
+//        if(s == null || s.length() < 10){
+//        	return res;
+//        }
+//        Map<Character,Integer> numbers = new HashMap<Character, Integer>();
+//        numbers.put('A', 0);
+//        numbers.put('C', 1);
+//        numbers.put('G', 2);
+//        numbers.put('T', 3);
+//        
+//        HashSet<Integer> set = new HashSet<Integer>();
+//        HashSet<Integer> unique = new HashSet<Integer>();
+//        
+//        int cur = 0;
+//        while((cur+9)< s.length()){
+//        	int k = 0;
+//        	for(int i=0; i<10; i++){
+//        		k = k*4+numbers.get(s.charAt(cur+i));
+//        	}
+//        	
+//        	if(set.contains(k) && !unique.contains(k)){
+//        		unique.add(k);
+//        		res.add(s.substring(cur,cur+10));
+//        	}else{
+//        		set.add(k);
+//        	}
+//        	cur++;
+//        }
+//        
+//        
+//        return res;
+//    }
+//}
+
+
+
+
+
+//import leetcode.Utility.TreeNode;
+//
+//public class Solution{
+//	public TreeNode findLCA(TreeNode root, TreeNode p1, TreeNode p2){
+//		if(root == null){
+//			return null;
+//		}
+//		
+//		if(root == p1 || root == p2){
+//			return root;
+//		}
+//		
+//		TreeNode left = findLCA(root.left,p1,p2);
+//		TreeNode right = findLCA(root.right,p1,p2);
+//		
+//		if(left != null && right != null){
+//			return root;
+//		}else{
+//			return left == null ? right : left;
+//		}
+//	}
+//}
+
+
+
+
+
+//public class Solution{
+//	public int findStrictlyLarger(char[] arr, char target){
+//		if(arr.length == 0){
+//			return 0;
+//		}
+//		
+//		int left =0;
+//		int right =arr.length-1;
+//		while(left < right){
+//			int mid = (left+right)/2;
+//			if(arr[mid] > target){
+//				right = mid;
+//			}else{
+//				left = mid +1;
+//			}
+//		}
+//		return arr[left] > target ? left : left+1;
+//	}
+//}
+
+
+
+
+
+//import java.util.List;
+//
+//import leetcode.Utility.ListNode;
+//
+//public class Solution {
+//    public ListNode mergeKLists(List<ListNode> lists) {
+//        if(lists == null || lists.size() == 0){
+//        	return null;
+//        }
+//        
+//        int left = 0;
+//        int end = lists.size()-1;
+//        
+//        while(end > 0){
+//        	while(left < end){
+//        		lists.set(left, merge(lists.get(left),lists.get(end)));
+//        		left++;
+//        		end--;
+//        	}
+//        	left = 0;
+//        }
+//        
+//        return lists.get(0);
+//    }
+//    
+//    public ListNode merge(ListNode l1, ListNode l2) {
+//    	ListNode res = new ListNode(-1);
+//    	
+//    	ListNode pre= res;
+//    	
+//    	while(l1 != null && l2 != null){
+//    		if(l1.val <= l2.val){
+//    			pre.next = l1;
+//    			l1 = l1.next;
+//    		}else{
+//    			pre.next = l2;
+//    			l2 = l2.next;
+//    		}
+//    		pre = pre.next;
+//    	}
+//    	
+//    	if(l1 != null){
+//    		pre.next = l1;
+//    	}else if(l2 != null){
+//    		pre.next = l2;
+//    	}
+//    	
+//    	return res.next;
+//    }
+//}
+
+
+
+
+
 //import leetcode.Utility.ListNode;
 //
 //public class Solution {
