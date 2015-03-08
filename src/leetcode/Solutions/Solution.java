@@ -1,6 +1,147 @@
 package leetcode.Solutions;
 
+public class Solution{
+	public int findDis(String[] arr, String k1, String k2){
+		if(arr.length == 0){
+			return 0;
+		}
+		
+		int k1index = -1;
+		int k2index = -2;
+		
+		int min = Integer.MAX_VALUE;
+		for(int i=0; i<arr.length; i++){
+			if(arr[i].equals(k1)){
+				k1index = i;
+				int dif = k1index - k2index;
+				
+				if(dif < min && k2index >= 0){
+					min = dif;
+				}
+			}else if(arr[i].equals(k2)){
+				k2index = i;
+				int dif = k2index - k1index;
+				if(k1index >= 0 && dif < min){
+					min = dif;
+				}
+			}
+		}
+		return min;
+	}
+}
 
+
+
+
+
+//import java.util.ArrayList;
+//import java.util.List;
+//
+//import leetcode.Utility.TreeNode;
+//
+//public class Solution{
+//	public List<Integer> serializeBT(TreeNode root){
+//		List<Integer> res = new ArrayList<Integer>();
+//		
+//		if(root == null){
+//			return res;
+//		}
+//		res.add(root.val);
+//		addTreeNode(root.left, res);
+//		addTreeNode(root.right, res);
+//		
+//		return res;
+//	}
+//	
+//	private void addTreeNode(TreeNode root, List<Integer> res){
+//		if(root == null){
+//			res.add(null);
+//			return ;
+//		}
+//		res.add(root.val);
+//		addTreeNode(root.left, res);
+//		addTreeNode(root.right, res);
+//	}
+//	
+//	private int index = 0;
+//	public TreeNode deserializeBT(Integer[] arr){
+//		if(index >= arr.length){
+//			return null;
+//		}
+//		if(arr[index] == null){
+//			return null;
+//		}
+//		TreeNode root = new TreeNode(arr[index]);
+//		index++;
+//		TreeNode left = deserializeBT(arr);
+//		index++;
+//		TreeNode right = deserializeBT(arr);
+//		
+//		root.left = left;
+//		root.right = right;
+//		
+//		return root;
+//	}
+//}
+
+
+
+
+
+//import leetcode.Utility.TreeNode;
+//
+//public class Solution {
+//    public TreeNode UpsideDownBinaryTree(TreeNode root) {
+//        if(root == null){
+//        	return root;
+//        }
+//        
+//        TreeNode parent = null;
+//        TreeNode parentRight = null;
+//        while(root != null){
+//        	TreeNode left = root.left;
+//        	TreeNode right = root.right;
+//        	
+//        	root.right = parent;
+//        	root.left = parentRight;
+//        	parent = root;
+//        	parentRight = right;
+//        	root = left;
+//        }
+//        
+//        return parent;
+//    }
+//}
+
+
+
+
+
+//public class Solution{
+//	public int[] multip(int[] arr){
+//		if(arr.length == 0){
+//			return arr;
+//		}
+//		
+//		int[] lefts = new int[arr.length];
+//		int[] rights = new int[arr.length];
+//		
+//		lefts[0] = 1;
+//		for(int i=1; i<arr.length; i++){
+//			lefts[i] = lefts[i-1] * arr[i-1];
+//		}
+//		
+//		rights[arr.length-1] = 1;
+//		for(int i=arr.length-2; i>=0; i--){
+//			rights[i] = rights[i+1] * arr[i+1];
+//		}
+//		
+//		for(int i=0; i<arr.length; i++){
+//			arr[i] = lefts[i] * rights[i];
+//		}
+//		return arr;
+//	}
+//}
 
 
 
