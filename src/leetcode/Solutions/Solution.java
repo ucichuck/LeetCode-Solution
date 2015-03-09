@@ -1,34 +1,205 @@
 package leetcode.Solutions;
 
-public class Solution{
-	public int findDis(String[] arr, String k1, String k2){
-		if(arr.length == 0){
-			return 0;
-		}
-		
-		int k1index = -1;
-		int k2index = -2;
-		
-		int min = Integer.MAX_VALUE;
-		for(int i=0; i<arr.length; i++){
-			if(arr[i].equals(k1)){
-				k1index = i;
-				int dif = k1index - k2index;
-				
-				if(dif < min && k2index >= 0){
-					min = dif;
-				}
-			}else if(arr[i].equals(k2)){
-				k2index = i;
-				int dif = k2index - k1index;
-				if(k1index >= 0 && dif < min){
-					min = dif;
-				}
-			}
-		}
-		return min;
-	}
-}
+
+
+
+
+
+
+//import java.util.ArrayList;
+//import java.util.List;
+//
+//public class Solution {
+//    public List<String> fullJustify(String[] words, int L) {
+//        List<String> res = new ArrayList<String>();
+//        
+//        if(words.length == 0){
+//        	return res;
+//        }
+//        
+//        int start = 0;
+//        int count = 0;
+//        for(int i=0; i<words.length; i++){
+//        	if(count + words[i].length() +(i-start) > L ){
+//        		int numSpace = 0;
+//        		int numExtra = 0;
+//        		if(i-start-1 > 0){
+//        			numSpace = (L-count) / (i-start-1);
+//            		numExtra = (L-count) % (i-start-1);
+//        		}
+//        		
+//        		StringBuilder tmp = new StringBuilder();
+//        		
+//        		for(int j=start; j<i; j++){
+//        			tmp.append(words[j]);
+//        			if(j < i-1){
+//        			     for(int k=0; k<numSpace; k++){
+//        			    	tmp.append(" ");
+//        			    }
+//        		    	if(numExtra > 0){
+//        				    tmp.append(" ");
+//        			    }
+//        			    numExtra--;
+//        			}
+//        			
+//        		}
+//        		
+//        		for(int j = tmp.length(); j<L; j++){
+//        			tmp.append(" ");
+//        		}
+//        		res.add(tmp.toString());
+//        		start = i;
+//        		count = 0;
+//        	}
+//        	count += words[i].length();
+//        }
+//        StringBuilder tmp = new StringBuilder();
+//        for(int i=start; i<words.length; i++){
+//        	tmp.append(words[i]);
+//        	if(i < words.length-1){
+//        		tmp.append(" ");
+//        	}
+//        }
+//        
+//        for(int i=tmp.length(); i<L; i++){
+//        	tmp.append(" ");
+//        }
+//        res.add(tmp.toString());
+//        return res;
+//    }
+//}
+
+
+
+
+
+//public class Solution {
+//    public String minWindow(String S, String T) {
+//        int[] ss = new int[256];
+//        int[] tt = new int[256];
+//        
+//        for(int i=0; i<T.length(); i++){
+//        	tt[T.charAt(i)]++;
+//        }
+//        
+//        int count = 0;
+//        int left = 0;
+//        int cur = 0;
+//        int min = Integer.MAX_VALUE;
+//        String res = "";
+//        
+//        while(cur < S.length()){
+//        	char scur = S.charAt(cur);
+//        	if(tt[scur] == 0){
+//        		cur++;
+//        		continue;
+//        	}else{
+//        		if(ss[scur] < tt[scur]){
+//        			count ++;
+//        		}
+//        		ss[scur] ++;
+//        		cur++;
+//        	}
+//        	
+//        	if(count == T.length()){
+//        		
+//        		while(true){
+//        			char leftchar = S.charAt(left);
+//        			if(tt[leftchar] == 0){
+//        				left++;
+//        				continue;
+//        			}else if(ss[leftchar] > tt[leftchar]){
+//        				ss[leftchar]--;
+//        				left++;
+//        				continue;
+//        			}else{
+//        				break;
+//        			}
+//        		}
+//        		
+//        		int dif = cur - left;
+//        		if(dif < min){
+//        			min = dif;
+//        			res = S.substring(left,cur);
+//        		}
+//        	}
+//        }
+//        return res;
+//    }
+//}
+
+
+
+
+
+//import java.util.Random;
+//
+//public class Solution{
+//	public int[] inPlaceShuf(int[] arr){
+//		Random rand = new Random();
+//		for(int i=1; i<arr.length; i++){
+//			int index = rand.nextInt(i);
+//			
+//			int tmp = arr[index];
+//			arr[index] = arr[i];
+//			arr[i] = tmp;
+//		}
+//		return arr;
+//	}
+//}
+
+
+
+
+
+//import java.util.ArrayList;
+//import java.util.Iterator;
+//
+//public class Solution{
+//	public Iterable<Integer> mergeKSorted(Iterator[] iters){
+//		ArrayList<Integer> res = new ArrayList<Integer>();
+//		
+//		int[] numbers = new int[iters.length];
+//		boolean[] valid = new boolean[iters.length];
+//		res.add(1);
+//		
+//		return res;
+//	}
+//}
+
+
+
+
+
+//public class Solution{
+//	public int findDis(String[] arr, String k1, String k2){
+//		if(arr.length == 0){
+//			return 0;
+//		}
+//		
+//		int k1index = -1;
+//		int k2index = -2;
+//		
+//		int min = Integer.MAX_VALUE;
+//		for(int i=0; i<arr.length; i++){
+//			if(arr[i].equals(k1)){
+//				k1index = i;
+//				int dif = k1index - k2index;
+//				
+//				if(dif < min && k2index >= 0){
+//					min = dif;
+//				}
+//			}else if(arr[i].equals(k2)){
+//				k2index = i;
+//				int dif = k2index - k1index;
+//				if(k1index >= 0 && dif < min){
+//					min = dif;
+//				}
+//			}
+//		}
+//		return min;
+//	}
+//}
 
 
 

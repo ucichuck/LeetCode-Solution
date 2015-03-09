@@ -1,19 +1,14 @@
 package leetcode.Utility;
 
-import leetcode.Solutions.Solution;
+import leetcode.Solutions.TextJustification;
 
 
 public class Main {
 public static void main(String[] args){
-	Solution solt = new Solution();
+	TextJustification test = new TextJustification();
 	
-	System.out.println(solt.findDis(new String[]{"as", "ss", "ee","er","sss","as","11","12","123","ee","ee"},"ss","12"));
-	System.out.println(solt.findDis(new String[]{"as", "ss", "ee","er","sss","as","11","12","123","ee","ee"},"as","ee"));
-
-	TwoWords two = new TwoWords(new String[]{"as", "ss", "ee","er","sss","as","11","12","123","ee","ee"});
 	
-	System.out.println(two.minDis("ss", "12"));
-	System.out.println(two.minDis("as", "ee"));
+	System.out.println(test.fullJustify(new String[]{"This", "is", "an", "example", "of", "text", "justification."}, 16));
 
 }
 }
