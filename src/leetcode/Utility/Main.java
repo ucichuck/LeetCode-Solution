@@ -1,15 +1,12 @@
 package leetcode.Utility;
 
-import leetcode.Solutions.TextJustification;
+import leetcode.Solutions.Solution;
 
 
 public class Main {
 public static void main(String[] args){
-	InfluencerSolution so = new InfluencerSolution();
-	
-	boolean[][] matrix = new boolean[][]{{false,false,true,true},{true,false,true,true},{false,false,false,false},{true,true,true,false}};
-	
-	System.out.println(so.getInfluencer(matrix));
+	Solution st = new Solution();
+	System.out.println(st.reverseBits(2));
 }
 }
 
