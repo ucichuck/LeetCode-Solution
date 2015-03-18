@@ -6,6 +6,147 @@ package leetcode.Solutions;
 
 
 
+//public class Solution {
+//    // you need to treat n as an unsigned value
+//    public int hammingWeight(int n) {
+//        int count = 0;
+//    	for( int i=1; i<=32; i++){
+//        	if(cal(n,i)){
+//        		count++;
+//        	}
+//        }
+//    	return count;
+//    }
+//    private boolean cal(int n, int i){
+//    	return (n & (1 << i)) != 0;
+//    }
+//}
+
+
+
+
+
+//import java.util.ArrayList;
+//import java.util.List;
+//
+//public class Solution {
+//    public List<String> fullJustify(String[] words, int L) {
+//    	List<String> res = new ArrayList<String>();
+//    	if(words.length == 0){
+//    		return res;
+//    	}
+//    	
+//    	int start = 0;
+//    	int count = 0;
+//    	for(int i = 0; i<words.length; i++){
+//    		if(count + words[i].length() + i-start > L){
+//    			int numSpace = 0;
+//    			int extaSpace = 0;
+//    			
+//    			if(i-start-1 > 0){
+//    				numSpace = (L-count)/(i-start-1);
+//    				extaSpace = (L-count)%(i-start-1);
+//    			}
+//    			
+//    			StringBuilder st = new StringBuilder();
+//    			for(int j=start; j<i; j++){
+//    				st.append(words[j]);
+//    				if(j < i-1){
+//    					for(int k=0; k<numSpace; k++){
+//    						st.append(" ");
+//    					}
+//    					
+//    					if(extaSpace > 0){
+//    						st.append(" ");
+//    						extaSpace--;
+//    					}
+//    				}
+//    			}
+//    			for(int j = st.length(); j<L; j++){
+//    				st.append(" ");
+//    			}
+//    			res.add(st.toString());
+//    			count = 0;
+//    			start = i;
+//    		}
+//    		count += words[i].length();
+//    	}
+//    	StringBuilder st = new StringBuilder();
+//    	for(int i=start; i<words.length; i++){
+//    		st.append(words[i]);
+//    		if(i < words.length-1){
+//    			st.append(" ");
+//    		}
+//    	}
+//    	for(int i=st.length(); i<L; i++){
+//    		st.append(" ");
+//    	}
+//    	res.add(st.toString());
+//    	return res;
+//    }
+//}
+
+
+
+
+
+//import java.awt.Point;
+//import java.util.HashMap;
+//
+//public class Solution {
+//    public int maxPoints(Point[] points) {
+//        if(points.length == 0){
+//        	return 0;
+//        }
+//        int max = 0;
+//        for(int i=0; i<points.length; i++){
+//        	Point cur = points[i];
+//        	int duplicate = 1;
+//        	HashMap<Double,Integer> map = new HashMap<Double, Integer>();
+//        	for(int j=0; j<points.length; j++){
+//        		if(i == j){
+//        			continue;
+//        		}
+//        		Point tmp = points[j];
+//        		
+//        		Double slope = 0.0;
+//        		if(tmp.x == cur.x && tmp.y == cur.y){
+//        			duplicate++;
+//        			continue;
+//        		}else if(tmp.x == cur.x){
+//        			slope = (double)Integer.MAX_VALUE;
+//        		}else{
+//        			slope = (tmp.y-cur.y)*1.0/(tmp.x-cur.x);
+//        		}
+//        		int count = 1;
+//        		if(map.containsKey(slope)){
+//        			count += map.get(slope);
+//        		}
+//        		
+//        		map.put(slope, count);
+//        	}
+//        	int num = 0;
+//        	if(map.keySet().size() == 0){
+//        		num = duplicate;
+//        	}else{
+//        		for(Double key : map.keySet()){
+//        			num = Math.max(num, duplicate+map.get(key));
+//        		}
+//        	}
+//        	max = Math.max(num, max);
+//        	
+//        }
+//        
+//        return max;
+//        
+//        
+//    }
+//}
+
+
+
+
+
 //import java.util.ArrayList;
 //import java.util.List;
 //

@@ -5,11 +5,11 @@ import leetcode.Solutions.TextJustification;
 
 public class Main {
 public static void main(String[] args){
-	TextJustification test = new TextJustification();
+	InfluencerSolution so = new InfluencerSolution();
 	
+	boolean[][] matrix = new boolean[][]{{false,false,true,true},{true,false,true,true},{false,false,false,false},{true,true,true,false}};
 	
-	System.out.println(test.fullJustify(new String[]{"This", "is", "an", "example", "of", "text", "justification."}, 16));
-
+	System.out.println(so.getInfluencer(matrix));
 }
 }
 
