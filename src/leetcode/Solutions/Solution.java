@@ -1,29 +1,855 @@
 package leetcode.Solutions;
 
-import java.util.Stack;
 
-public class Solution {
-    // you need treat n as an unsigned value
-	private int[] nums = new int[32];
-    public int reverseBits(int n) {
-        int res = 0;
-        int carry =1;
-        
-        for(int i=0; i<32; i++){
-        	int m = 1<<i;
-        	if((n&m)!=0){
-        		nums[i] = 1;
-        	}
-        }
-        
-      for(int i=31; i>=0; i--){
-    	  res += nums[i]*carry;
-    	  carry = carry*2;
-      }
-        
-        return res;
-    }
-}
+
+
+
+
+
+//import java.util.Stack;
+//
+//public class Solution {
+//    public boolean isValid(String s) {
+//        if(s == null || s.isEmpty()){
+//        	return true;
+//        }
+//        
+//        Stack<Character> stc = new Stack<Character>();
+//        
+//        for(int i=0; i<s.length(); i++){
+//        	char cur = s.charAt(i);
+//        	if(isLeft(cur)){
+//        		stc.push(cur);
+//        	}else{
+//        		if(stc.isEmpty()){
+//        			return false;
+//        		}
+//        		char left = stc.pop();
+//        		if(!isMatch(left,cur)){
+//        			return false;
+//        		}
+//        	}
+//        	
+//        }
+//        if(!stc.isEmpty()){
+//			return false;
+//		}
+//        return true;
+//    }
+//    
+//    private boolean isLeft(char cur){
+//    	return cur == '(' || cur == '{' || cur == '[';
+//    }
+//    
+//    private boolean isMatch(char left, char cur){
+//    	if(left == '('){
+//    		return cur == ')';
+//    	}else if(left == '{'){
+//    		return cur == '}';
+//    	}else{
+//    		return cur == ']';
+//    	}
+//    }
+//}
+
+
+
+
+
+//import java.util.concurrent.ConcurrentHashMap;
+//
+//public class Solution {
+//    public String minWindow(String S, String T) {
+//    	ConcurrentHashMap<String,String> st = null;
+//    	if(T.length()>S.length()){
+//            return "";
+//        }
+//        char[] ta= T.toCharArray();
+//    	char[] sa = S.toCharArray();
+//    	int[] table = new int[256];
+//    	int[] window = new int[256];
+//    	for(int i=0;i<256;i++){
+//    		table[i]=0;
+//    		window[i]=0;
+//    	}
+//    	int count=0;
+//    	for(int i=0; i<T.length();i++){
+//    		table[ta[i]]+=1;
+//    	}
+//    	int minLen = Integer.MAX_VALUE;
+//    	int start = 0;
+//    	int end = 0;
+//    	int minBegin = 0;
+//    	
+//    	for(;end<S.length(); end++){
+//    		if(table[S.charAt(end)] == 0){
+//    			continue;
+//    		}
+//    		window[S.charAt(end)]++;
+//    		if(table[S.charAt(end)] >= window[S.charAt(end)]){
+//    			
+//    			count++;
+//    		}
+//    		
+//    		if(count == T.length()){
+//    			while(start < end){
+//    				if(table[S.charAt(start)] == 0){
+//    					start++;
+//    				}else if(table[S.charAt(start)] < window[S.charAt(start)]){
+//    					window[S.charAt(start)]--;
+//    					start++;
+//    				}else{
+//    					break;
+//    				}
+//    				
+//    			}
+//    			int len = end-start+1;
+//    			if(len<minLen){
+//    				minLen=len;
+//    				minBegin = start;
+//    			}
+//    		}
+//    	}
+//    	if(minLen <= S.length())
+//        	return S.substring(minBegin,minBegin+minLen);
+//        	else return "";
+//    }
+//}
+
+
+
+
+
+//import java.util.ArrayList;
+//import java.util.List;
+//
+//public class Solution {
+//    public List<String> fullJustify(String[] words, int L) {
+//    	List<String> res = new ArrayList<String>();
+//
+//    	if(words == null || words.length == 0){
+//    		return res;
+//    	}
+//    	
+//    	int start = 0;
+//    	int count = 0;
+//    	
+//    	for(int i=0; i<words.length; i++){
+//    		if(count + words[i].length() > L){
+//    			int spaceNum = 0;
+//	            int extraNum = 0;
+//	            
+//	            if(i-start-1 > 0){
+//	            	spaceNum = (L-count)/(i-start-1);
+//	            	extraNum = (L-count)%(i-start-1);
+//	            }
+//	            
+//	            StringBuilder str = new StringBuilder();
+//	            for(int j=start; j<i ; j++){
+//	            	str.append(words[j]);
+//	            	if(j<i-1){
+//	            		for(int m=0; m<spaceNum; m++){
+//	            			str.append(" ");
+//	            		}
+//	            		
+//	            		if(extraNum > 0){
+//	            			str.append(" ");
+//	            			extraNum --;
+//	            		}
+//	            	}
+//	            }
+//	            
+//	            for(int j=str.length(); j<L; j++){
+//	            	str.append(" ");
+//	            }
+//	            
+//	            res.add(str.toString());
+//	            start = i;
+//	            count = 0;
+//    		}
+//    		count += words[i].length();
+//    	}
+//    	 StringBuilder str = new StringBuilder();
+//    	for(int i = start; i<words.length; i++){
+//    		str.append(words[i]);
+//    		if(i < words.length-1){
+//    			str.append(" ");
+//    		}
+//    	}
+//    	
+//    	for(int i=str.length(); i<L; i++){
+//    		str.append(" ");
+//    	}
+//    	res.add(str.toString());
+//    	return res;
+//    	
+//    }
+//}
+
+
+
+
+
+//import java.util.ArrayList;
+//import java.util.List;
+//
+//import leetcode.Utility.TreeNode;
+//
+//public class Solution {
+//    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+//    	List<List<Integer>> res = new ArrayList<List<Integer>>();
+//    	
+//    	if(root == null){
+//    		return res;
+//    	}
+//    	
+//    	List<TreeNode> cur = new ArrayList<TreeNode>();
+//    	List<TreeNode> next = new ArrayList<TreeNode>();
+//    	List<Integer> tmp = new ArrayList<Integer>();
+//    	
+//    	boolean isRevert = true;
+//    	cur.add(root);
+//    	
+//    	while(!cur.isEmpty()){
+//    		TreeNode node = cur.remove(0);
+//    		tmp.add(node.val);
+//    		if(isRevert){
+//    			if(node.left != null){
+//    				next.add(0,node.left);
+//    			}
+//    			
+//    			if(node.right != null){
+//    				next.add(0,node.right);
+//    			}
+//    		}else{
+//    			if(node.right != null){
+//    				next.add(0,node.right);
+//    			}
+//    			
+//    			if(node.left != null){
+//    				next.add(0,node.left);
+//    			}
+//    		}
+//    		
+//    		if(cur.isEmpty()){
+//    			cur.addAll(next);
+//    			next = new ArrayList<TreeNode>();
+//    			res.add(tmp);
+//    			tmp = new ArrayList<Integer>();
+//    			isRevert = !isRevert;
+//    		}
+//    	}
+//    	return res;
+//    }
+//}
+
+
+
+
+
+//import java.util.ArrayList;
+//import java.util.HashMap;
+//import java.util.HashSet;
+//import java.util.List;
+//
+//public class Solution {
+//    public List<String> findRepeatedDnaSequences(String s) {
+//    	List<String> arr =new ArrayList<String>();
+//    	
+//    	if(s.isEmpty() || s.length() <= 10){
+//    		return arr;
+//    		
+//    	}
+//    	
+//    	int index = 0;
+//    	HashSet<Integer> table = new HashSet<Integer>();
+//    	HashSet<Integer> unique = new HashSet<Integer>();
+//    	
+//    	HashMap<String,Integer> map = new HashMap<String,Integer>();
+//    	
+//    	map.put("A", 0);
+//    	map.put("G", 1);
+//    	map.put("T", 2);
+//    	map.put("C", 3);
+//    	
+//    	while((index + 10) <= s.length()){
+//    		int k = 0;
+//    		for(int i=0; i<10; i++){
+//    			k = k*4 + map.get(String.valueOf(s.charAt(index+i)));
+//    		}
+//    		
+//    		if(table.contains(k)){
+//    			if(!unique.contains(k)){
+//    				arr.add(s.substring(index, index+10));
+//    				unique.add(k);
+//    			}
+//    		}else{
+//    			table.add(k);
+//    		}
+//    		index++;
+//    	}
+//    	return arr;
+//    }
+//}
+
+
+
+
+
+//import java.util.ArrayList;
+//import java.util.List;
+//
+//public class Solution{
+//    public List<String> combinFactors (int target){
+//    	List<String> arr = new ArrayList<String>();
+//    	
+//    	if(target <= 0){
+//    		return arr;
+//    	}
+//    	
+//    	if(target == 1){
+//    		arr.add("1*1");
+//    		return arr;
+//    	}
+//    	arr.add(target+"*1");
+//    	cal(target,11,1,"",arr);
+//    	
+//    	return arr;
+//    }
+//    
+//    private void cal(int target, int index, int res, String tmp, List<String> arr){
+//    	if(res > target){
+//    		return;
+//    	}
+//    	if(res == target){
+//    		arr.add(tmp);
+//    		return;
+//    	}
+//    	
+//    	for(int i=index; i>1; i--){
+//    		String next = tmp.isEmpty()?String.valueOf(i):tmp+"*"+i;
+//    		cal(target,i,res*i,next,arr);
+//    	}
+//    }
+//    
+//}
+
+
+
+
+
+//import java.util.ArrayList;
+//import java.util.List;
+//
+//public class Solution{
+//	public List<String> getPlusCombo(int key){
+//		List<String> arr = new ArrayList<String>();
+//		if(key <= 0){
+//			return arr;
+//		}
+//		
+//		if(key == 1){
+//			arr.add("1");
+//			return arr;
+//		}
+//		
+//		cal(key,1,0,"",arr);
+//		return arr;
+//		
+//	}
+//	
+//	private void cal(int key, int index, int sum, String tmp, List<String> arr){
+//		if(sum > key){
+//			return ;
+//		}
+//		if(sum == key){
+//			arr.add(tmp);
+//			return;
+//		}
+//		
+//		for(int i=index; i<key; i++){
+//			cal(key,i,sum+i,tmp.isEmpty()? String.valueOf(i) : tmp+"+"+i, arr);
+//		}
+//		
+//	}
+//}
+
+
+
+
+
+//public class Solution {
+//    public int maxProduct(int[] A) {
+//        if(A ==null || A.length == 0){
+//        	return 0;
+//        }
+//        
+//        int max = 0;
+//        int minMul = 1;
+//        int maxMul = 1;
+//        
+//        for(int i=0; i<A.length; i++){
+//        	int ma = Math.max(A[i], Math.max(A[i]*minMul, A[i]*maxMul));
+//        	int mi = Math.min(A[i], Math.min(A[i]*minMul, A[i]*maxMul));
+//        	
+//        	minMul = mi;
+//        	maxMul = ma;
+//        	max = Math.max(max, ma);
+//        }
+//        
+//        return max;
+//    }
+//}
+
+
+
+
+
+//import java.util.ArrayList;
+//import java.util.List;
+//
+//public class Solution{
+//	 public List<String> getPlusCombo(int key){
+//		 List<String> arr = new ArrayList<String>();
+//		 
+//		 if(key <= 0){
+//			 return arr;
+//		 }
+//		 
+//		 if(key == 1){
+//			 arr.add("1");
+//			 return arr;
+//		 }
+//		 List<String> arr2 = new ArrayList<String>();
+//		 for(int i=1; i<=key; i++){
+//			
+//			 arr = getPlusCombo(key-i);
+//			 
+//			 for(String tmp : arr){
+//				 arr2.add(String.valueOf(i) + tmp);
+//			 }
+//			 
+//			 
+//		 }
+//		 return arr2;
+//	 }
+//}
+
+
+
+
+
+//public class Solution {
+//    public boolean isNumber(String s) {
+//    	s =s.trim();
+//    	if(s.isEmpty()){
+//    		return false;
+//    	}
+//    	
+//    	int left = 0;
+//    	int right = s.length()-1;
+//    	
+//    	if(s.charAt(0) == '+' || s.charAt(0) == '-'){
+//    		left++;
+//    	}
+//    	
+//    	boolean isNum = false;
+//    	boolean isDig = false;
+//    	boolean isExp = false;
+//    	while(left <= right){
+//    		if(s.charAt(left)>= '0' && s.charAt(left) <= '9'){
+//    			isNum = true;
+//    		}else if(s.charAt(left) == '.'){
+//    			if(isExp || isDig){
+//    				return false;
+//    			}
+//    			isDig = true;
+//    		}else if(s.charAt(left) == 'e'){
+//    			if(!isNum || isExp){
+//    				return false;
+//    			}
+//    			if(s.charAt(left) == '-' || s.charAt(left) == '+'){
+//    				left++;
+//    			}
+//    			isExp = true;
+//    			isNum = false;
+//    		}else{
+//    			return false;
+//    		}
+//    		left++;
+//    	}
+//    	return isNum;
+//    }
+//}
+
+
+
+
+
+//public class Solution {
+//    public double pow(double x, int n) {
+//        if(n == 0){
+//        	return 1;
+//        }
+//        if(n == 1){
+//        	return x;
+//        }
+//        
+//        if(n < 0){
+//        	x = 1/x;
+//        	n = -n;
+//        }
+//        
+//        double res = 0;
+//        if(n%2 == 0){
+//        	res = pow(x*x,n/2);
+//        }else{
+//        	res = pow(x*x,n/2)*x;
+//        }
+//        return res;
+//    }
+//}
+
+
+
+
+
+//import leetcode.Utility.LinkedListNode;
+//
+//public class Solution{
+//	public boolean canPlaceFlowers(LinkedListNode<Boolean> flowerbed, int numberToPlace) {
+//		if(flowerbed == null ){
+//			return false;
+//		}
+//		
+//		int count = 0;
+//		boolean nextAvail = true;
+//		
+//		LinkedListNode<Boolean> cur = flowerbed;
+//		LinkedListNode<Boolean> next = cur.next;
+//		if(next == null){
+//			if(!cur.val && numberToPlace <= 1){
+//				return true;
+//			}else{
+//				return false;
+//			}
+//		}
+//		
+//		while(cur != null && next != null){
+//
+//			if(cur.val){
+//				nextAvail = false;
+//				cur = next;
+//				next = next.next;
+//			}else{
+//				if(!nextAvail){
+//					nextAvail = true;
+//					cur = next;
+//					next = next.next;
+//				}else{
+//					if(!next.val){
+//						count ++;
+//						nextAvail = false;
+//					}
+//					cur = next;
+//					next = next.next;
+//				}
+//			}
+//		}
+//		
+//		if(cur != null && !cur.val && nextAvail){
+//			count ++;
+//		}
+//		
+//		return count >= numberToPlace;
+//	}
+//}
+
+
+
+
+
+//public class Solution {
+//    public int minCut(String s) {
+//        if(s == null || s.isEmpty()){
+//        	return 0;
+//        }
+//        
+//        int len = s.length();
+//        int[] dp = new int[len+1];
+//        boolean[][] table = new boolean[len][len];
+//        
+//        for(int i=len; i>=0; i--){
+//        	dp[i] = len-i;
+//        }
+//        
+//        for(int i=len-1; i>=0; i--){
+//        	for(int j=i; j<len; j++){
+//        		if(s.charAt(i) == s.charAt(j) &&(j-i < 2 || table[i+1][j-1])){
+//        			table[i][j] = true;
+//        			
+//        			dp[i] = Math.min(dp[i], dp[j+1]+1);
+//        		}
+//        	}
+//        }
+//        
+//        return dp[0]-1;
+//    }
+//}
+
+
+
+
+
+//public class Solution{
+//	public int findLongestPalindormicSubsequence(String str){
+//		if(str == null || str.isEmpty()){
+//			return 0;
+//		}
+//		
+//		int n = str.length();
+//		
+//		int[][] table = new int[n][n];
+//		
+//		for(int i=0; i<n; i++){
+//			table[i][i] = 1;
+//		}
+//		
+//		for(int dis=2; dis <= n; dis++){
+//			for(int i=0; i<n-dis+1; i++){
+//				int j = i+dis-1;
+//				
+//				if(str.charAt(i) == str.charAt(j) && dis == 2){
+//					table[i][j] = 2;
+//				}else if(str.charAt(i) == str.charAt(j)){
+//					table[i][j] = 2+table[i+1][j-1];
+//				}else{
+//					table[i][j] = Math.max(table[i+1][j], table[i][j-1]);
+//				}
+//			}
+//		}
+//		return table[0][n-1];
+//	}
+//}
+
+
+
+
+
+//public class Solution {
+//    public int findMin(int[] num) {
+//    	if(num == null || num.length == 0){
+//    		return -1;
+//    	}
+//    	
+//    	int left = 0;
+//    	int right = num.length-1;
+//    	
+//    	while(left < right){
+//    		int mid = (left+right)/2;
+//    		
+//    		if(num[mid] > num[right]){
+//    			left = mid+1;
+//    		}else if(num[mid] < num[right]){
+//    			right = mid;
+//    		}else{
+//    			right --;
+//    		}
+//    		
+//    	}
+//    	return left;  
+//    }
+//}
+
+
+
+
+
+//public class Solution {
+//    public int findMin(int[] num) {
+//    	if(num == null || num.length == 0){
+//    		return -1;
+//    	}
+//    	
+//    	int left = 0;
+//    	int right = num.length-1;
+//    	
+//    	while(left < right){
+//    		int mid = (left+right)/2;
+//    		
+//    		if(num[mid] > num[right]){
+//    			left = mid+1;
+//    		}else{
+//    			right = mid;
+//    		}
+//    		
+//    	}
+//    	return left;
+//    }
+//}
+
+
+
+
+
+//public class Solution {
+//    public boolean search(int[] A, int target) {
+//        if(A == null || A.length == 0){
+//        	return false;
+//        }
+//        
+//        return find(A,target,0,A.length-1);
+//    }
+//    
+//    private boolean find(int[] A, int target, int left, int right){
+//    	if(left > right){
+//    		return false;
+//    	}
+//    	
+//    	int mid = (left+right)/2;
+//    	
+//    	if(A[mid] == target){
+//    		return true;
+//    	}
+//    	
+//    	if(A[mid] > A[right]){
+//    		if(target >= A[left] && target < A[mid]){
+//    			return find(A,target,left, mid-1);
+//    		}else{
+//    			return find(A,target,mid+1,right);
+//    		}
+//    	}else if(A[mid] < A[right]){
+//    		if(target > A[mid] && target <= A[right]){
+//    			return find(A,target,mid+1,right);
+//    		}else{
+//    			return find(A,target,left, mid-1);
+//    		}
+//    	}else{
+//    		if(A[mid] == A[left]){
+//    			return find(A,target,left,right-1);
+//    		}else{
+//    			return find(A,target,left, mid-1);
+//    		}
+//    	}
+//    }
+//}
+
+
+
+
+
+//import leetcode.Utility.TreeNode;
+//
+//public class Solution {
+//    public TreeNode UpsideDownBinaryTree(TreeNode root) {
+//        if(root == null){
+//        	return root;
+//        }
+//        
+//        TreeNode parent = null, parentRight = null;
+//        
+//        while(root != null){
+//        	TreeNode left = root.left;
+//        	TreeNode right = root.right;
+//        	root.left = parentRight;
+//        	root.right = parent;
+//        	parent = root;
+//        	parentRight = right;
+//        	root = left;
+//        	
+//        }
+//        return parent;
+//    }
+//}
+
+
+
+
+
+//import java.util.ArrayList;
+//import java.util.List;
+//
+//import leetcode.Utility.FourListNode;
+//
+//public class Solution{
+//	public FourListNode flattenListNode(FourListNode root){
+//		
+//		List<FourListNode> res = new ArrayList<FourListNode>();
+//		
+//		if(root == null){
+//			return root;
+//		}
+//		List<FourListNode> curLev = new ArrayList<FourListNode>();
+//		curLev.add(root);
+//		List<FourListNode> nextLev = new ArrayList<FourListNode>();
+//		while(!curLev.isEmpty()){
+//			FourListNode cur = curLev.remove(0);
+//			res.add(cur);
+//			if(cur.up != null){
+//				cur.up.down = null;
+//				nextLev.add(cur.up);
+//			}
+//			if(cur.down != null){
+//				cur.down.up = null;
+//				nextLev.add(cur.down);
+//			}
+//			if(cur.pre != null){
+//				cur.pre.next = null;
+//				nextLev.add(cur.pre);
+//			}
+//			if(cur.next != null){
+//				cur.next.pre = null;
+//				nextLev.add(cur.next);
+//			}
+//			
+//			if(curLev.isEmpty()){
+//				curLev.addAll(nextLev);
+//				nextLev = new ArrayList<FourListNode>();
+//			}
+//		}
+//		FourListNode resNode = res.remove(0);
+//		FourListNode cur = resNode;
+//		while(cur != null){
+//			cur.up = null;
+//			cur.down = null;
+//			cur.next = res.isEmpty() ? null : res.remove(0);
+//			cur = cur.next;
+//		}
+//		
+//		
+//		
+//		return resNode;
+//	}
+//}
+
+
+
+
+
+//import java.util.Stack;
+//
+//public class Solution {
+//    // you need treat n as an unsigned value
+//	private int[] nums = new int[32];
+//    public int reverseBits(int n) {
+//        int res = 0;
+//        int carry =1;
+//        
+//        for(int i=0; i<32; i++){
+//        	int m = 1<<i;
+//        	if((n&m)!=0){
+//        		nums[i] = 1;
+//        	}
+//        }
+//        
+//      for(int i=31; i>=0; i--){
+//    	  res += nums[i]*carry;
+//    	  carry = carry*2;
+//      }
+//        
+//        return res;
+//    }
+//}
 
 
 

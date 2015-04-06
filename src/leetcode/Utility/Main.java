@@ -1,13 +1,18 @@
 package leetcode.Utility;
 
+import java.util.List;
+
 import leetcode.Solutions.Solution;
 
 
 public class Main {
-public static void main(String[] args){
-	Solution st = new Solution();
-	System.out.println(st.reverseBits(2));
-}
+	public static void main(String[] args){
+		 
+        Solution so = new Solution();
+       so.findRepeatedDnaSequences("AAAAAAAAAAA");
+ }
+
+
 }
 
 
